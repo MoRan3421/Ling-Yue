@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>灵约 · 限时活动</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root{
+  --primary:#7b8cff;
+  --bg:#f6f8ff;
+  --card:#ffffff;
+  --text:#2c2f4a;
+  --muted:#6b6f99;
+}
+
+body{
+  margin:0;
+  font-family:"Segoe UI","PingFang SC",sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+header{
+  padding:50px 20px;
+  text-align:center;
+}
+
+main{
+  max-width:900px;
+  margin:auto;
+  padding:0 20px 120px;
+}
+
+.card{
+  background:var(--card);
+  border-radius:20px;
+  padding:22px;
+  margin-bottom:24px;
+  box-shadow:0 12px 30px rgba(120,140,255,.15);
+}
+
+h2{
+  margin:0 0 12px;
+}
+
+.activity{
+  padding:12px;
+  border-left:4px solid var(--primary);
+  margin-bottom:16px;
+}
+
+.activity button{
+  margin-top:6px;
+  padding:8px 12px;
+  border:none;
+  border-radius:12px;
+  background:var(--primary);
+  color:#fff;
+  cursor:pointer;
+}
+.timer{
+  font-size:14px;
+  color:var(--muted);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🎉 限时活动</h1>
+  <p>领取奖励 / 活动倒计时</p>
+</header>
+
+<main>
+
+<div class="card">
+  <h2>活动列表</h2>
+
+  <div class="activity">
+    🌸 春日试炼
+    <div class="timer" id="timer1"></div>
+    <button onclick="claim('春日试炼')">领取奖励</button>
+  </div>
+
+  <div class="activity">
+    🔥 英雄挑战赛
+    <div class="timer" id="timer2"></div>
+    <button onclick="claim('英雄挑战赛')">领取奖励</button>
+  </div>
+
+</div>
+
+</main>
+
+<script>
+// 倒计时示例 (活动剩余时间 1 天)
+function startTimer(id, seconds){
+  const el=document.getElementById(id);
+  setInterval(()=>{
+    const d=Math.floor(seconds/86400);
+    const h=Math.floor((seconds%86400)/3600);
+    const m=Math.floor((seconds%3600)/60);
+    const s=seconds%60;
+    el.innerText=`剩余时间: ${d}天 ${h}时 ${m}分 ${s}秒`;
+    if(seconds>0) seconds--;
+  },1000);
+}
+
+startTimer("timer1",86400);
+startTimer("timer2",43200);
+
+function claim(name){
+  alert(`你已领取 ${name} 奖励！（示例）`);
+}
+
+// 应用主题颜色
+const theme = localStorage.getItem("theme");
+if(theme){
+  document.documentElement.style.setProperty('--primary',theme);
+}
+</script>
+
+</body>
+</html>

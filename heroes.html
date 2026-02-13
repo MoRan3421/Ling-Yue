@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>灵约 · 英雄</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root{
+  --bg:#f6f8ff;
+  --card:#ffffff;
+  --primary:#7b8cff;
+  --text:#2c2f4a;
+  --muted:#6b6f99;
+}
+
+body{
+  margin:0;
+  font-family:"Segoe UI","PingFang SC",sans-serif;
+  background:linear-gradient(180deg,#eef2ff,#fdfdff);
+  color:var(--text);
+}
+
+header{
+  padding:50px 20px;
+  text-align:center;
+}
+
+header h1{
+  margin:0;
+  font-size:36px;
+}
+
+header p{
+  color:var(--muted);
+}
+
+main{
+  max-width:1200px;
+  margin:auto;
+  padding:0 20px 120px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+
+.hero{
+  background:var(--card);
+  border-radius:18px;
+  padding:18px;
+  box-shadow:0 10px 30px rgba(120,140,255,.15);
+  cursor:pointer;
+  transition:.25s;
+}
+
+.hero:hover{
+  transform:translateY(-6px);
+}
+
+.hero h3{
+  margin:0 0 6px;
+}
+
+.hero .role{
+  font-size:13px;
+  color:var(--primary);
+}
+
+.hero .info{
+  font-size:13px;
+  color:var(--muted);
+  line-height:1.5;
+}
+
+#detail{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.45);
+  display:none;
+  align-items:center;
+  justify-content:center;
+}
+
+#detail .box{
+  background:#fff;
+  border-radius:20px;
+  padding:28px;
+  width:90%;
+  max-width:420px;
+}
+
+.close{
+  float:right;
+  cursor:pointer;
+  color:var(--muted);
+}
+
+button.lang{
+  position:fixed;
+  top:20px;
+  right:20px;
+  background:#fff;
+  border:none;
+  padding:10px 14px;
+  border-radius:12px;
+  box-shadow:0 8px 24px rgba(0,0,0,.1);
+  cursor:pointer;
+}
+
+nav{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:16px;
+}
+
+nav button{
+  padding:6px 10px;
+  border:none;
+  border-radius:10px;
+  background:var(--primary);
+  color:#fff;
+  font-size:14px;
+  cursor:pointer;
+  transition:.2s;
+}
+
+nav button:hover{
+  background:#fff;
+  color:var(--primary);
+  border:1px solid var(--primary);
+}
+</style>
+</head>
+
+<body>
+
+<button class="lang" onclick="toggleLang()">🌐 语言</button>
+
+<header>
+  <h1 data-i18n="heroesTitle">⚔️ 英雄殿堂</h1>
+  <p data-i18n="heroesCount">当前英雄数量：23 位</p>
+
+<main>
+<section class="grid" id="heroes"></section>
+</main>
+
+<div id="detail" onclick="this.style.display='none'">
+  <div class="box" onclick="event.stopPropagation()">
+    <span class="close" onclick="closeDetail()">✖</span>
+    <h2 id="d-name"></h2>
+    <p id="d-info"></p>
+  </div>
+</div>
+
+<script>
+// =======================
+// 英雄数据
+// =======================
+const heroes = [
+  ["凌霄剑尊","warrior","难度 ★★★","修为：78","契合度：86","版本强度：A"],
+  ["月璃仙姬","mage","难度 ★★","修为：64","契合度：72","版本强度：S"],
+  ["玄影","assassin","难度 ★★★★","修为：81","契合度：90","版本强度：S+"],
+  ["灵鹿医者","support","难度 ★","修为：55","契合度：68","版本强度：A"],
+  ["荒岳","tank","难度 ★★","修为：70","契合度：75","版本强度：A"],
+  ["赤焰尊","warrior","★★★","82","88","A"],
+  ["星璇","mage","★★","60","70","B"],
+  ["夜魇","assassin","★★★★","90","93","S+"],
+  ["青萝","support","★","50","65","A"],
+  ["玄甲","tank","★★","72","80","A"],
+  ["风珀","warrior","★★★","76","82","A"],
+  ["雪音","mage","★★","63","71","A"],
+  ["无影","assassin","★★★★","88","91","S"],
+  ["灵鸢","support","★","52","67","A"],
+  ["岩魁","tank","★★","74","83","A"],
+  ["炎冥", "warrior", "★★★", "80", "85", "S"],
+  ["星汐","mage","★★","66","73","A"],
+  ["烬夜","assassin","★★★★","92","94","S+"],
+  ["药灵","support","★","54","69","A"],
+  ["山嶽","tank","★★","76","84","A"],
+  ["雷衡", "warrior","★★★", "79", "87", "A"],
+  ["幻书", "mage","★★", "65", "74", "A"],
+  ["幽刃", "assassin","★★★★", "91", "92", "S"],
+  ["灵泽", "support","★", "56", "70", "A"],
+  ["巨岩","tank","★★","78","86","A"]
+];
+
+// =======================
+// 渲染英雄卡片
+// =======================
+const wrap = document.getElementById("heroes");
+heroes.forEach(h=>{
+  const div = document.createElement("div");
+  div.className="hero";
+  div.innerHTML = `
+    <h3>${h[0]}</h3>
+    <div class="role">${h[1]}</div>
+    <div class="info">
+      ${h[2]}<br>
+      ${h[3]} · ${h[4]}<br>
+      ${h[5]}
+    </div>
+  `;
+  div.onclick=()=>showDetail(h);
+  wrap.appendChild(div);
+});
+
+// =======================
+// 弹窗详情
+// =======================
+function showDetail(h){
+  document.getElementById("d-name").innerText = h[0];
+  document.getElementById("d-info").innerText =
+    `定位：${h[1]}
+${h[2]}
+${h[3]}
+${h[4]}
+${h[5]}`;
+  document.getElementById("detail").style.display="flex";
+}
+
+function closeDetail(){
+  document.getElementById("detail").style.display="none";
+}
+
+// =======================
+// 导航跳转
+// =======================
+function go(page){
+  window.location.href=page;
+}
+
+// =======================
+// 全局主题与语言管理
+// =======================
+let currentTheme=localStorage.getItem('theme')||'#7b8cff';
+document.documentElement.style.setProperty('--primary',currentTheme);
+
+let currentLang=localStorage.getItem('lang')||'zh';
+
+function toggleLang(){
+  currentLang = currentLang==='zh'?'en':currentLang==='en'?'jp':'zh';
+  localStorage.setItem('lang',currentLang);
+  alert('语言已切换至: '+currentLang+'（示例，可在此更新页面内容）');
+}
+
+function setTheme(color){
+  currentTheme=color;
+  localStorage.setItem('theme',color);
+  document.documentElement.style.setProperty('--primary',color);
+}
+</script>
+
+<script src="core.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>灵约 · 设置</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root{
+  --primary:#7b8cff;
+  --bg:#f6f8ff;
+  --card:#ffffff;
+  --text:#2c2f4a;
+  --muted:#6b6f99;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:"Segoe UI","PingFang SC",sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  transition:0.3s;
+}
+
+header{
+  padding:40px 20px;
+  text-align:center;
+}
+
+header h1{
+  margin:0;
+  color:var(--primary);
+}
+
+header p{
+  color:var(--muted);
+}
+
+main{
+  max-width:720px;
+  margin:auto;
+  padding:0 20px 100px;
+}
+
+.card{
+  background:var(--card);
+  border-radius:18px;
+  padding:22px;
+  margin-bottom:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
+  border:2px solid var(--primary);
+  transition:0.3s;
+}
+
+h2{
+  margin:0 0 12px;
+  color:var(--primary);
+}
+
+select{
+  width:100%;
+  padding:12px;
+  border-radius:12px;
+  border:1px solid #ddd;
+  font-size:15px;
+}
+
+.color-group{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+}
+
+.color-group button{
+  padding:14px;
+  border-radius:14px;
+  border:none;
+  font-size:15px;
+  cursor:pointer;
+  color:#fff;
+  transition:0.2s;
+}
+
+.color-group button:hover{
+  transform:scale(1.05);
+}
+
+.tip{
+  font-size:14px;
+  color:var(--muted);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1 data-i18n="title">⚙️ 游戏设置</h1>
+  <p data-i18n="subtitle">语言 · 主题 · 显示</p>
+</header>
+
+<main>
+
+<div class="card">
+  <h2 data-i18n="langTitle">🌐 语言</h2>
+  <select id="langSelect">
+    <option value="zh">简体中文</option>
+    <option value="en">English</option>
+    <option value="jp">日本語</option>
+  </select>
+</div>
+
+<div class="card">
+  <h2 data-i18n="themeTitle">🎨 主题颜色</h2>
+  <div class="color-group">
+  <button data-i18n="blue" style="background:#7b8cff" data-color="#7b8cff"></button>
+  <button data-i18n="green" style="background:#8bd8c7" data-color="#8bd8c7"></button>
+  <button data-i18n="pink" style="background:#f2b3d6" data-color="#f2b3d6"></button>
+  <button data-i18n="purple" style="background:#c6b7ff" data-color="#c6b7ff"></button>
+  </div>
+</div>
+
+<div class="card">
+  <h2 data-i18n="tipTitle">ℹ️ 提示</h2>
+  <p class="tip" data-i18n="tipText">
+    所有设置会自动保存，刷新仍然生效。
+  </p>
+</div>
+
+</main>
+
+<script>
+/* ===========================
+   灵约 · 全站核心系统
+   语言 + 主题 全站同步版
+=========================== */
+
+
+/* ===== 应用语言 ===== */
+function applyLang(lang){
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    const key = el.getAttribute("data-i18n");
+    if(LANG[lang] && LANG[lang][key]){
+      el.innerText = LANG[lang][key];
+    }
+  });
+}
+
+/* ===== 初始化系统 ===== */
+document.addEventListener("DOMContentLoaded",function(){
+
+  /* 恢复语言 */
+  const savedLang = localStorage.getItem("lang") || "zh";
+  applyLang(savedLang);
+
+  /* 恢复主题 */
+  const savedTheme = localStorage.getItem("theme");
+  if(savedTheme){
+    document.documentElement.style.setProperty('--primary', savedTheme);
+  }
+
+});
+
+
+/* ===== 应用语言 ===== */
+function applyLang(lang){
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    const key = el.getAttribute("data-i18n");
+    if(LANG[lang] && LANG[lang][key]){
+      el.innerText = LANG[lang][key];
+    }
+  });
+}
+
+/* ===== 页面初始化 ===== */
+document.addEventListener("DOMContentLoaded",function(){
+
+  /* 恢复语言 */
+  const langSelect = document.getElementById("langSelect");
+  const savedLang = localStorage.getItem("lang") || "zh";
+  langSelect.value = savedLang;
+  applyLang(savedLang);
+
+  langSelect.addEventListener("change",function(){
+    localStorage.setItem("lang", this.value);
+    applyLang(this.value);
+  });
+
+  /* 恢复主题 */
+  const savedTheme = localStorage.getItem("theme");
+  if(savedTheme){
+    document.documentElement.style.setProperty('--primary', savedTheme);
+  }
+
+  /* 主题按钮 */
+  document.querySelectorAll("[data-color]").forEach(btn=>{
+    btn.addEventListener("click",function(){
+      const color = this.getAttribute("data-color");
+      document.documentElement.style.setProperty('--primary', color);
+      localStorage.setItem("theme", color);
+    });
+  });
+
+
+
+});
+</script>
+<script>
+document.getElementById("langSelect").addEventListener("change",function(){
+  localStorage.setItem("lang", this.value);
+});
+</script>
+
+<script>
+  const savedLang = localStorage.getItem("lang") || "zh";
+  applyLang(savedLang);
+</script>
+
+<script src="core.js"></script>
+
+
+</body>
+</html>

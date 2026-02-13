@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>灵约 · 灵尊试炼</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root{
+  --primary:#7b8cff;
+  --bg:#f6f8ff;
+  --card:#ffffff;
+  --text:#2c2f4a;
+  --muted:#6b6f99;
+}
+
+body{
+  margin:0;
+  font-family:"Segoe UI","PingFang SC",sans-serif;
+  background:linear-gradient(180deg,#eef2ff,#fdfdff);
+  color:var(--text);
+}
+
+header{
+  padding:50px 20px;
+  text-align:center;
+}
+
+main{
+  max-width:900px;
+  margin:auto;
+  padding:0 20px 120px;
+}
+
+.card{
+  background:var(--card);
+  border-radius:20px;
+  padding:22px;
+  margin-bottom:24px;
+  box-shadow:0 12px 30px rgba(120,140,255,.15);
+}
+
+.rank-list div{
+  display:flex;
+  justify-content:space-between;
+  padding:14px 10px;
+  border-radius:12px;
+  background:#f9faff;
+  margin-top:10px;
+}
+
+.rank-list div.top1{background:linear-gradient(90deg,#ffd36a,#ffb86c);}
+.rank-list div.top2{background:linear-gradient(90deg,#c6b7ff,#8bd8c7);}
+.rank-list div.top3{background:linear-gradient(90deg,#ff8c8c,#ffb3d6);}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>👑 灵尊试炼</h1>
+  <p>高端积分赛 · 全服排名</p>
+</header>
+
+<main>
+
+<div class="card">
+  <h2>🏅 前 10 玩家</h2>
+  <div class="rank-list" id="rank-list"></div>
+</div>
+
+<div class="card">
+  <h2>🧙 我的排名</h2>
+  <p id="my-rank">排名：12 | 段位：灵尊 | 积分：1420 / 1500</p>
+  <p style="color:var(--muted);font-size:14px;">距离下一段位还有 80 积分</p>
+</div>
+
+</main>
+
+<script>
+// 模拟前10玩家数据
+const topPlayers=[
+  {name:"玄影",score:1850,rank:"灵尊"},
+  {name:"月璃仙姬",score:1780,rank:"灵尊"},
+  {name:"炎冥",score:1720,rank:"灵尊"},
+  {name:"凌霄剑尊",score:1650,rank:"灵尊"},
+  {name:"青萝",score:1610,rank:"灵尊"},
+  {name:"无影",score:1580,rank:"灵尊"},
+  {name:"雪音",score:1540,rank:"灵尊"},
+  {name:"巨岩",score:1500,rank:"灵尊"},
+  {name:"灵泽",score:1480,rank:"灵尊"},
+  {name:"雷衡",score:1450,rank:"灵尊"}
+];
+
+const list = document.getElementById("rank-list");
+topPlayers.forEach((p,i)=>{
+  const div = document.createElement("div");
+  let cls="";
+  if(i===0) cls="top1";
+  else if(i===1) cls="top2";
+  else if(i===2) cls="top3";
+  div.className=cls;
+  div.innerHTML=`<span>${i+1} · ${p.name}</span><span>${p.rank} · ${p.score}</span>`;
+  list.appendChild(div);
+});
+
+// 应用主题颜色
+const theme = localStorage.getItem("theme");
+if(theme){
+  document.documentElement.style.setProperty('--primary',theme);
+}
+</script>
+
+</body>
+</html>

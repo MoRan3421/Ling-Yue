@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>灵约 · 修行排位</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root{
+  --primary:#7b8cff;
+  --bg:#f6f8ff;
+  --card:#ffffff;
+  --text:#2c2f4a;
+  --muted:#6b6f99;
+}
+
+body{
+  margin:0;
+  font-family:"Segoe UI","PingFang SC",sans-serif;
+  background:linear-gradient(180deg,#eef2ff,#fdfdff);
+  color:var(--text);
+}
+
+header{
+  padding:50px 20px;
+  text-align:center;
+}
+
+main{
+  max-width:900px;
+  margin:auto;
+  padding:0 20px 120px;
+}
+
+.card{
+  background:var(--card);
+  border-radius:20px;
+  padding:24px;
+  margin-bottom:24px;
+  box-shadow:0 12px 30px rgba(120,140,255,.15);
+}
+
+.rank{
+  font-size:28px;
+  margin-bottom:10px;
+}
+
+.stars span{
+  font-size:22px;
+  margin-right:4px;
+}
+
+.good{color:#ffd36a}
+.bad{color:#ddd}
+
+button{
+  padding:12px 18px;
+  border:none;
+  border-radius:12px;
+  background:var(--primary);
+  color:#fff;
+  font-size:15px;
+  cursor:pointer;
+  margin-right:10px;
+}
+
+button.alt{
+  background:#ddd;
+  color:#555;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🏆 修行排位</h1>
+  <p>S1 赛季 · 初灵启源</p>
+</header>
+
+<main>
+
+<div class="card">
+  <div class="rank">当前段位：🌊 筑基 · 二阶</div>
+  <div class="stars" id="stars"></div>
+</div>
+
+<div class="card">
+  <h3>🎮 模拟一局排位结算</h3>
+  <p style="color:var(--muted)">用于展示加星 / 不加星逻辑</p>
+  <button onclick="win(true)">胜利 · 表现好</button>
+  <button onclick="win(false)">胜利 · 表现一般</button>
+  <button class="alt" onclick="lose()">失败</button>
+</div>
+
+<div class="card">
+  <h3>👑 灵尊说明</h3>
+  <p style="color:var(--muted);line-height:1.6">
+    达到灵尊后，将进入积分制段位。<br>
+    排位表现将直接影响积分变化，决定你在全服的排名。
+  </p>
+</div>
+
+</main>
+
+<script>
+let stars = 3; // 当前星数（0-5）
+
+function render(){
+  const box = document.getElementById("stars");
+  box.innerHTML="";
+  for(let i=1;i<=5;i++){
+    const s=document.createElement("span");
+    s.innerText="★";
+    s.className = i<=stars ? "good":"bad";
+    box.appendChild(s);
+  }
+}
+
+function win(good){
+  stars += good ? 2 : 1;
+  if(stars>5) stars=5;
+  alert(good ? "表现出色！+2 星" : "胜利！+1 星");
+  render();
+}
+
+function lose(){
+  stars -= 1;
+  if(stars<0) stars=0;
+  alert("失败，本局未获得星数");
+  render();
+}
+
+render();
+
+// 应用主题色
+const theme = localStorage.getItem("theme");
+if(theme){
+  document.documentElement.style.setProperty('--primary',theme);
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>灵约 · 战绩</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root{
+  --primary:#7b8cff;
+  --bg:#f6f8ff;
+  --card:#ffffff;
+  --text:#2c2f4a;
+  --muted:#6b6f99;
+}
+
+body{
+  margin:0;
+  font-family:"Segoe UI","PingFang SC",sans-serif;
+  background:linear-gradient(180deg,#eef2ff,#fdfdff);
+  color:var(--text);
+}
+
+header{
+  padding:50px 20px;
+  text-align:center;
+}
+
+main{
+  max-width:1000px;
+  margin:auto;
+  padding:0 20px 120px;
+}
+
+.card{
+  background:var(--card);
+  border-radius:20px;
+  padding:22px;
+  margin-bottom:24px;
+  box-shadow:0 12px 30px rgba(120,140,255,.15);
+}
+
+.match{
+  display:flex;
+  justify-content:space-between;
+  padding:14px;
+  border-radius:14px;
+  margin-top:12px;
+  background:#f9faff;
+}
+
+.win{
+  border-left:6px solid #6fdc9b;
+}
+
+.lose{
+  border-left:6px solid #ff8c8c;
+}
+
+.hero-rank{
+  display:flex;
+  justify-content:space-between;
+  margin-top:12px;
+  padding:10px;
+  background:#f9faff;
+  border-radius:12px;
+}
+
+.bar{
+  height:8px;
+  border-radius:6px;
+  background:#eee;
+  overflow:hidden;
+  margin-top:6px;
+}
+
+.bar span{
+  display:block;
+  height:100%;
+  background:var(--primary);
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>📊 对局战绩</h1>
+  <p>查看你的修行成长记录</p>
+</header>
+
+<main>
+
+<!-- 玩家统计 -->
+<div class="card">
+  <h2>🧙 玩家数据</h2>
+  <p>胜率：64% | 平均KDA：4.8 | MVP率：22%</p>
+</div>
+
+<!-- 最近对局 -->
+<div class="card">
+  <h2>🎮 最近对局</h2>
+
+  <div class="match win">
+    <div>
+      ⚔️ 凌霄剑尊  
+      <br><small>KDA 12 / 2 / 9</small>
+    </div>
+    <div>胜利 ⭐ MVP</div>
+  </div>
+
+  <div class="match lose">
+    <div>
+      🔥 赤焰尊  
+      <br><small>KDA 5 / 7 / 3</small>
+    </div>
+    <div>失败</div>
+  </div>
+
+  <div class="match win">
+    <div>
+      🌙 月璃仙姬  
+      <br><small>KDA 9 / 1 / 11</small>
+    </div>
+    <div>胜利</div>
+  </div>
+
+</div>
+
+<!-- 英雄强度排行 -->
+<div class="card">
+  <h2>📈 当前版本强势英雄</h2>
+
+  <div class="hero-rank">
+    玄影（胜率 71%）
+  </div>
+  <div class="bar"><span style="width:71%"></span></div>
+
+  <div class="hero-rank">
+    月璃仙姬（胜率 66%）
+  </div>
+  <div class="bar"><span style="width:66%"></span></div>
+
+  <div class="hero-rank">
+    炎冥（胜率 62%）
+  </div>
+  <div class="bar"><span style="width:62%"></span></div>
+
+</div>
+
+<!-- 契合度成长 -->
+<div class="card">
+  <h2>💞 英雄契合度</h2>
+
+  凌霄剑尊
+  <div class="bar"><span style="width:86%"></span></div>
+
+  月璃仙姬
+  <div class="bar"><span style="width:72%"></span></div>
+
+  玄影
+  <div class="bar"><span style="width:90%"></span></div>
+
+</div>
+
+</main>
+
+<script>
+// 应用主题颜色
+const theme = localStorage.getItem("theme");
+if(theme){
+  document.documentElement.style.setProperty('--primary',theme);
+}
+</script>
+
+</body>
+</html>

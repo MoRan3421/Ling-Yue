@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>灵约 · 公告</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root{
+  --primary:#7b8cff;
+  --bg:#f6f8ff;
+  --card:#ffffff;
+  --text:#2c2f4a;
+  --muted:#6b6f99;
+}
+
+body{
+  margin:0;
+  font-family:"Segoe UI","PingFang SC",sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+header{
+  padding:50px 20px;
+  text-align:center;
+}
+
+main{
+  max-width:900px;
+  margin:auto;
+  padding:0 20px 120px;
+}
+
+.card{
+  background:var(--card);
+  border-radius:20px;
+  padding:22px;
+  margin-bottom:24px;
+  box-shadow:0 12px 30px rgba(120,140,255,.15);
+}
+
+h2{
+  margin:0 0 12px;
+}
+
+.notice{
+  padding:12px;
+  border-left:4px solid var(--primary);
+  margin-bottom:10px;
+}
+.notice time{
+  display:block;
+  font-size:12px;
+  color:var(--muted);
+  margin-bottom:4px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>📜 官方公告</h1>
+  <p>S1 赛季 · 初灵启源</p>
+</header>
+
+<main>
+
+<div class="card">
+  <h2>最新公告</h2>
+  <div class="notice">
+    <time>2026-02-08</time>
+    🌌 S1 赛季「初灵启源」已正式开启！全新英雄、全新段位系统上线！
+  </div>
+  <div class="notice">
+    <time>2026-02-07</time>
+    🔹 新增修行排位结算系统，胜负加星 / 积分机制正式生效。
+  </div>
+  <div class="notice">
+    <time>2026-02-06</time>
+    🎉 灵尊试炼积分榜上线，可查看全服高端玩家排名。
+  </div>
+</div>
+
+</main>
+
+<script>
+// 应用主题颜色
+const theme = localStorage.getItem("theme");
+if(theme){
+  document.documentElement.style.setProperty('--primary',theme);
+}
+</script>
+
+</body>
+</html>

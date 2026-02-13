@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>灵约 · 装备符文铭文</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+:root{
+  --red:#f56565;
+  --purple:#a78bfa;
+  --blue:#60a5fa;
+  --green:#34d399;
+  --orange:#fbbf24;
+  --gold:#fcd34d;
+  --silver:#9ca3af;
+  --card:#fff;
+  --text:#2c2f4a;
+  --muted:#6b6f99;
+}
+body{margin:0;font-family:"Segoe UI","PingFang SC",sans-serif;background:linear-gradient(180deg,#eef2ff,#fdfdff);color:var(--text);}
+header{padding:50px 20px;text-align:center;}
+header h1{margin:0;font-size:36px;}
+header p{color:var(--muted);}
+main{max-width:1200px;margin:auto;padding:0 20px 120px;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;}
+.card{background:var(--card);border-radius:18px;padding:18px;box-shadow:0 10px 30px rgba(120,140,255,.15);cursor:pointer;transition:.25s;display:flex;flex-direction:column;align-items:center;}
+.card:hover{transform:translateY(-6px);}
+.card img{width:48px;height:48px;margin-bottom:6px;}
+.card h3{margin:0 0 6px;text-align:center;}
+.card .tag{display:inline-block;padding:4px 10px;border-radius:999px;color:#fff;font-size:12px;margin-bottom:8px;}
+.card p{font-size:13px;color:var(--muted);line-height:1.5;text-align:center;}
+#detail{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;align-items:center;justify-content:center;z-index:999;}
+#detail .box{background:#fff;border-radius:20px;padding:28px;width:90%;max-width:420px;text-align:center;}
+#detail img{width:64px;height:64px;margin-bottom:12px;}
+.close{float:right;cursor:pointer;color:var(--muted);}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🛡️ 灵约 · 装备符文铭文</h1>
+  <p>点击卡片查看详情</p>
+</header>
+
+<main>
+<h2>💎 装备</h2>
+<section class="grid" id="equipments"></section>
+
+<h2>🔮 符文</h2>
+<section class="grid" id="runes"></section>
+
+<h2>📜 铭文</h2>
+<section class="grid" id="inscriptions"></section>
+</main>
+
+<div id="detail" onclick="this.style.display='none'">
+  <div class="box" onclick="event.stopPropagation()">
+    <span class="close" onclick="closeDetail()">✖</span>
+    <img id="d-img" src="" alt="">
+    <h2 id="d-name"></h2>
+    <span class="tag" id="d-tag"></span>
+    <p id="d-info"></p>
+  </div>
+</div>
+
+<script>
+// ------------------ 装备 30 套 ------------------
+const equipments = [
+  {name:"风行履","type":"鞋子","rarity":"史诗","gold":1200,"color":"var(--orange)","desc":"移速+45，短暂冲刺加速","icon":"https://via.placeholder.com/48?text=鞋子"},
+  {name:"疾风靴","type":"鞋子","rarity":"史诗","gold":1300,"color":"var(--orange)","desc":"移速+50，减少控制效果持续时间","icon":"https://via.placeholder.com/48?text=鞋子"},
+  {name:"影踪履","type":"鞋子","rarity":"精良","gold":1100,"color":"var(--orange)","desc":"移速+35，隐身移动一秒","icon":"https://via.placeholder.com/48?text=鞋子"},
+  {name:"灵光剑","type":"攻击","rarity":"史诗","gold":1500,"color":"var(--red)","desc":"攻击力+55，技能附加灵火灼烧","icon":"https://via.placeholder.com/48?text=攻击"},
+  {name:"破云战锤","type":"打野","rarity":"史诗","gold":1600,"color":"var(--green)","desc":"野怪伤害+38%，技能冷却减少5%","icon":"https://via.placeholder.com/48?text=打野"},
+  {name:"苍穹盾牌","type":"防御","rarity":"精良","gold":1200,"color":"var(--blue)","desc":"护甲+35，魔抗+20，生命+200","icon":"https://via.placeholder.com/48?text=防御"},
+  {name:"烈焰巨剑","type":"攻击","rarity":"传说","gold":2200,"color":"var(--red)","desc":"攻击力+80，附加灼烧伤害","icon":"https://via.placeholder.com/48?text=攻击"},
+  {name:"玄冰战甲","type":"防御","rarity":"传说","gold":2000,"color":"var(--blue)","desc":"护甲+60，魔抗+40，生命+400","icon":"https://via.placeholder.com/48?text=防御"},
+  {name:"幽冥斧","type":"打野","rarity":"史诗","gold":1800,"color":"var(--green)","desc":"野怪伤害+45%，击杀后回血10%","icon":"https://via.placeholder.com/48?text=打野"},
+  {name:"灵狐匕首","type":"攻击","rarity":"精良","gold":1400,"color":"var(--red)","desc":"攻击力+50，暴击率+10%","icon":"https://via.placeholder.com/48?text=攻击"},
+  {name:"烈阳之盾","type":"防御","rarity":"史诗","gold":1600,"color":"var(--blue)","desc":"护甲+50，受到伤害降低15%","icon":"https://via.placeholder.com/48?text=防御"},
+  {name:"破影弓","type":"攻击","rarity":"精良","gold":1450,"color":"var(--red)","desc":"攻击力+45，技能触发穿透效果","icon":"https://via.placeholder.com/48?text=攻击"},
+  {name:"寒霜之靴","type":"鞋子","rarity":"史诗","gold":1250,"color":"var(--orange)","desc":"移速+40，减速敌人10%","icon":"https://via.placeholder.com/48?text=鞋子"},
+  {name:"灵魂法杖","type":"法术","rarity":"传说","gold":2100,"color":"var(--purple)","desc":"法术强度+75，技能附加灼烧效果","icon":"https://via.placeholder.com/48?text=法术"},
+  {name:"雷鸣战锤","type":"打野","rarity":"传说","gold":2300,"color":"var(--green)","desc":"野怪伤害+50%，技能击退效果","icon":"https://via.placeholder.com/48?text=打野"},
+  {name:"苍狼护肩","type":"防御","rarity":"精良","gold":1300,"color":"var(--blue)","desc":"护甲+40，生命+250","icon":"https://via.placeholder.com/48?text=防御"},
+  {name:"烈焰手套","type":"攻击","rarity":"精良","gold":1400,"color":"var(--red)","desc":"攻击力+50，技能附加燃烧效果","icon":"https://via.placeholder.com/48?text=攻击"},
+  {name:"玄灵法袍","type":"法术","rarity":"精良","gold":1500,"color":"var(--purple)","desc":"法术强度+60，冷却减少5%","icon":"https://via.placeholder.com/48?text=法术"},
+  {name:"幽影之靴","type":"鞋子","rarity":"精良","gold":1150,"color":"var(--orange)","desc":"移速+35，增加闪避几率","icon":"https://via.placeholder.com/48?text=鞋子"},
+  {name:"破魔盾","type":"防御","rarity":"传说","gold":1800,"color":"var(--blue)","desc":"护甲+55，魔抗+35，反弹部分伤害","icon":"https://via.placeholder.com/48?text=防御"},
+  {name:"灵光匕首","type":"攻击","rarity":"史诗","gold":1550,"color":"var(--red)","desc":"攻击力+55，技能触发流血效果","icon":"https://via.placeholder.com/48?text=攻击"},
+  {name:"烈焰靴","type":"鞋子","rarity":"传说","gold":1350,"color":"var(--orange)","desc":"移速+50，短暂提升攻速","icon":"https://via.placeholder.com/48?text=鞋子"},
+  {name:"天雷之锤","type":"打野","rarity":"传说","gold":2400,"color":"var(--green)","desc":"野怪伤害+55%，技能触电伤害","icon":"https://via.placeholder.com/48?text=打野"},
+  {name:"寒冰护手","type":"防御","rarity":"精良","gold":1250,"color":"var(--blue)","desc":"护甲+38，减速攻击敌人10%","icon":"https://via.placeholder.com/48?text=防御"},
+  {name:"灵风剑","type":"攻击","rarity":"精良","gold":1450,"color":"var(--red)","desc":"攻击力+48，技能附加风刃伤害","icon":"https://via.placeholder.com/48?text=攻击"},
+  {name:"幻影鞋","type":"鞋子","rarity":"史诗","gold":1280,"color":"var(--orange)","desc":"移速+42，短暂隐身","icon":"https://via.placeholder.com/48?text=鞋子"},
+  {name:"灵魂斧","type":"打野","rarity":"精良","gold":1750,"color":"var(--green)","desc":"野怪伤害+42%，击杀回血8%","icon":"https://via.placeholder.com/48?text=打野"},
+  {name:"烈焰护肩","type":"防御","rarity":"史诗","gold":1600,"color":"var(--blue)","desc":"护甲+50，生命+300","icon":"https://via.placeholder.com/48?text=防御"},
+  {name:"玄影长弓","type":"攻击","rarity":"传说","gold":2000,"color":"var(--red)","desc":"攻击力+70，技能附加穿透伤害","icon":"https://via.placeholder.com/48?text=攻击"}
+];
+
+// ------------------ 符文 19 个 ------------------
+const runes = [
+  {name:"天雷印","type":"主符文","rarity":"史诗","color":"var(--gold)","desc":"技能命中敌人叠加雷击伤害","icon":"https://via.placeholder.com/48?text=主符文"},
+  {name:"烈焰电刃","type":"主符文","rarity":"传说","color":"var(--gold)","desc":"连续攻击触发爆发伤害","icon":"https://via.placeholder.com/48?text=主符文"},
+  {name:"灵巧步法","type":"副符文","rarity":"精良","color":"var(--silver)","desc":"移动速度提升，短时间闪避增益","icon":"https://via.placeholder.com/48?text=副符文"},
+  {name:"神盾护佑","type":"副符文","rarity":"普通","color":"var(--silver)","desc":"受到伤害时获得护盾","icon":"https://via.placeholder.com/48?text=副符文"},
+  {name:"破甲之力","type":"攻系符文","rarity":"史诗","color":"var(--red)","desc":"增加对护甲目标伤害","icon":"https://via.placeholder.com/48?text=攻系"},
+  {name:"冰霜之印","type":"防御符文","rarity":"精良","color":"var(--blue)","desc":"受到攻击降低移动速度20%","icon":"https://via.placeholder.com/48?text=防御符文"},
+  {name:"雷光之纹","type":"攻系符文","rarity":"传说","color":"var(--red)","desc":"技能命中敌人触发闪电伤害","icon":"https://via.placeholder.com/48?text=攻系"},
+  {name:"幽冥之印","type":"主符文","rarity":"精良","color":"var(--gold)","desc":"技能造成额外暗影伤害","icon":"https://via.placeholder.com/48?text=主符文"},
+  {name:"幻梦之纹","type":"副符文","rarity":"精良","color":"var(--silver)","desc":"短时间增加暴击率","icon":"https://via.placeholder.com/48?text=副符文"},
+  {name:"星河之印","type":"主符文","rarity":"史诗","color":"var(--gold)","desc":"技能命中叠加星辰伤害","icon":"https://via.placeholder.com/48?text=主符文"},
+  {name:"灵狐之纹","type":"副符文","rarity":"普通","color":"var(--silver)","desc":"移动速度增加5%","icon":"https://via.placeholder.com/48?text=副符文"},
+  {name:"天火之印","type":"攻系符文","rarity":"史诗","color":"var(--red)","desc":"普通攻击附加火焰伤害","icon":"https://via.placeholder.com/48?text=攻系"},
+  {name:"玄影之纹","type":"防御符文","rarity":"精良","color":"var(--blue)","desc":"受到伤害减少5%","icon":"https://via.placeholder.com/48?text=防御符文"},
+  {name:"灵翼之印","type":"主符文","rarity":"传说","color":"var(--gold)","desc":"技能触发额外飞行伤害","icon":"https://via.placeholder.com/48?text=主符文"},
+  {name:"烈阳之纹","type":"攻系符文","rarity":"精良","color":"var(--red)","desc":"技能附加灼烧效果","icon":"https://via.placeholder.com/48?text=攻系"},
+  {name:"幽火之印","type":"主符文","rarity":"传说","color":"var(--gold)","desc":"技能附加幽火灼烧伤害","icon":"https://via.placeholder.com/48?text=主符文"},
+  {name:"幻影之纹2","type":"副符文","rarity":"精良","color":"var(--silver)","desc":"闪避率提升5%","icon":"https://via.placeholder.com/48?text=副符文"},
+  {name:"灵月之印","type":"主符文","rarity":"史诗","color":"var(--gold)","desc":"技能命中叠加月光伤害","icon":"https://via.placeholder.com/48?text=主符文"},
+  {name:"星耀之纹","type":"攻系符文","rarity":"传说","color":"var(--red)","desc":"技能附加额外伤害","icon":"https://via.placeholder.com/48?text=攻系"}
+];
+
+// ------------------ 铭文 50 个 ------------------
+const inscriptions = [];
+const inscriptionNames = [
+"烈焰之印","苍穹之纹","灵风之印","幽冥之纹","天雷之印","星辰之纹","幻影之印","灵狐之纹",
+"破空之印","雷霆之纹","暗影之印","冰霜之纹","灵魂之印","火焰之纹","玄甲之印","灵光之纹",
+"灵犀之印","幽焰之纹","幻梦之印","天穹之纹","灵翼之印","烈阳之纹","玄影之印","灵石之纹",
+"寒霜之印","雷光之纹","焚天之印","星河之纹","灵刃之印","幽冥之纹2","破影之印","灵鳞之纹",
+"焱灵之印","苍云之纹","玄灵之印","烈焰之纹2","灵魂之印2","幽火之纹","天火之印2","幻影之纹3",
+"灵月之印2","星耀之纹2","雷灵之印","灵凰之纹","苍穹之印2","暗影之纹3","灵狐之印3","烈日之纹",
+"灵刃之印3","幽冥之纹4"
+];
+for(let i=0;i<50;i++){
+  let type = (i%4==0)?"攻击":(i%4==1)?"法术":(i%4==2)?"防御":"通用";
+  let color = (type=="攻击")?"var(--red)":(type=="法术")?"var(--purple)":(type=="防御")?"var(--blue)":"var(--green)";
+  inscriptions.push({name:inscriptionNames[i],type:type,rarity:"史诗",color:color,desc:type+"+5"});
+}
+
+// ------------------ 渲染函数 ------------------
+function createCard(item,parentId){
+  const wrap = document.getElementById(parentId);
+  const div = document.createElement("div");
+  div.className="card";
+  div.innerHTML=`<img src="${item.icon}" alt=""><h3>${item.name}</h3><div class="tag" style="background:${item.color}">${item.type} · ${item.rarity}</div><p>${item.desc}${item.gold? '<br>金币:'+item.gold : ''}</p>`;
+  div.onclick=()=>showDetail(item);
+  wrap.appendChild(div);
+}
+
+equipments.forEach(e=>createCard(e,"equipments"));
+runes.forEach(r=>createCard(r,"runes"));
+inscriptions.forEach(i=>createCard(i,"inscriptions"));
+
+function showDetail(item){
+  document.getElementById("d-img").src=item.icon;
+  document.getElementById("d-name").innerText=item.name;
+  document.getElementById("d-tag").innerText=`${item.type} · ${item.rarity}`;
+  document.getElementById("d-tag").style.background=item.color;
+  document.getElementById("d-info").innerHTML=item.desc+(item.gold?'<br>金币:'+item.gold:'');
+  document.getElementById("detail").style.display="flex";
+}
+function closeDetail(){document.getElementById("detail").style.display="none";}
+</script>
+
+
+</body>
+</html>

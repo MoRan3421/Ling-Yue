@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<title>灵约 · 动漫修仙 MOBA</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root{
+  --bg:#f6f8ff;
+  --card:#ffffff;
+  --primary:#7b8cff;
+  --secondary:#a8d8ff;
+  --text:#2c2f4a;
+  --muted:#6b6f99;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:"Segoe UI","PingFang SC",sans-serif;
+  background:linear-gradient(180deg,#eef2ff,#fdfdff);
+  color:var(--text);
+}
+
+header{
+  padding:80px 20px 60px;
+  text-align:center;
+}
+
+header h1{
+  font-size:42px;
+  margin:0 0 16px;
+}
+
+header p{
+  font-size:18px;
+  color:var(--muted);
+  max-width:720px;
+  margin:0 auto;
+}
+
+main{
+  padding:0 20px 120px;
+  max-width:1200px;
+  margin:auto;
+}
+
+.section-title{
+  margin:60px 0 24px;
+  font-size:26px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:var(--card);
+  border-radius:18px;
+  padding:22px;
+  box-shadow:0 10px 30px rgba(120,140,255,.15);
+  transition:.25s;
+  cursor:pointer;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 18px 45px rgba(120,140,255,.25);
+}
+
+.card h3{
+  margin:0 0 10px;
+  font-size:20px;
+}
+
+.card p{
+  margin:0;
+  font-size:14px;
+  line-height:1.6;
+  color:var(--muted);
+}
+
+.tag{
+  display:inline-block;
+  background:linear-gradient(135deg,var(--primary),var(--secondary));
+  color:#fff;
+  padding:4px 10px;
+  font-size:12px;
+  border-radius:999px;
+  margin-bottom:10px;
+}
+
+footer{
+  text-align:center;
+  padding:40px 20px;
+  color:var(--muted);
+  font-size:13px;
+}
+
+button.lang{
+  position:fixed;
+  top:20px;
+  right:20px;
+  background:#fff;
+  border:none;
+  padding:10px 14px;
+  border-radius:12px;
+  box-shadow:0 8px 24px rgba(0,0,0,.1);
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<!-- 语言切换按钮 -->
+<button class="lang" onclick="toggleLang()">🌐 语言</button>
+
+<header>
+<header>
+  <h1 data-i18n="homeTitle">🌌 欢迎来到《灵约》</h1>
+  <p data-i18n="homeDesc">
+    动漫修仙风格的 5V5 MOBA 竞技游戏<br>踏入灵曜峡谷，召唤强力英雄，展开智慧与操作的对决
+  </p>
+</header>
+
+</header>
+
+<main>
+
+<h2 class="section-title" data-i18n="coreTitle">🎮 核心玩法</h2>
+<section class="grid">
+  <div class="card" onclick="go('heroes.html')">
+    <span class="tag" data-i18n="heroSystem">英雄系统</span>
+    <h3 data-i18n="heroes">⚔️ 英雄</h3>
+    <p data-i18n="heroDesc">25+ 修行英雄<br>难度 · 契合度 · 修为熟练度</p>
+  </div>
+
+  <div class="card" onclick="go('hero-gear.html')">
+    <span class="tag" data-i18n="equipSystem">装备系统</span>
+    <h3 data-i18n="gearRune">🛡 英雄装备与符文</h3>
+    <p data-i18n="gearDesc">查看装备推荐与符文搭配<br>强化英雄实力</p>
+  </div>
+
+  <div class="card" onclick="go('rank.html')">
+    <span class="tag" data-i18n="seasonTag">S1 赛季</span>
+    <h3 data-i18n="rankTitle">🏆 修行排位</h3>
+    <p data-i18n="rankDesc">加星机制 · 表现结算<br>高段位积分制</p>
+  </div>
+
+  <div class="card" onclick="go('supreme.html')">
+    <span class="tag" data-i18n="highMatch">高端对局</span>
+    <h3 data-i18n="supremeTitle">👑 灵尊试炼</h3>
+    <p data-i18n="supremeDesc">积分累计<br>巅峰强者排行榜</p>
+  </div>
+
+
+<div class="card" onclick="go('record.html')">
+  <span class="tag" data-i18n="recordTag">战绩</span>
+  <h3 data-i18n="recordTitle">📊 战绩</h3>
+  <p data-i18n="recordDesc">对局数据 · 英雄表现<br>成长分析</p>
+</div>
+</section>
+
+<h2 class="section-title" data-i18n="platformTitle">🌍 全平台支持</h2>
+<section class="grid">
+  <div class="card">
+    <span class="tag" data-i18n="pcTag">PC</span>
+    <h3 data-i18n="pc">🖥️ PC</h3>
+    <p data-i18n="pcDesc">Windows / 云端启动</p>
+  </div>
+  <div class="card">
+    <span class="tag" data-i18n="mobileTag">Mobile</span>
+    <h3 data-i18n="mobile">📱 Mobile</h3>
+    <p data-i18n="mobileDesc">Google Play · App Store</p>
+  </div>
+  <div class="card">
+    <span class="tag" data-i18n="consoleTag">Console</span>
+    <h3 data-i18n="console">🎮 主机</h3>
+    <p data-i18n="consoleDesc">Xbox · Nintendo Switch</p>
+  </div>
+  <div class="card">
+    <span class="tag" data-i18n="vrTag">VR</span>
+    <h3 data-i18n="vr">🥽 VR</h3>
+    <p data-i18n="vrDesc">沉浸式观战 / 剧情体验</p>
+  </div>
+  <div class="card">
+    <span class="tag" data-i18n="streamTag">Stream</span>
+    <h3 data-i18n="stream">☁️ Stream</h3>
+    <p data-i18n="streamDesc">无需下载 · 低配畅玩</p>
+  </div>
+</section>
+
+
+<h2 class="section-title" data-i18n="newsTitle">📢 游戏资讯</h2>
+<section class="grid">
+  <div class="card" onclick="go('notice.html')">
+    <span class="tag" data-i18n="seasonTag">S1</span>
+    <h3 data-i18n="noticeTitle">📜 公告</h3>
+    <p data-i18n="noticeDesc">初灵启源赛季<br>平衡与更新说明</p>
+  </div>
+
+  <div class="card" onclick="go('event.html')">
+    <span class="tag" data-i18n="eventTag">活动</span>
+    <h3 data-i18n="eventTitle">🎉 活动</h3>
+    <p data-i18n="eventDesc">限时玩法 · 奖励领取</p>
+  </div>
+
+  <div class="card" onclick="go('test.html')">
+    <span class="tag" data-i18n="testTag">体验服</span>
+    <h3 data-i18n="testTitle">🧪 体验服</h3>
+    <p data-i18n="testDesc">新英雄 · 新机制<br>抢先试玩</p>
+  </div>
+
+<div class="card" onclick="go('setting.html')">
+  <span class="tag" data-i18n="settingTag">设置</span>
+  <h3 data-i18n="settingTitle">⚙️ 设置</h3>
+  <p data-i18n="settingDesc">语言 · 主题颜色<br>显示与操作</p>
+</div>
+
+
+</section>
+
+<h2 class="section-title" data-i18n="moreTitle">🌟 更多内容</h2>
+<section class="grid">
+  <div class="card" onclick="go('community.html')">
+    <span class="tag" data-i18n="communityTag">玩家互动</span>
+    <h3 data-i18n="communityTitle">💬 社区</h3>
+    <p data-i18n="communityDesc">
+      玩家讨论 · 攻略分享<br>英雄心得与版本理解
+    </p>
+  </div>
+
+  <div class="card" onclick="go('official.html')">
+    <span class="tag" data-i18n="officialTag">世界观</span>
+    <h3 data-i18n="officialTitle">🏢 官方</h3>
+    <p data-i18n="officialDesc">
+      灵约世界设定<br>阵营 · 势力 · 修行体系
+    </p>
+  </div>
+</section>
+
+<footer data-i18n="footerText">
+  © 灵约 LingYue · S1 初灵启源<br>公平竞技 · 防外挂系统 · 多端互通
+</footer>
+    </p>
+  </div>
+
+
+
+
+</main>
+
+
+<script>
+// 页面跳转
+function go(page){
+  window.location.href = page;
+}
+
+// =======================
+// 全局主题与语言管理
+// =======================
+const defaultTheme = '--primary';
+const defaultLang = 'zh';
+
+// 读取主题
+let currentTheme = localStorage.getItem('theme') || '#7b8cff';
+document.documentElement.style.setProperty('--primary', currentTheme);
+
+// 读取语言
+let currentLang = localStorage.getItem('lang') || 'zh';
+
+// 语言切换示例
+function toggleLang(){
+  if(currentLang==='zh') currentLang='en';
+  else if(currentLang==='en') currentLang='jp';
+  else currentLang='zh';
+  localStorage.setItem('lang', currentLang);
+  alert('语言已切换至: '+currentLang+'（示例，页面内容可根据当前语言更新）');
+}
+
+// 主题切换示例（可在设置页用）
+function setTheme(color){
+  currentTheme=color;
+  localStorage.setItem('theme',color);
+  document.documentElement.style.setProperty('--primary',color);
+}
+</script>
+</section>
+
+<script src="core.js" ></script>
+
+
+
+</body>
+</html>
+
+
