@@ -1,3 +1,4 @@
+
 /* ========= 全站语言 + 主题系统 ========= */
 
 const LANG = {
@@ -225,60 +226,154 @@ const LANG = {
     green:"💚 スピリットグリーン",
     pink:"💗 サクラピンク",
     purple:"💜 スターライトパープル",
-  },
- };
+  }
+};
+
+// =======================
+// 当前语言
+// =======================
+let currentLang = localStorage.getItem("lang") || "zh";
+
+const heroes = [
+  {key:"lingxiao", role:"warrior", stars:3, mastery:78, synergy:86, power:"A"},
+  {key:"yueli", role:"mage", stars:2, mastery:64, synergy:72, power:"S"},
+  {key:"xuanying", role:"assassin", stars:4, mastery:81, synergy:90, power:"S+"},
+  {key:"linglu", role:"support", stars:1, mastery:55, synergy:68, power:"A"},
+  {key:"huangyue", role:"tank", stars:2, mastery:70, synergy:75, power:"A"},
+  {key:"chiyanzun", role:"warrior", stars:3, mastery:82, synergy:88, power:"A"},
+  {key:"xingxuan", role:"mage", stars:2, mastery:60, synergy:70, power:"B"},
+  {key:"yeyan", role:"assassin", stars:4, mastery:90, synergy:93, power:"S+"},
+  {key:"qingluo", role:"support", stars:1, mastery:50, synergy:65, power:"A"},
+  {key:"xuanjia", role:"tank", stars:2, mastery:72, synergy:80, power:"A"},
+  {key:"fengpo", role:"warrior", stars:3, mastery:76, synergy:82, power:"A"},
+  {key:"xueyin", role:"mage", stars:2, mastery:63, synergy:71, power:"A"},
+  {key:"wuying", role:"assassin", stars:4, mastery:88, synergy:91, power:"S"},
+  {key:"lingyuan", role:"support", stars:1, mastery:52, synergy:67, power:"A"},
+  {key:"yankui", role:"tank", stars:2, mastery:74, synergy:83, power:"A"},
+  {key:"yanming", role:"warrior", stars:3, mastery:80, synergy:85, power:"S"},
+  {key:"xingxi", role:"mage", stars:2, mastery:66, synergy:73, power:"A"},
+  {key:"jinye", role:"assassin", stars:4, mastery:92, synergy:94, power:"S+"},
+  {key:"yaoling", role:"support", stars:1, mastery:54, synergy:69, power:"A"},
+  {key:"shanyue", role:"tank", stars:2, mastery:76, synergy:84, power:"A"},
+  {key:"leiheng", role:"warrior", stars:3, mastery:79, synergy:87, power:"A"},
+  {key:"huanshu", role:"mage", stars:2, mastery:65, synergy:74, power:"A"},
+  {key:"youren", role:"assassin", stars:4, mastery:91, synergy:92, power:"S"},
+  {key:"lingze", role:"support", stars:1, mastery:56, synergy:70, power:"A"},
+  {key:"juyan", role:"tank", stars:2, mastery:78, synergy:86, power:"A"},
+];
+
+/* ========= 新增：读取嵌套语言（关键修复） ========= */
+function getLangValue(obj, path){
+  return path.split(".").reduce((o,k)=>o && o[k], obj);
+}
 
 
 
-/* ========= 应用语言函数 ========= */
+/* ========= 新增：读取嵌套语言（关键修复） ========= */
+function getLangValue(obj, path){
+  return path.split(".").reduce((o,k)=>o && o[k], obj);
+}
+
+/* ========= 渲染英雄卡片 ========= */
+function renderHeroes(lang=currentLang){
+  const wrap = document.getElementById("heroes");
+  if(!wrap) return;
+  wrap.innerHTML="";
+  heroes.forEach(h=>{
+    const div = document.createElement("div");
+    div.className="hero";
+    div.innerHTML = `
+      <h3>${LANG[lang][h.key] || h.key}</h3>
+      <div class="role">${LANG[lang].role[h.role]}</div>
+      <div class="info">
+        ${LANG[lang].difficulty.replace("{stars}","★".repeat(h.stars))}<br>
+        ${LANG[lang].mastery.replace("{value}",h.mastery)} · ${LANG[lang].synergy.replace("{value}",h.synergy)}<br>
+        ${LANG[lang].power.replace("{value}",h.power)}
+      </div>
+    `;
+    div.onclick = ()=>showDetail(h, lang);
+    wrap.appendChild(div);
+  });
+}
+
+function showDetail(h, lang=currentLang){
+  const dName = document.getElementById("d-name");
+  const dInfo = document.getElementById("d-info");
+  if(!dName||!dInfo) return;
+  dName.innerText = LANG[lang][h.key] || h.key;
+  dInfo.innerText = `
+职业：${LANG[lang].role[h.role]}
+${LANG[lang].difficulty.replace("{stars}","★".repeat(h.stars))}
+${LANG[lang].mastery.replace("{value}",h.mastery)}
+${LANG[lang].synergy.replace("{value}",h.synergy)}
+${LANG[lang].power.replace("{value}",h.power)}
+  `;
+}
+
+function closeDetail(){
+  document.getElementById("detail").style.display="none";
+}
+
+/* ========= 全站语言（修复点） ========= */
 function applyLang(lang){
   if(!LANG[lang]) return;
+
   document.querySelectorAll("[data-i18n]").forEach(el=>{
     const key = el.dataset.i18n;
-    if(LANG[lang][key]){
-      el.innerHTML = LANG[lang][key]; // 支持 <br>
-    }
+    const value = getLangValue(LANG[lang], key);
+    if(value) el.innerHTML = value;
   });
-  localStorage.setItem("lang", lang);
+
+  localStorage.setItem("lang",lang);
+  currentLang = lang;
+  renderHeroes(lang);
 }
- return names[lang][key] || key;
 
- function showDetail(h, lang){
-  document.getElementById("d-name").innerText = translateHeroName(h.name, lang);
-  document.getElementById("d-info").innerText =
-    `定位：${LANG[lang].role[h.role]}
-${LANG[lang].difficulty.replace("{stars}", "★".repeat(h.stars))}
-${LANG[lang].mastery.replace("{value}", h.mastery)}
-${LANG[lang].synergy.replace("{value}", h.synergy)}
-${LANG[lang].power.replace("{value}", h.power)}`;
-/* ========= 初始化页面 ========= */
+/* ========= 页面初始化 ========= */
 document.addEventListener("DOMContentLoaded", function(){
-
-  const savedLang = localStorage.getItem("lang") || "zh";
-  const savedTheme = localStorage.getItem("theme") || "#7b8cff";
+  const savedLang = localStorage.getItem("lang")||"zh";
+  const savedTheme = localStorage.getItem("theme")||"#7b8cff";
 
   applyLang(savedLang);
+  document.documentElement.style.setProperty('--primary', savedTheme);
 
-  // 下拉选择语言
   const langSelect = document.getElementById("langSelect");
   if(langSelect){
     langSelect.value = savedLang;
-    langSelect.addEventListener("change", function(){
+    langSelect.addEventListener("change",function(){
       applyLang(this.value);
     });
   }
 
-  // 应用主题
-  document.documentElement.style.setProperty('--primary', savedTheme);
-
-  // 主题按钮点击事件
   document.querySelectorAll("[data-color]").forEach(btn=>{
-    btn.addEventListener("click", function(){
-      const color = this.dataset.color;
-      document.documentElement.style.setProperty('--primary', color);
-      localStorage.setItem("theme", color);
+    btn.addEventListener("click",function(){
+      const color=this.dataset.color;
+      document.documentElement.style.setProperty('--primary',color);
+      localStorage.setItem("theme",color);
     });
   });
-
 });
- }
+function closeDetail(){
+  document.getElementById("detail").style.display="none";
+}
+
+/* ========= 应用语言 ========= */
+function applyLang(lang){
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    const val=getLangValue(LANG[lang],el.dataset.i18n);
+    if(val) el.innerHTML=val;
+  });
+  currentLang=lang;
+  localStorage.setItem("lang",lang);
+  renderHeroes(lang);
+}
+
+/* ========= 初始化 ========= */
+document.addEventListener("DOMContentLoaded",()=>{
+  const sel=document.getElementById("langSelect");
+  sel.value=currentLang;
+  sel.onchange=e=>applyLang(e.target.value);
+  applyLang(currentLang);
+});
+
+

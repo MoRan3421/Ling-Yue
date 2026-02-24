@@ -253,9 +253,19 @@ function setTheme(color){
   localStorage.setItem('theme',color);
   document.documentElement.style.setProperty('--primary',color);
 }
+
+fetch("http://127.0.0.1:5000/api/heroes")
+  .then(r => r.json())
+  .then(list => {
+    list.forEach(h=>{
+      // 动态生成英雄卡片
+    })
+  })
 </script>
 
 <script src="core.js"></script>
+
+
 
 </body>
 </html>
