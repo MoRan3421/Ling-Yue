@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>灵约 · 无尽完全体 | 动漫修仙MOBA 万灵归一·全模块预约</title>
-    <!-- 字体与图标库 最终极 -->
+    <title>灵约 · 无量完全体 | 动漫修仙MOBA 万物归一·全模块预约</title>
+    <!-- 字体与图标库 终极无量 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;800;900&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
@@ -24,179 +24,182 @@
             line-height: 1.5;
         }
 
-        /* 万源之始 · 终极混沌背景 */
-        .primordial-void {
+        /* 无量劫 · 终极混沌背景 */
+        .boundless-void {
             position: fixed;
             width: 100%; height: 100%;
-            background: radial-gradient(ellipse at 40% 50%, #2f1b4a 0%, #000000 100%);
+            background: radial-gradient(ellipse at 30% 40%, #2f1b4a 0%, #000000 100%);
             z-index: -10;
         }
         
-        .primordial-void::before {
+        .boundless-void::before {
             content: '';
             position: absolute;
-            width: 250%; height: 250%;
-            top: -75%; left: -75%;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" opacity="0.18"><path d="M400 150 L650 400 L400 650 L150 400 Z" fill="none" stroke="%23aa88ff" stroke-width="3"/><circle cx="400" cy="400" r="150" fill="%23332288" opacity="0.2"/><path d="M250 280 Q400 120, 550 280" stroke="%23cc99ff" stroke-width="4" fill="none"/><path d="M250 520 Q400 680, 550 520" stroke="%23ddbbff" stroke-width="4" fill="none"/><circle cx="320" cy="320" r="25" fill="%23ffffff"/><circle cx="480" cy="480" r="30" fill="%23bbaaff"/><path d="M200 200 L600 600" stroke="%239977ee" stroke-width="2" stroke-dasharray="20 20"/></svg>') repeat;
-            animation: voidSpin 600s linear infinite;
+            width: 300%; height: 300%;
+            top: -100%; left: -100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" opacity="0.2"><path d="M500 200 L800 500 L500 800 L200 500 Z" fill="none" stroke="%23aa88ff" stroke-width="4"/><circle cx="500" cy="500" r="200" fill="%23332288" opacity="0.15"/><path d="M300 350 Q500 150, 700 350" stroke="%23cc99ff" stroke-width="5" fill="none"/><path d="M300 650 Q500 850, 700 650" stroke="%23ddbbff" stroke-width="5" fill="none"/><circle cx="400" cy="400" r="30" fill="%23ffffff"/><circle cx="600" cy="600" r="40" fill="%23bbaaff"/><path d="M200 200 L800 800" stroke="%239977ee" stroke-width="3" stroke-dasharray="30 30"/><path d="M200 800 L800 200" stroke="%239977ee" stroke-width="3" stroke-dasharray="30 30"/></svg>') repeat;
+            animation: boundlessSpin 800s linear infinite;
         }
-        @keyframes voidSpin { 0% { transform: rotate(0deg) scale(1); } 100% { transform: rotate(90deg) scale(2.2); } }
+        @keyframes boundlessSpin { 0% { transform: rotate(0deg) scale(1); } 100% { transform: rotate(120deg) scale(2.5); } }
 
-        /* 灵魂潮汐粒子 */
-        .soul-tide {
+        /* 无量粒子海 */
+        .boundless-particles {
             position: fixed;
             width: 100%; height: 100%;
             pointer-events: none;
             z-index: -9;
         }
-        .tide {
+        .boundless-particle {
             position: absolute;
-            background: radial-gradient(circle, rgba(180, 130, 255, 0.3), transparent 90%);
+            background: radial-gradient(circle, rgba(200, 150, 255, 0.3), transparent 90%);
             border-radius: 50%;
-            filter: blur(60px);
-            width: 700px; height: 700px;
-            animation: tideFlow 50s infinite alternate ease-in-out;
+            filter: blur(80px);
+            width: 900px; height: 900px;
+            animation: boundlessFlow 60s infinite alternate ease-in-out;
         }
-        @keyframes tideFlow {
+        @keyframes boundlessFlow {
             0% { transform: translate(0, 0) scale(1); opacity: 0.1; }
-            100% { transform: translate(300px, -200px) scale(2.2); opacity: 0.4; }
+            100% { transform: translate(400px, -300px) scale(2.5); opacity: 0.4; }
         }
 
         /* 主容器 */
         .site-wrapper {
-            max-width: 1800px;
+            max-width: 2000px;
             margin: 0 auto;
             padding: 0 3rem 5rem;
             position: relative;
             backdrop-filter: blur(1px);
         }
 
-        /* 导航 - 无尽完全体 */
+        /* 导航 - 无量完全体 */
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 2.2rem 0 1.8rem;
-            border-bottom: 2px solid rgba(210, 170, 255, 0.5);
+            padding: 2.5rem 0 2rem;
+            border-bottom: 3px solid rgba(220, 180, 255, 0.6);
             margin-bottom: 3rem;
             flex-wrap: wrap;
-            backdrop-filter: blur(12px);
+            backdrop-filter: blur(15px);
         }
         .logo-area {
             display: flex;
             align-items: center;
-            gap: 1.5rem;
+            gap: 1.8rem;
         }
         .logo-icon {
-            font-size: 4.2rem;
-            filter: drop-shadow(0 0 70px #e7c6ff);
+            font-size: 4.8rem;
+            filter: drop-shadow(0 0 100px #f0d0ff);
             transform: rotate(-5deg);
         }
         .logo-text {
-            font-size: 3.2rem;
+            font-size: 3.8rem;
             font-weight: 900;
-            background: linear-gradient(145deg, #ffffff, #f7e5ff, #e6ccff, #c6a2ff);
+            background: linear-gradient(145deg, #ffffff, #f9eaff, #f0d8ff, #e2c4ff, #c6a2ff);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            letter-spacing: 6px;
+            letter-spacing: 8px;
         }
         .nav-links {
             display: flex;
-            gap: 3.5rem;
+            gap: 3rem;
             font-size: 1.5rem;
             font-weight: 700;
+            flex-wrap: wrap;
+            justify-content: center;
         }
         .nav-links span {
-            color: #e5d2ff;
+            color: #ecd9ff;
             cursor: default;
-            position: relative;
-            padding-bottom: 5px;
+            padding: 0.3rem 0;
+            border-bottom: 3px solid transparent;
+            transition: 0.2s;
         }
-        .omnibus-badge {
-            background: #2a1b4a;
-            border-radius: 80px;
-            padding: 0.9rem 2.5rem;
-            border: 3px solid #dbbaff;
-            box-shadow: 0 0 100px #b088ff;
-            font-size: 1.2rem;
-            letter-spacing: 2px;
+        .nav-links span:hover { border-bottom-color: #dbb5ff; }
+        .boundless-badge {
+            background: #2e1d55;
+            border-radius: 100px;
+            padding: 1rem 3rem;
+            border: 4px solid #e9ceff;
+            box-shadow: 0 0 150px #c69eff;
+            font-size: 1.4rem;
         }
 
-        /* 主视觉 - 万灵归一 */
+        /* 主视觉 - 无量劫 */
         .hero-vision {
             text-align: center;
-            margin: 2rem 0 5rem;
+            margin: 2rem 0 6rem;
         }
         .hero-title {
-            font-size: 9rem;
+            font-size: 10rem;
             font-weight: 900;
-            letter-spacing: 18px;
-            background: linear-gradient(145deg, #ffffff, #f5e2ff, #e9d0ff, #d4b5ff, #b78eff);
+            letter-spacing: 20px;
+            background: linear-gradient(145deg, #ffffff, #f9ecff, #f2ddff, #e8ceff, #dbb9ff, #c6a2ff);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            text-shadow: 0 0 150px #dab6ff, 0 0 300px #b185ff;
+            text-shadow: 0 0 200px #e6c8ff, 0 0 400px #c6a2ff;
             line-height: 1;
         }
         .hero-sub {
-            font-size: 2.8rem;
-            background: rgba(24, 10, 48, 0.8);
-            backdrop-filter: blur(20px);
-            padding: 1.2rem 5rem;
-            border-radius: 120px;
-            border: 3px solid #e9ceff;
-            box-shadow: 0 0 200px #b892ff;
+            font-size: 3.2rem;
+            background: rgba(28, 12, 56, 0.85);
+            backdrop-filter: blur(25px);
+            padding: 1.5rem 6rem;
+            border-radius: 150px;
+            border: 4px solid #f2dcff;
+            box-shadow: 0 0 250px #d8b6ff;
             display: inline-block;
         }
 
-        /* 四大BUFF - 神龛至尊版 */
+        /* 四大BUFF - 无量神龛 */
         .relic-buffs {
             display: flex;
             justify-content: center;
-            gap: 2.8rem;
-            margin: 5rem 0 6rem;
+            gap: 3rem;
+            margin: 6rem 0 7rem;
             flex-wrap: wrap;
         }
         .relic {
-            flex: 1 1 250px;
-            background: rgba(8, 3, 22, 0.85);
-            backdrop-filter: blur(25px);
-            border-radius: 150px 150px 60px 60px;
-            border: 4px solid;
-            padding: 3.5rem 1rem 2.5rem;
+            flex: 1 1 280px;
+            background: rgba(8, 3, 22, 0.9);
+            backdrop-filter: blur(30px);
+            border-radius: 180px 180px 70px 70px;
+            border: 5px solid;
+            padding: 4rem 1rem 3rem;
             text-align: center;
-            box-shadow: 0 0 250px currentColor;
+            box-shadow: 0 0 300px currentColor;
         }
-        .relic:nth-child(1) { border-color: #ff8a5c; box-shadow: 0 0 250px #ff6b4a; }
-        .relic:nth-child(2) { border-color: #7ac2ff; box-shadow: 0 0 250px #4f9aff; }
-        .relic:nth-child(3) { border-color: #ffe97a; box-shadow: 0 0 250px #ffd426; }
-        .relic:nth-child(4) { border-color: #8cf5a0; box-shadow: 0 0 250px #4be37b; }
-        .relic-icon { font-size: 7rem; filter: drop-shadow(0 0 90px); }
-        .relic-name { font-size: 4rem; font-weight: 900; letter-spacing: 5px; }
-        .relic-desc { font-size: 1.5rem; opacity: 1; }
+        .relic:nth-child(1) { border-color: #ff9a6c; box-shadow: 0 0 300px #ff7b55; }
+        .relic:nth-child(2) { border-color: #8accff; box-shadow: 0 0 300px #5aa5ff; }
+        .relic:nth-child(3) { border-color: #ffee8a; box-shadow: 0 0 300px #ffdd44; }
+        .relic:nth-child(4) { border-color: #9effb0; box-shadow: 0 0 300px #5bef8a; }
+        .relic-icon { font-size: 8rem; filter: drop-shadow(0 0 100px); }
+        .relic-name { font-size: 4.5rem; font-weight: 900; letter-spacing: 6px; }
+        .relic-desc { font-size: 1.8rem; }
 
-        /* 英雄 + 皮肤七阶 + 灵宠 三列终极融合 */
-        .trinity-section {
+        /* 英雄 + 皮肤七阶 + 灵宠 + 坐骑 四象归一 */
+        .quadrant-section {
             display: grid;
-            grid-template-columns: 1.5fr 1.5fr 1.2fr;
+            grid-template-columns: 1.5fr 1.5fr 1.2fr 1.2fr;
             gap: 2rem;
-            margin: 4rem 0;
+            margin: 5rem 0;
         }
-        .trinity-panel {
-            background: rgba(18, 9, 38, 0.75);
-            backdrop-filter: blur(22px);
-            border-radius: 90px;
-            padding: 2.5rem;
-            border: 2px solid #caaaff;
-            box-shadow: 0 0 180px #5f3ca0 inset;
+        .quadrant-panel {
+            background: rgba(18, 9, 38, 0.8);
+            backdrop-filter: blur(25px);
+            border-radius: 100px;
+            padding: 2.8rem;
+            border: 3px solid #dbbaff;
+            box-shadow: 0 0 200px #6a44b0 inset;
         }
         .panel-title {
-            font-size: 3rem;
+            font-size: 3.2rem;
             font-weight: 800;
-            border-left: 18px solid #dbb5ff;
-            padding-left: 2rem;
-            margin-bottom: 2.2rem;
+            border-left: 20px solid #e6c4ff;
+            padding-left: 2.2rem;
+            margin-bottom: 2.5rem;
         }
         .hero-grid {
             display: grid;
@@ -204,16 +207,16 @@
             gap: 1.2rem;
         }
         .hero-card {
-            background: #251948;
-            border-radius: 60px;
-            padding: 2rem 0.5rem;
+            background: #2a1d4a;
+            border-radius: 70px;
+            padding: 2.2rem 0.5rem;
             text-align: center;
-            border: 2px solid #b692ff;
+            border: 2px solid #c6a4ff;
         }
-        .hero-card i { font-size: 4.2rem; filter: drop-shadow(0 0 40px #dbb0ff); }
-        .hero-name { font-size: 1.4rem; font-weight: 700; }
+        .hero-card i { font-size: 4.5rem; filter: drop-shadow(0 0 50px #e6c4ff); }
+        .hero-name { font-size: 1.5rem; font-weight: 700; }
 
-        /* 皮肤等级七阶完全展示 */
+        /* 皮肤等级七阶 */
         .tier-list {
             display: flex;
             flex-direction: column;
@@ -222,17 +225,17 @@
         .tier-item {
             display: flex;
             align-items: center;
-            gap: 1.8rem;
-            background: #271e48;
-            border-radius: 70px;
-            padding: 1.4rem 2.2rem;
-            border: 2px solid #c09eff;
+            gap: 2rem;
+            background: #2d224a;
+            border-radius: 80px;
+            padding: 1.5rem 2.5rem;
+            border: 2px solid #cfaaff;
         }
-        .tier-icon { font-size: 3.2rem; width: 70px; text-align: center; }
+        .tier-icon { font-size: 3.5rem; width: 80px; }
         .tier-info { flex:1; }
-        .tier-name { font-size: 2rem; font-weight: 800; }
-        .tier-desc { color: #d8c0ff; font-size: 1.1rem; }
-        .tier-tag { background: #5539a0; border-radius: 60px; padding: 0.4rem 1.8rem; }
+        .tier-name { font-size: 2.2rem; font-weight: 800; }
+        .tier-desc { color: #e3ccff; font-size: 1.2rem; }
+        .tier-tag { background: #6045aa; border-radius: 70px; padding: 0.5rem 2rem; }
 
         /* 灵宠网格 */
         .pet-grid {
@@ -241,44 +244,68 @@
             gap: 1.2rem;
         }
         .pet-card {
-            background: #241b48;
-            border-radius: 60px;
-            padding: 1.8rem 0.5rem;
+            background: #2a1d4a;
+            border-radius: 70px;
+            padding: 2rem 0.5rem;
             text-align: center;
-            border: 2px solid #bf9eff;
+            border: 2px solid #cfaaff;
         }
-        .pet-card i { font-size: 4rem; filter: drop-shadow(0 0 40px #dab6ff); }
-        .pet-card span { font-size: 1.5rem; font-weight: 700; display: block; }
+        .pet-card i { font-size: 4.5rem; filter: drop-shadow(0 0 50px); }
+        .pet-card span { font-size: 1.6rem; font-weight: 700; }
 
-        /* 段位系统 + 战令 + 赛事 + 社交 四重奏 */
-        .quad-section {
+        /* 坐骑网格 */
+        .mount-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.2rem;
+        }
+        .mount-card {
+            background: #2a1d4a;
+            border-radius: 70px;
+            padding: 2rem 0.5rem;
+            text-align: center;
+            border: 2px solid #cfaaff;
+        }
+        .mount-card i { font-size: 4.5rem; }
+        .mount-card span { font-size: 1.6rem; }
+
+        /* 符文系统 + 神器系统 + 转职系统 + 结婚系统 四重天 */
+        .heaven-section {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 1.8rem;
             margin: 4rem 0;
         }
-        .quad-panel {
-            background: rgba(24, 13, 48, 0.75);
-            backdrop-filter: blur(20px);
-            border-radius: 80px;
-            padding: 2rem;
-            border: 2px solid #c6a6ff;
+        .heaven-panel {
+            background: rgba(24, 13, 48, 0.8);
+            backdrop-filter: blur(22px);
+            border-radius: 90px;
+            padding: 2.5rem;
+            border: 3px solid #d4b4ff;
         }
-        .rank-ladder {
-            background: #1d1240;
-            border-radius: 60px;
-            padding: 1.5rem;
+        .rune-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
         }
-        .rank-item { display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #927ad0; }
+        .rune-item { background: #332657; border-radius: 50px; padding: 1rem; text-align: center; }
 
-        /* 抽奖系统完全体 */
-        .gacha-omnibus {
-            background: linear-gradient(145deg, #312459, #0f0829);
-            border-radius: 150px;
-            padding: 4rem 5rem;
-            margin: 5rem 0;
-            border: 5px solid #e9ceff;
-            box-shadow: 0 0 350px #c39bff;
+        /* 宗门战 + 成就 + 排行榜 + 录像 */
+        .war-section {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.8rem;
+            margin: 4rem 0;
+        }
+
+        /* 抽奖系统无量版 */
+        .gacha-boundless {
+            background: linear-gradient(145deg, #3d2d6a, #120b30);
+            border-radius: 200px;
+            padding: 5rem 6rem;
+            margin: 6rem 0;
+            border: 6px solid #f2dcff;
+            box-shadow: 0 0 400px #d8b6ff;
         }
         .gacha-pools {
             display: flex;
@@ -287,109 +314,124 @@
             flex-wrap: wrap;
         }
         .gacha-pool {
-            background: #221a48;
-            border-radius: 100px;
-            padding: 2.5rem 4rem;
-            border: 4px solid #e1c0ff;
-            min-width: 280px;
+            background: #2a1e58;
+            border-radius: 120px;
+            padding: 3rem 5rem;
+            border: 5px solid #eaceff;
+            min-width: 320px;
         }
-        .pool-rate { font-size: 2rem; color: #ffe48f; }
+        .pool-rate { font-size: 2.2rem; color: #ffec99; }
 
-        /* 玩法介绍终极版 */
-        .gameplay-mega {
+        /* 玩法介绍无量版 */
+        .gameplay-boundless {
             display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 1.5rem;
-            margin: 4rem 0;
+            grid-template-columns: repeat(8, 1fr);
+            gap: 1.2rem;
+            margin: 5rem 0;
         }
         .gameplay-tile {
-            background: rgba(28, 16, 48, 0.8);
+            background: rgba(28, 16, 48, 0.85);
             backdrop-filter: blur(18px);
-            border-radius: 70px;
+            border-radius: 80px;
             padding: 2rem 0.5rem;
             text-align: center;
-            border: 2px solid #c6a6ff;
+            border: 2px solid #d4b4ff;
         }
 
-        /* 预约最终版 + 全平台 */
-        .preorder-final {
-            background: linear-gradient(145deg, #362970, #120b2f);
-            border-radius: 250px 250px 80px 80px;
-            padding: 5rem 6rem;
-            margin: 5rem 0;
-            border: 5px solid #f0d6ff;
-            box-shadow: 0 0 400px #dbb0ff;
+        /* 直播 + 周边商城 */
+        .media-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+        .media-panel {
+            background: rgba(28, 16, 48, 0.8);
+            backdrop-filter: blur(22px);
+            border-radius: 100px;
+            padding: 2.5rem;
+            border: 3px solid #dbbaff;
+        }
+
+        /* 预约无量版 */
+        .preorder-boundless {
+            background: linear-gradient(145deg, #44339b, #150e33);
+            border-radius: 300px 300px 100px 100px;
+            padding: 6rem 8rem;
+            margin: 6rem 0;
+            border: 6px solid #f5e2ff;
+            box-shadow: 0 0 500px #e6c8ff;
             text-align: center;
         }
-        .platform-all {
+        .platform-boundless {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 2.5rem;
-            font-size: 3.5rem;
-            margin: 3rem 0;
+            gap: 3rem;
+            font-size: 4rem;
+            margin: 4rem 0;
         }
-        .platform-all span { background: #281f58; border-radius: 100px; padding: 2rem 4rem; border: 4px solid #eaceff; }
+        .platform-boundless span { background: #31286a; border-radius: 120px; padding: 2.5rem 5rem; border: 5px solid #f0dcff; }
 
-        /* 底部无尽 */
-        .footer-infinite {
-            margin-top: 6rem;
-            border-top: 4px solid #aa87e6;
-            padding-top: 4rem;
+        /* 底部无量 */
+        .footer-boundless {
+            margin-top: 8rem;
+            border-top: 5px solid #b694ff;
+            padding-top: 5rem;
             display: grid;
-            grid-template-columns: repeat(6, 1fr);
+            grid-template-columns: repeat(8, 1fr);
             gap: 2rem;
         }
-        .s1-eternal {
+        .s1-boundless {
             text-align: center;
-            margin: 3rem 0 1rem;
-            font-size: 3rem;
-            letter-spacing: 12px;
-            background: #221842;
+            margin: 4rem 0 2rem;
+            font-size: 3.5rem;
+            letter-spacing: 15px;
+            background: #281e52;
             display: inline-block;
-            padding: 1rem 6rem;
-            border-radius: 100px;
-            border: 4px solid #dbbaff;
+            padding: 1.5rem 8rem;
+            border-radius: 120px;
+            border: 5px solid #e9ceff;
         }
     </style>
 </head>
 <body>
-    <div class="primordial-void"></div>
-    <div class="soul-tide" id="soulTide"></div>
+    <div class="boundless-void"></div>
+    <div class="boundless-particles" id="boundlessParticles"></div>
 
     <div class="site-wrapper">
-        <!-- 导航栏 无尽完全体 -->
+        <!-- 导航栏 无量完全体 -->
         <div class="navbar">
             <div class="logo-area">
                 <i class="fas fa-feather-alt logo-icon"></i>
-                <span class="logo-text">灵约 · 万灵归一</span>
+                <span class="logo-text">灵约 · 无量劫</span>
             </div>
             <div class="nav-links">
-                <span>万灵</span><span>觉醒</span><span>灵宠</span><span>抽签</span><span>段位</span><span>战令</span><span>赛事</span><span>社交</span>
+                <span>无量</span><span>英雄</span><span>皮肤</span><span>灵宠</span><span>坐骑</span><span>神器</span><span>符文</span><span>转职</span><span>宗门</span><span>结婚</span><span>成就</span><span>直播</span><span>商城</span>
             </div>
-            <div class="omnibus-badge"><i class="fas fa-infinity"></i> 无尽预约中</div>
+            <div class="boundless-badge"><i class="fas fa-infinity"></i> 无量预约</div>
         </div>
 
         <!-- 主视觉 -->
         <div class="hero-vision">
-            <div class="hero-title">《灵 约 · 无 尽》</div>
-            <div class="hero-sub"><i class="fas fa-star"></i> 万灵沉寂 · 全模块预约 · 择日飞升 <i class="fas fa-star"></i></div>
+            <div class="hero-title">《灵 约 · 无 量》</div>
+            <div class="hero-sub"><i class="fas fa-star"></i> 万物归一 · 全模块预约 · 渡无量劫 <i class="fas fa-star"></i></div>
         </div>
 
         <!-- 四大BUFF -->
         <div class="relic-buffs">
-            <div class="relic"><i class="fas fa-fire relic-icon"></i><div class="relic-name">业火</div><div class="relic-desc">真伤·灼烧·寂灭轮回</div></div>
-            <div class="relic"><i class="fas fa-snowflake relic-icon"></i><div class="relic-name">寒霜</div><div class="relic-desc">冷却·减速·时空凝滞</div></div>
-            <div class="relic"><i class="fas fa-bolt relic-icon"></i><div class="relic-name">雷鸣</div><div class="relic-desc">攻速·连锁·雷劫降临</div></div>
-            <div class="relic"><i class="fas fa-leaf relic-icon"></i><div class="relic-name">灵木</div><div class="relic-desc">回复·双抗·万物生机</div></div>
+            <div class="relic"><i class="fas fa-fire relic-icon"></i><div class="relic-name">业火</div><div class="relic-desc">真伤·灼烧·无量业火</div></div>
+            <div class="relic"><i class="fas fa-snowflake relic-icon"></i><div class="relic-name">寒霜</div><div class="relic-desc">冷却·减速·时空冻结</div></div>
+            <div class="relic"><i class="fas fa-bolt relic-icon"></i><div class="relic-name">雷鸣</div><div class="relic-desc">攻速·连锁·无量雷劫</div></div>
+            <div class="relic"><i class="fas fa-leaf relic-icon"></i><div class="relic-name">灵木</div><div class="relic-desc">回复·双抗·生生不息</div></div>
         </div>
 
-        <!-- 三体合一：英雄 + 皮肤七阶 + 灵宠 -->
-        <div class="trinity-section">
-            <div class="trinity-panel">
-                <div class="panel-title"><i class="fas fa-dragon"></i> 觉醒英雄 · 四十九灵</div>
+        <!-- 四象归一：英雄 + 皮肤七阶 + 灵宠 + 坐骑 -->
+        <div class="quadrant-section">
+            <div class="quadrant-panel">
+                <div class="panel-title"><i class="fas fa-dragon"></i> 觉醒英雄 · 九九八十一</div>
                 <div class="hero-grid">
-                    <div class="hero-card"><i class="fas fa-dragon"></i><span class="hero-name">苍岚</span></div>
+                    <div class="hero-card"><i class="fas fa-dragon"></i><span>苍岚</span></div>
                     <div class="hero-card"><i class="fas fa-crow"></i><span>云梦</span></div>
                     <div class="hero-card"><i class="fas fa-fox"></i><span>灵漪</span></div>
                     <div class="hero-card"><i class="fas fa-eagle"></i><span>重明</span></div>
@@ -402,9 +444,9 @@
                     <div class="hero-card"><i class="fas fa-fish"></i><span>瑶姬</span></div>
                     <div class="hero-card"><i class="fas fa-hippo"></i><span>霸下</span></div>
                 </div>
-                <p style="margin-top:1.8rem;">+ 37位觉醒英雄 · 皆在契约</p>
+                <p>+ 69位觉醒英雄 · 皆在契约</p>
             </div>
-            <div class="trinity-panel">
+            <div class="quadrant-panel">
                 <div class="panel-title"><i class="fas fa-palette"></i> 七阶进化 · 皮肤等级</div>
                 <div class="tier-list">
                     <div class="tier-item"><span class="tier-icon">⚪</span><div class="tier-info"><span class="tier-name">初灵</span><div class="tier-desc">基础粒子 · 原画</div></div><span class="tier-tag">默认</span></div>
@@ -416,8 +458,8 @@
                     <div class="tier-item"><span class="tier-icon">👑</span><div class="tier-info"><span class="tier-name">万灵</span><div class="tier-desc">全屏特效 · 飞升回城</div></div><span class="tier-tag">七阶</span></div>
                 </div>
             </div>
-            <div class="trinity-panel">
-                <div class="panel-title"><i class="fas fa-paw"></i> 灵宠 · 伴生魂兽</div>
+            <div class="quadrant-panel">
+                <div class="panel-title"><i class="fas fa-paw"></i> 灵宠 · 三十六天罡</div>
                 <div class="pet-grid">
                     <div class="pet-card"><i class="fas fa-dragon"></i><span>烛龙</span></div>
                     <div class="pet-card"><i class="fas fa-fox"></i><span>灵狐</span></div>
@@ -430,116 +472,166 @@
                     <div class="pet-card"><i class="fas fa-spider"></i><span>幽蛛</span></div>
                     <div class="pet-card"><i class="fas fa-snake"></i><span>腾蛇</span></div>
                 </div>
-                <p>灵宠助战 · 独立技能 · 羁绊进化</p>
             </div>
-        </div>
-
-        <!-- 四重奏：段位系统 + 战令系统 + 赛事体系 + 社交系统 -->
-        <div class="quad-section">
-            <div class="quad-panel">
-                <div class="panel-title" style="font-size:2.2rem;">🏆 灵魂十段</div>
-                <div class="rank-ladder">
-                    <div class="rank-item"><span>淬灵</span><span>I - III</span></div>
-                    <div class="rank-item"><span>锻魂</span><span>IV - VI</span></div>
-                    <div class="rank-item"><span>通幽</span><span>VII - IX</span></div>
-                    <div class="rank-item"><span>羽化</span><span>X - XII</span></div>
-                    <div class="rank-item"><span>登神</span><span>XIII - XV</span></div>
-                    <div class="rank-item"><span>万灵</span><span>XVI+</span></div>
+            <div class="quadrant-panel">
+                <div class="panel-title"><i class="fas fa-horse"></i> 坐骑 · 七十二地煞</div>
+                <div class="mount-grid">
+                    <div class="mount-card"><i class="fas fa-dragon"></i><span>应龙</span></div>
+                    <div class="mount-card"><i class="fas fa-horse"></i><span>天马</span></div>
+                    <div class="mount-card"><i class="fas fa-cloud"></i><span>祥云</span></div>
+                    <div class="mount-card"><i class="fas fa-feather"></i><span>青鸾</span></div>
+                    <div class="mount-card"><i class="fas fa-fish"></i><span>鲲鹏</span></div>
+                    <div class="mount-card"><i class="fas fa-tiger"></i><span>穷奇</span></div>
+                    <div class="mount-card"><i class="fas fa-cow"></i><span>夔牛</span></div>
+                    <div class="mount-card"><i class="fas fa-dog"></i><span>天狗</span></div>
                 </div>
             </div>
-            <div class="quad-panel">
-                <div class="panel-title" style="font-size:2.2rem;">📜 战令系统</div>
-                <div>· 初灵战令 · 觉醒战令</div>
-                <div>· 七阶皮肤碎片 · 灵宠蛋</div>
-                <div>· 灵魂结晶 · 抽签券</div>
-                <div style="margin-top:1rem;">S1战令 · 待启</div>
+        </div>
+
+        <!-- 四重天：符文 + 神器 + 转职 + 结婚 -->
+        <div class="heaven-section">
+            <div class="heaven-panel">
+                <div class="panel-title" style="font-size:2.5rem;">🔮 符文系统</div>
+                <div class="rune-grid">
+                    <div class="rune-item"><i class="fas fa-fire"></i> 业火</div>
+                    <div class="rune-item"><i class="fas fa-snowflake"></i> 寒霜</div>
+                    <div class="rune-item"><i class="fas fa-bolt"></i> 雷鸣</div>
+                    <div class="rune-item"><i class="fas fa-leaf"></i> 灵木</div>
+                    <div class="rune-item"><i class="fas fa-moon"></i> 太阴</div>
+                    <div class="rune-item"><i class="fas fa-sun"></i> 太阳</div>
+                </div>
+                <p>6大系 · 108种符文 · 自由搭配</p>
             </div>
-            <div class="quad-panel">
-                <div class="panel-title" style="font-size:2.2rem;">⚔️ 赛事体系</div>
-                <div>· 巅峰赛 · 灵魂联赛</div>
-                <div>· 全球总决赛 · 世界赛</div>
-                <div>· 冠军皮肤 · 战队系统</div>
+            <div class="heaven-panel">
+                <div class="panel-title" style="font-size:2.5rem;">⚔️ 神器系统</div>
+                <div>· 轩辕剑 · 盘古斧</div>
+                <div>· 炼妖壶 · 东皇钟</div>
+                <div>· 昆仑镜 · 昊天塔</div>
+                <div>十大神器 · 觉醒属性</div>
             </div>
-            <div class="quad-panel">
-                <div class="panel-title" style="font-size:2.2rem;">💬 社交系统</div>
-                <div>· 灵约者公会 · 好友羁绊</div>
-                <div>· 语音开黑 · 灵魂聊天</div>
-                <div>· 师徒系统 · 情缘系统</div>
+            <div class="heaven-panel">
+                <div class="panel-title" style="font-size:2.5rem;">🔄 转职系统</div>
+                <div>· 剑仙 · 法尊 · 战圣</div>
+                <div>· 灵师 · 影刺 · 御者</div>
+                <div>· 二次飞升 · 三次觉醒</div>
+            </div>
+            <div class="heaven-panel">
+                <div class="panel-title" style="font-size:2.5rem;">💑 结婚系统</div>
+                <div>· 道侣 · 双修 · 情缘技能</div>
+                <div>· 婚礼殿堂 · 夫妻副本</div>
+                <div>· 离婚系统 · 再续前缘</div>
             </div>
         </div>
 
-        <!-- 抽奖系统完全体 + 保底规则 -->
-        <div class="gacha-omnibus">
-            <div style="font-size:5rem; font-weight:900; text-align:center;">🎰 灵签·召魂 完全体 🎰</div>
+        <!-- 宗门战 + 成就 + 排行榜 + 录像 -->
+        <div class="war-section">
+            <div class="heaven-panel">
+                <div class="panel-title" style="font-size:2.2rem;">🏯 宗门战</div>
+                <div>· 每周六 · 百宗大战</div>
+                <div>· 宗门据点 · 灵脉争夺</div>
+                <div>· 宗门商店 · 专属时装</div>
+            </div>
+            <div class="heaven-panel">
+                <div class="panel-title" style="font-size:2.2rem;">🏆 成就系统</div>
+                <div>· 战斗成就 · 收集成就</div>
+                <div>· 社交成就 · 隐藏成就</div>
+                <div>· 成就点数 · 称号奖励</div>
+            </div>
+            <div class="heaven-panel">
+                <div class="panel-title" style="font-size:2.2rem;">📊 排行榜</div>
+                <div>· 巅峰榜 · 英雄榜</div>
+                <div>· 宗门榜 · 财富榜</div>
+                <div>· 魅力榜 · 成就榜</div>
+            </div>
+            <div class="heaven-panel">
+                <div class="panel-title" style="font-size:2.2rem;">🎥 录像系统</div>
+                <div>· 对局回放 · 精彩时刻</div>
+                <div>· 一键录制 · 分享社区</div>
+                <div>· 大神观战 · 战术分析</div>
+            </div>
+        </div>
+
+        <!-- 抽奖系统无量版 -->
+        <div class="gacha-boundless">
+            <div style="font-size:6rem; font-weight:900; text-align:center;">🎰 无量灵签 · 召魂 🎰</div>
             <div class="gacha-pools">
-                <div class="gacha-pool"><div style="font-size:3rem;">天命池</div><div class="pool-rate">七阶皮肤 1.8%</div><div>灵宠 5% · 英雄 8%</div><div>60抽保底</div></div>
-                <div class="gacha-pool"><div style="font-size:3rem;">觉醒池</div><div class="pool-rate">觉醒碎片 18%</div><div>皮肤碎片 22%</div><div>40抽保底</div></div>
-                <div class="gacha-pool"><div style="font-size:3rem;">限时UP</div><div class="pool-rate">「万灵」苍岚 2%</div><div>「烛龙」灵宠 3%</div><div>90抽大保底</div></div>
+                <div class="gacha-pool"><div style="font-size:3.5rem;">天命池</div><div class="pool-rate">七阶皮肤 2%</div><div>灵宠 6% · 坐骑 5%</div><div>70抽保底</div></div>
+                <div class="gacha-pool"><div style="font-size:3.5rem;">觉醒池</div><div class="pool-rate">神器 3%</div><div>符文 15% · 转职材料</div><div>50抽保底</div></div>
+                <div class="gacha-pool"><div style="font-size:3.5rem;">无量池</div><div class="pool-rate">万灵皮肤 1.5%</div><div>神兽坐骑 2%</div><div>90抽大保底</div></div>
             </div>
-            <p style="font-size:2rem; text-align:center; margin-top:2rem;">✨ 抽签积攒灵魄 · 兑换当期UP · 保底继承 ✨</p>
+            <p style="font-size:2.5rem; text-align:center; margin-top:3rem;">✨ 保底继承 · 无量灵魄兑换 · 全限定 ✨</p>
         </div>
 
-        <!-- 玩法介绍 六边形战士 -->
-        <div class="gameplay-mega">
-            <div class="gameplay-tile"><i class="fas fa-users" style="font-size:3rem;"></i><div>5V5经典</div></div>
-            <div class="gameplay-tile"><i class="fas fa-trophy" style="font-size:3rem;"></i><div>巅峰排位</div></div>
-            <div class="gameplay-tile"><i class="fas fa-dragon" style="font-size:3rem;"></i><div>英雄觉醒</div></div>
-            <div class="gameplay-tile"><i class="fas fa-paw" style="font-size:3rem;"></i><div>灵宠作战</div></div>
-            <div class="gameplay-tile"><i class="fas fa-dice-d20" style="font-size:3rem;"></i><div>天命抽签</div></div>
-            <div class="gameplay-tile"><i class="fas fa-shield-alt" style="font-size:3rem;"></i><div>EVMGSO</div></div>
-            <div class="gameplay-tile"><i class="fas fa-scroll" style="font-size:3rem;"></i><div>灵诀系统</div></div>
-            <div class="gameplay-tile"><i class="fas fa-palette" style="font-size:3rem;"></i><div>七阶皮肤</div></div>
-            <div class="gameplay-tile"><i class="fas fa-crown" style="font-size:3rem;"></i><div>段位奖励</div></div>
-            <div class="gameplay-tile"><i class="fas fa-calendar" style="font-size:3rem;"></i><div>战令系统</div></div>
-            <div class="gameplay-tile"><i class="fas fa-globe" style="font-size:3rem;"></i><div>全球赛事</div></div>
-            <div class="gameplay-tile"><i class="fas fa-heart" style="font-size:3rem;"></i><div>社交羁绊</div></div>
+        <!-- 玩法介绍无量版 16种玩法 -->
+        <div class="gameplay-boundless">
+            <div class="gameplay-tile">5V5</div><div class="gameplay-tile">排位</div><div class="gameplay-tile">觉醒</div>
+            <div class="gameplay-tile">灵宠</div><div class="gameplay-tile">坐骑</div><div class="gameplay-tile">神器</div>
+            <div class="gameplay-tile">符文</div><div class="gameplay-tile">转职</div><div class="gameplay-tile">结婚</div>
+            <div class="gameplay-tile">宗门</div><div class="gameplay-tile">成就</div><div class="gameplay-tile">排行榜</div>
+            <div class="gameplay-tile">录像</div><div class="gameplay-tile">抽签</div><div class="gameplay-tile">战令</div>
+            <div class="gameplay-tile">赛事</div>
         </div>
 
-        <!-- 预约最终版 + 全平台下载 包含所有 -->
-        <div class="preorder-final">
-            <h2 style="font-size:6rem; font-weight:900;">✧ 万灵归一 · 预约 ✧</h2>
-            <p style="font-size:2.5rem;">留下灵魂印记 · 飞升之日通知你</p>
-            <div class="platform-all">
-                <span><i class="fab fa-android"></i> APK</span>
-                <span><i class="fab fa-apple"></i> iOS</span>
-                <span><i class="fab fa-windows"></i> exe</span>
+        <!-- 直播 + 周边商城 -->
+        <div class="media-section">
+            <div class="media-panel">
+                <div class="panel-title"><i class="fas fa-video"></i> 灵约直播</div>
+                <div>· 官方直播 · 大神直播</div>
+                <div>· 赛事直播 · 教学直播</div>
+                <div>· 弹幕互动 · 直播抽奖</div>
+            </div>
+            <div class="media-panel">
+                <div class="panel-title"><i class="fas fa-shopping-cart"></i> 周边商城</div>
+                <div>· 手办 · 服装 · 设定集</div>
+                <div>· 灵宠公仔 · 七阶皮肤画集</div>
+                <div>· 宗门令 · 限量典藏</div>
+            </div>
+        </div>
+
+        <!-- 预约无量版 + 全平台 -->
+        <div class="preorder-boundless">
+            <h2 style="font-size:7rem; font-weight:900;">✧ 无量契约 · 预约 ✧</h2>
+            <p style="font-size:3rem;">留下印记 · 共渡无量劫</p>
+            <div class="platform-boundless">
+                <span><i class="fab fa-android"></i></span>
+                <span><i class="fab fa-apple"></i></span>
+                <span><i class="fab fa-windows"></i></span>
                 <span><i class="fab fa-apple"></i> macOS</span>
-                <span><i class="fas fa-terminal"></i> Linux</span>
-                <span><i class="fas fa-gamepad"></i> Steam</span>
+                <span><i class="fas fa-terminal"></i></span>
+                <span><i class="fab fa-steam"></i></span>
+                <span><i class="fas fa-gamepad"></i> PS5</span>
             </div>
-            <div style="margin-top:3rem; font-size:2.5rem;">🎁 预约得「万灵归一」头像框 · 七阶皮肤体验卡 · 灵宠蛋 🎁</div>
+            <div style="margin-top:4rem; font-size:3rem;">🎁 预约得「无量劫」头像框 · 七阶皮肤 · 神兽坐骑蛋 🎁</div>
         </div>
 
-        <!-- 终极底部 全模块索引 -->
-        <div class="footer-infinite">
-            <div><h4>英雄</h4>49觉醒 · 七阶皮肤</div>
-            <div><h4>灵宠</h4>18只 · 羁绊进化</div>
-            <div><h4>抽签</h4>3大池 · 保底继承</div>
-            <div><h4>段位</h4>灵魂十段 · 巅峰赛</div>
-            <div><h4>战令</h4>S1 · 双战令</div>
-            <div><h4>赛事</h4>全球总决赛</div>
+        <!-- 底部无量 全模块索引 -->
+        <div class="footer-boundless">
+            <div><h4>英雄</h4>81觉醒</div><div><h4>皮肤</h4>七阶进化</div>
+            <div><h4>灵宠</h4>36天罡</div><div><h4>坐骑</h4>72地煞</div>
+            <div><h4>神器</h4>十大神器</div><div><h4>符文</h4>108种</div>
+            <div><h4>转职</h4>6大职业</div><div><h4>结婚</h4>道侣系统</div>
         </div>
-        <div style="text-align:center; margin:3rem 0;">
-            <span class="s1-eternal">S1 · 初灵启源 · 万灵归一 · 预约开启</span>
+        <div style="text-align:center; margin:4rem 0;">
+            <span class="s1-boundless">S1 · 无量初开 · 全模块预约</span>
         </div>
-        <div style="text-align:center; color:#b095e6; margin-top:2rem; font-size:1.4rem;">
-            © 灵约 · 动漫修仙5V5 · 四大原力buff · 七阶进化 · 灵宠伴生 · 抽奖系统 · 段位战令 · 赛事社交 · 一切以正式发布为准
+        <div style="text-align:center; color:#b89ef0; font-size:1.6rem;">
+            © 灵约 · 动漫修仙5V5 · 四大原力buff · 七阶皮肤 · 灵宠坐骑 · 神器符文 · 转职结婚 · 宗门成就 · 直播商城 · 无量劫中
         </div>
     </div>
 
     <!-- 粒子生成 -->
     <script>
         (function() {
-            const container = document.getElementById('soulTide');
-            for (let i = 0; i < 30; i++) {
-                const tide = document.createElement('div');
-                tide.className = 'tide';
-                tide.style.width = (Math.random()*800+500)+'px';
-                tide.style.height = tide.style.width;
-                tide.style.top = Math.random()*100 + '%';
-                tide.style.left = Math.random()*100 + '%';
-                tide.style.animationDelay = Math.random()*25 + 's';
-                container.appendChild(tide);
+            const container = document.getElementById('boundlessParticles');
+            for (let i = 0; i < 40; i++) {
+                const p = document.createElement('div');
+                p.className = 'boundless-particle';
+                p.style.width = (Math.random()*1000+600)+'px';
+                p.style.height = p.style.width;
+                p.style.top = Math.random()*100 + '%';
+                p.style.left = Math.random()*100 + '%';
+                p.style.animationDelay = Math.random()*30 + 's';
+                container.appendChild(p);
             }
         })();
     </script>
@@ -547,11 +639,11 @@
     <style>
         body::after {
             content: ''; position: fixed; top:0; left:0; width:100%; height:100%;
-            background: radial-gradient(1200px at 30% 40%, rgba(170, 120, 255, 0.2), transparent 75%);
+            background: radial-gradient(1500px at 30% 40%, rgba(180, 130, 255, 0.25), transparent 80%);
             pointer-events: none; z-index: -5;
-            animation: ultimatePulse 30s infinite alternate;
+            animation: boundlessPulse 35s infinite alternate;
         }
-        @keyframes ultimatePulse {
+        @keyframes boundlessPulse {
             0% { opacity: 0.2; } 100% { opacity: 0.7; }
         }
     </style>
