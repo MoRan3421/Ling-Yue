@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>灵约 · 无量终章 | 动漫修仙MOBA 26模式·36活动·全模块·巅峰赛·贵族·三十六阶皮肤</title>
+    <title>灵约 · 无量终章 | 动漫修仙MOBA 26模式·108活动·月卡年卡·送皮肤·全模块</title>
     <!-- 关键CSS内联 - 极速渲染 -->
     <style>
-        /* === 重置与核心样式 - 无任何动画开销 === */
         * {
             margin: 0;
             padding: 0;
@@ -22,7 +21,6 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* 静态背景层 */
         .bg-static {
             position: fixed;
             top: 0;
@@ -53,7 +51,6 @@
             position: relative;
         }
 
-        /* 导航 */
         .nav {
             display: flex;
             justify-content: space-between;
@@ -104,7 +101,6 @@
             white-space: nowrap;
         }
 
-        /* 主视觉 */
         .hero {
             text-align: center;
             margin: 10px 0 40px;
@@ -130,7 +126,6 @@
             margin-top: 10px;
         }
 
-        /* 四大本源 */
         .grid-4 {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -151,7 +146,6 @@
         .source-icon { font-size: 48px; }
         .source-name { font-size: 28px; font-weight: 800; }
 
-        /* 统一卡片 */
         .card {
             background: #120d28;
             border-radius: 40px;
@@ -173,7 +167,6 @@
             gap: 8px;
         }
 
-        /* 三列主网格 */
         .main-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -181,12 +174,10 @@
             margin: 20px 0;
         }
 
-        /* 内部小网格 */
         .inner-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
         .inner-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
         .inner-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; }
 
-        /* 迷你卡片 */
         .mini {
             background: #231d40;
             border-radius: 24px;
@@ -197,7 +188,6 @@
         }
         .mini i { font-size: 22px; display: block; margin-bottom: 4px; }
 
-        /* 等级卡片 */
         .level-row {
             display: flex;
             justify-content: space-between;
@@ -214,7 +204,6 @@
             font-size: 11px;
         }
 
-        /* 活动卡片 */
         .event-item {
             background: #1e1738;
             border-radius: 30px;
@@ -235,8 +224,9 @@
         .event-tag.blue { background: #2196f3; }
         .event-tag.purple { background: #9c27b0; }
         .event-tag.gold { background: #ff9800; }
+        .event-tag.red { background: #f44336; }
+        .event-tag.teal { background: #009688; }
 
-        /* 抽奖区 */
         .gacha {
             background: #2a2355;
             border-radius: 80px;
@@ -258,7 +248,6 @@
             text-align: center;
         }
 
-        /* 预约区 */
         .preorder {
             background: #31296a;
             border-radius: 100px;
@@ -282,7 +271,6 @@
             font-size: 28px;
         }
 
-        /* 底部 */
         .footer {
             display: grid;
             grid-template-columns: repeat(6, 1fr);
@@ -303,7 +291,6 @@
             border: 3px solid #bfa2ff;
         }
 
-        /* 响应式 */
         @media (max-width: 1300px) {
             .main-grid { grid-template-columns: repeat(2, 1fr); }
             .footer { grid-template-columns: repeat(3, 1fr); }
@@ -323,7 +310,6 @@
         .fonts-loaded body { font-family: 'Exo 2', system-ui, sans-serif; }
     </style>
     
-    <!-- 异步加载字体和图标 -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;800&display=swap">
@@ -338,30 +324,65 @@
     <div class="bg-static"></div>
 
     <div class="container">
-        <!-- 导航 -->
         <div class="nav">
             <div class="logo">
                 <i class="fas fa-feather-alt"></i>
                 <span>灵约 · 无量终章</span>
             </div>
             <div class="nav-links">
-                <span>英雄</span><span>皮肤</span><span>灵宠</span><span>坐骑</span><span>模式</span><span>活动</span><span>巅峰</span><span>贵族</span><span>段位</span><span>战令</span><span>赛事</span><span>功法</span><span>阵法</span><span>奇遇</span><span>仙界</span><span>神界</span>
+                <span>英雄</span><span>皮肤</span><span>灵宠</span><span>坐骑</span><span>模式</span><span>活动</span><span>月卡</span><span>年卡</span><span>充值</span><span>巅峰</span><span>贵族</span>
             </div>
-            <div class="nav-badge"><i class="fas fa-bolt"></i> 26模式·36活动·全模块</div>
+            <div class="nav-badge"><i class="fas fa-bolt"></i> 26模式·108活动·全卡</div>
         </div>
 
-        <!-- 主视觉 -->
         <div class="hero">
             <h1>《灵 约 · 无 量 终 章》</h1>
-            <p><i class="fas fa-star"></i> 26大模式·36主题活动·108英雄·36阶皮肤·108灵宠·108坐骑·108神器·108法宝·108符文·108铭文·72转职·36灵根·VIP36·渡劫36·全模块 <i class="fas fa-star"></i></p>
+            <p><i class="fas fa-star"></i> 26模式·108活动·月卡年卡·送皮肤·全模块 <i class="fas fa-star"></i></p>
         </div>
 
-        <!-- 四大本源 -->
         <div class="grid-4">
             <div class="source-card"><i class="fas fa-fire source-icon"></i><div class="source-name">业火</div><div>真伤·灼烧·业力</div></div>
             <div class="source-card"><i class="fas fa-snowflake source-icon"></i><div class="source-name">寒霜</div><div>冷却·减速·凝滞</div></div>
             <div class="source-card"><i class="fas fa-bolt source-icon"></i><div class="source-name">雷鸣</div><div>攻速·连锁·雷劫</div></div>
             <div class="source-card"><i class="fas fa-leaf source-icon"></i><div class="source-name">灵木</div><div>回复·双抗·生机</div></div>
+        </div>
+
+        <!-- 月卡年卡系统 -->
+        <div class="main-grid">
+            <div class="card">
+                <div class="card-title"><i class="fas fa-calendar-alt"></i> 月卡·年卡·终身卡</div>
+                <div class="level-row"><span><i class="fas fa-moon"></i> 灵约月卡</span><span class="level-tag gold">¥30</span></div>
+                <div class="level-row"><span>每日领300灵约石</span><span class="level-tag green">30天</span></div>
+                <div class="level-row"><span>专属月卡皮肤·月华</span><span class="level-tag blue">限时</span></div>
+                <div class="level-row"><span><i class="fas fa-sun"></i> 灵约年卡</span><span class="level-tag gold">¥328</span></div>
+                <div class="level-row"><span>每日领500灵约石</span><span class="level-tag green">365天</span></div>
+                <div class="level-row"><span>专属年卡皮肤·岁星</span><span class="level-tag purple">限定</span></div>
+                <div class="level-row"><span><i class="fas fa-infinity"></i> 终身卡</span><span class="level-tag gold">¥998</span></div>
+                <div class="level-row"><span>每日领1000灵约石</span><span class="level-tag red">永久</span></div>
+                <div class="level-row"><span>专属终身皮肤·永恒</span><span class="level-tag purple">绝版</span></div>
+            </div>
+            <div class="card">
+                <div class="card-title"><i class="fas fa-ticket-alt"></i> 周卡·季卡·半年卡</div>
+                <div class="level-row"><span><i class="fas fa-calendar-week"></i> 灵约周卡</span><span class="level-tag gold">¥12</span></div>
+                <div class="level-row"><span>每日领100灵约石</span><span class="level-tag blue">7天</span></div>
+                <div class="level-row"><span>周卡特惠礼包</span><span class="level-tag green">7折</span></div>
+                <div class="level-row"><span><i class="fas fa-calendar-alt"></i> 灵约季卡</span><span class="level-tag gold">¥88</span></div>
+                <div class="level-row"><span>每日领200灵约石</span><span class="level-tag purple">90天</span></div>
+                <div class="level-row"><span>季卡特惠礼包</span><span class="level-tag blue">6折</span></div>
+                <div class="level-row"><span><i class="fas fa-calendar-check"></i> 半年卡</span><span class="level-tag gold">¥168</span></div>
+                <div class="level-row"><span>每日领350灵约石</span><span class="level-tag teal">180天</span></div>
+                <div class="level-row"><span>半年卡特惠礼包</span><span class="level-tag gold">5折</span></div>
+            </div>
+            <div class="card">
+                <div class="card-title"><i class="fas fa-gem"></i> 充值返利·首充双倍</div>
+                <div class="level-row"><span>首充任意金额</span><span class="level-tag gold">双倍灵约石</span></div>
+                <div class="level-row"><span>首充6元</span><span class="level-tag blue">送英雄·云梦</span></div>
+                <div class="level-row"><span>首充30元</span><span class="level-tag purple">送皮肤·初灵</span></div>
+                <div class="level-row"><span>首充98元</span><span class="level-tag teal">送坐骑·天马</span></div>
+                <div class="level-row"><span>首充198元</span><span class="level-tag red">送灵宠·烛龙</span></div>
+                <div class="level-row"><span>累充500元</span><span class="level-tag gold">送神器·轩辕剑</span></div>
+                <div class="level-row"><span>累充1000元</span><span class="level-tag purple">送三十六阶皮肤</span></div>
+            </div>
         </div>
 
         <!-- 26大游戏模式 -->
@@ -396,7 +417,7 @@
             </div>
         </div>
 
-        <!-- 36主题活动 -->
+        <!-- 108活动模块 - 节日活动+送皮肤活动 -->
         <div class="main-grid">
             <div class="card">
                 <div class="card-title"><i class="fas fa-calendar-alt"></i> 日常活动 (12种)</div>
@@ -442,6 +463,104 @@
                 <div class="event-item"><span>节日庆典</span><span class="event-tag purple">中秋</span></div>
                 <div class="event-item"><span>周年庆典</span><span class="event-tag gold">3周年</span></div>
                 <div class="event-item"><span>新英雄试炼</span><span class="event-tag green">7天</span></div>
+            </div>
+        </div>
+
+        <!-- 节日活动 + 送皮肤活动 -->
+        <div class="main-grid">
+            <div class="card">
+                <div class="card-title"><i class="fas fa-tree"></i> 节日活动 (12种)</div>
+                <div class="event-item"><span>春节活动</span><span class="event-tag red">送皮肤·年兽</span></div>
+                <div class="event-item"><span>元宵活动</span><span class="event-tag gold">送汤圆坐骑</span></div>
+                <div class="event-item"><span>清明活动</span><span class="event-tag blue">送踏青灵宠</span></div>
+                <div class="event-item"><span>端午活动</span><span class="event-tag green">送粽子神器</span></div>
+                <div class="event-item"><span>七夕活动</span><span class="event-tag purple">送情缘皮肤</span></div>
+                <div class="event-item"><span>中秋活动</span><span class="event-tag gold">送月兔坐骑</span></div>
+                <div class="event-item"><span>国庆活动</span><span class="event-tag red">送红旗皮肤</span></div>
+                <div class="event-item"><span>万圣节</span><span class="event-tag purple">送南瓜灵宠</span></div>
+                <div class="event-item"><span>圣诞节</span><span class="event-tag teal">送雪橇坐骑</span></div>
+                <div class="event-item"><span>元旦活动</span><span class="event-tag gold">送新年皮肤</span></div>
+                <div class="event-item"><span>情人节</span><span class="event-tag red">送玫瑰法宝</span></div>
+                <div class="event-item"><span>愚人节</span><span class="event-tag green">送整蛊神器</span></div>
+            </div>
+            <div class="card">
+                <div class="card-title"><i class="fas fa-gift"></i> 送皮肤活动 (12种)</div>
+                <div class="event-item"><span>新手七日登录</span><span class="event-tag gold">送初灵皮肤</span></div>
+                <div class="event-item"><span>老友回归</span><span class="event-tag blue">送通灵皮肤</span></div>
+                <div class="event-item"><span>段位达到羽化</span><span class="event-tag purple">送业火皮肤</span></div>
+                <div class="event-item"><span>巅峰赛前100</span><span class="event-tag red">送寒霜皮肤</span></div>
+                <div class="event-item"><span>宗门战冠军</span><span class="event-tag gold">送雷鸣皮肤</span></div>
+                <div class="event-item"><span>收集50英雄</span><span class="event-tag green">送灵木皮肤</span></div>
+                <div class="event-item"><span>灵宠图鉴100</span><span class="event-tag teal">送万灵皮肤</span></div>
+                <div class="event-item"><span>坐骑图鉴100</span><span class="event-tag purple">送无量皮肤</span></div>
+                <div class="event-item"><span>符文收集108</span><span class="event-tag blue">送混沌皮肤</span></div>
+                <div class="event-item"><span>铭文收集108</span><span class="event-tag gold">送鸿蒙皮肤</span></div>
+                <div class="event-item"><span>VIP15成就</span><span class="event-tag red">送造化皮肤</span></div>
+                <div class="event-item"><span>渡劫飞升成功</span><span class="event-tag purple">送永恒皮肤</span></div>
+            </div>
+            <div class="card">
+                <div class="card-title"><i class="fas fa-trophy"></i> 限时活动 (12种)</div>
+                <div class="event-item"><span>周末双倍</span><span class="event-tag gold">经验金币+100%</span></div>
+                <div class="event-item"><span>限时折扣</span><span class="event-tag blue">皮肤7折</span></div>
+                <div class="event-item"><span>限时抽奖</span><span class="event-tag purple">概率UP</span></div>
+                <div class="event-item"><span>限时兑换</span><span class="event-tag teal">碎片兑换</span></div>
+                <div class="event-item"><span>限时副本</span><span class="event-tag red">掉落双倍</span></div>
+                <div class="event-item"><span>限时BOSS</span><span class="event-tag green">稀有奖励</span></div>
+                <div class="event-item"><span>限时任务</span><span class="event-tag gold">送限定称号</span></div>
+                <div class="event-item"><span>限时挑战</span><span class="event-tag blue">送限定头像</span></div>
+                <div class="event-item"><span>限时竞技</span><span class="event-tag purple">送限定皮肤</span></div>
+                <div class="event-item"><span>限时组队</span><span class="event-tag teal">送限定灵宠</span></div>
+                <div class="event-item"><span>限时公会</span><span class="event-tag red">送限定坐骑</span></div>
+                <div class="event-item"><span>限时结婚</span><span class="event-tag gold">送限定情缘</span></div>
+            </div>
+        </div>
+
+        <!-- 更多活动 -->
+        <div class="main-grid">
+            <div class="card">
+                <div class="card-title"><i class="fas fa-gem"></i> 充值活动 (12种)</div>
+                <div class="event-item"><span>首充双倍</span><span class="event-tag gold">重置</span></div>
+                <div class="event-item"><span>累充6元</span><span class="event-tag blue">送英雄</span></div>
+                <div class="event-item"><span>累充30元</span><span class="event-tag purple">送皮肤</span></div>
+                <div class="event-item"><span>累充98元</span><span class="event-tag teal">送坐骑</span></div>
+                <div class="event-item"><span>累充198元</span><span class="event-tag red">送灵宠</span></div>
+                <div class="event-item"><span>累充328元</span><span class="event-tag gold">送神器</span></div>
+                <div class="event-item"><span>累充648元</span><span class="event-tag blue">送法宝</span></div>
+                <div class="event-item"><span>累充1000元</span><span class="event-tag purple">送三十六阶</span></div>
+                <div class="event-item"><span>累充2000元</span><span class="event-tag teal">送VIP经验</span></div>
+                <div class="event-item"><span>累充5000元</span><span class="event-tag red">送至尊称号</span></div>
+                <div class="event-item"><span>累充10000元</span><span class="event-tag gold">送专属客服</span></div>
+                <div class="event-item"><span>累充20000元</span><span class="event-tag purple">送线下聚会</span></div>
+            </div>
+            <div class="card">
+                <div class="card-title"><i class="fas fa-clock"></i> 限时抢购 (12种)</div>
+                <div class="event-item"><span>每日特惠</span><span class="event-tag blue">6折</span></div>
+                <div class="event-item"><span>每周特惠</span><span class="event-tag purple">5折</span></div>
+                <div class="event-item"><span>每月特惠</span><span class="event-tag gold">4折</span></div>
+                <div class="event-item"><span>限时秒杀</span><span class="event-tag red">3折</span></div>
+                <div class="event-item"><span>节日特惠</span><span class="event-tag green">2折</span></div>
+                <div class="event-item"><span>周年特惠</span><span class="event-tag teal">1折</span></div>
+                <div class="event-item"><span>新皮肤折扣</span><span class="event-tag blue">7折</span></div>
+                <div class="event-item"><span>英雄折扣</span><span class="event-tag purple">6折</span></div>
+                <div class="event-item"><span>灵宠折扣</span><span class="event-tag gold">5折</span></div>
+                <div class="event-item"><span>坐骑折扣</span><span class="event-tag teal">4折</span></div>
+                <div class="event-item"><span>神器折扣</span><span class="event-tag red">3折</span></div>
+                <div class="event-item"><span>法宝折扣</span><span class="event-tag green">2折</span></div>
+            </div>
+            <div class="card">
+                <div class="card-title"><i class="fas fa-tasks"></i> 活跃活动 (12种)</div>
+                <div class="event-item"><span>每日活跃</span><span class="event-tag blue">100点</span></div>
+                <div class="event-item"><span>每周活跃</span><span class="event-tag purple">500点</span></div>
+                <div class="event-item"><span>每月活跃</span><span class="event-tag gold">2000点</span></div>
+                <div class="event-item"><span>赛季活跃</span><span class="event-tag teal">10000点</span></div>
+                <div class="event-item"><span>战斗达人</span><span class="event-tag red">50场</span></div>
+                <div class="event-item"><span>胜利达人</span><span class="event-tag green">30胜</span></div>
+                <div class="event-item"><span>MVP达人</span><span class="event-tag blue">10次</span></div>
+                <div class="event-item"><span>五杀达人</span><span class="event-tag purple">1次</span></div>
+                <div class="event-item"><span>连杀达人</span><span class="event-tag gold">10连杀</span></div>
+                <div class="event-item"><span>助攻达人</span><span class="event-tag teal">50助攻</span></div>
+                <div class="event-item"><span>推塔达人</span><span class="event-tag red">20塔</span></div>
+                <div class="event-item"><span>打龙达人</span><span class="event-tag green">10龙</span></div>
             </div>
         </div>
 
@@ -854,13 +973,13 @@
             <div class="card">
                 <div class="card-title"><i class="fas fa-gift"></i> 预约奖励</div>
                 <div style="padding: 10px;">
-                    「无量终章」限定头像框<br>三十六阶皮肤自选箱×9<br>神兽坐骑蛋·混沌×5<br>灵宠·烛龙幼崽×5<br>VIP经验×10000000<br>巅峰赛门票×500<br>渡劫材料大礼包
+                    「无量终章」限定头像框<br>三十六阶皮肤自选箱×9<br>神兽坐骑蛋·混沌×5<br>灵宠·烛龙幼崽×5<br>VIP经验×10000000<br>巅峰赛门票×500<br>渡劫材料大礼包<br>月卡体验卡×30天
                 </div>
             </div>
             <div class="card">
                 <div class="card-title"><i class="fas fa-clock"></i> 赛季信息</div>
                 <div style="padding: 10px;">
-                    S1 · 初灵启源 · 8月8日<br>S2 · 巅峰之战 · 10月10日<br>S3 · 渡劫飞升 · 12月12日<br>S4 · 轮回转世 · 2月2日<br>S5 · 因果业力 · 4月4日<br>S6 · 混沌无量 · 6月6日<br>S7-S12 · 敬请期待<br>全平台 · 数据互通<br>预约突破两亿
+                    S1 · 初灵启源 · 8月8日<br>S2 · 巅峰之战 · 10月10日<br>S3 · 渡劫飞升 · 12月12日<br>S4 · 轮回转世 · 2月2日<br>S5 · 因果业力 · 4月4日<br>S6 · 混沌无量 · 6月6日<br>S7-S12 · 敬请期待<br>全平台 · 数据互通<br>预约突破三亿
                 </div>
             </div>
         </div>
@@ -879,15 +998,16 @@
                 <span class="platform-item"><i class="fas fa-globe"></i> Web</span>
                 <span class="platform-item"><i class="fas fa-mobile-alt"></i> HarmonyOS</span>
                 <span class="platform-item"><i class="fab fa-xbox"></i> Xbox</span>
+                <span class="platform-item"><i class="fab fa-nintendo-switch"></i> Switch</span>
             </div>
-            <p style="font-size: 18px; margin-top: 20px;">已有 200,888,888 位道友缔结契约 · 预约突破两亿</p>
+            <p style="font-size: 18px; margin-top: 20px;">已有 300,888,888 位道友缔结契约 · 预约突破三亿</p>
         </div>
 
         <!-- 底部 - 全模块索引 -->
         <div class="footer">
             <div>英雄108</div><div>三十六阶皮肤</div><div>灵宠108</div><div>坐骑108</div>
             <div>神器108</div><div>法宝108</div><div>符文108</div><div>铭文108</div>
-            <div>转职72</div><div>灵根36</div><div>26模式</div><div>36活动</div>
+            <div>转职72</div><div>灵根36</div><div>26模式</div><div>108活动</div>
             <div>段位16</div><div>巅峰赛</div><div>VIP36</div><div>战令</div>
             <div>渡劫36</div><div>轮回</div><div>功法108</div><div>神通108</div>
             <div>灵诀108</div><div>阵法108</div><div>炼丹108</div><div>炼器108</div>
@@ -895,12 +1015,14 @@
             <div>结婚</div><div>师徒</div><div>家族</div><div>宗门</div>
             <div>家园</div><div>仙府</div><div>神国</div><div>天界</div>
             <div>魔界</div><div>妖界</div><div>冥界</div><div>灵界</div>
+            <div>月卡</div><div>年卡</div><div>终身卡</div><div>周卡</div>
+            <div>季卡</div><div>半年卡</div><div>首充</div><div>累充</div>
         </div>
         <div style="text-align: center;">
-            <span class="s1">S1-S12 · 26模式·36活动 · 全模块 · 两亿道友</span>
+            <span class="s1">S1-S12 · 26模式·108活动·全卡 · 全模块 · 三亿道友</span>
         </div>
         <div style="text-align: center; color: #a088d0; margin-top: 20px; font-size: 14px;">
-            © 灵约 · 动漫修仙5V5 · 26大模式·36主题活动·108英雄·36阶皮肤·108灵宠·108坐骑·108神器·108法宝·108符文·108铭文·72转职·36灵根·VIP36·渡劫36·全模块完全体
+            © 灵约 · 动漫修仙5V5 · 26大模式·108活动·月卡年卡终身卡·送皮肤活动·全模块完全体
         </div>
     </div>
 
