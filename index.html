@@ -3,16 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>灵约 · 轻量化完全体 | 动漫修仙MOBA 全模块·流畅体验</title>
-    <!-- 字体与图标库 - 使用系统字体优先，减少加载 -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;800&display=swap" rel="stylesheet">
-    <!-- Font Awesome 6 - 使用精简版kit? 不，使用CDN但采用async加载 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></noscript>
+    <title>灵约 · 终极完全体 | 动漫修仙MOBA 全模块·极致流畅</title>
+    <!-- 关键CSS内联，移除阻塞 -->
     <style>
-        /* 关键CSS优先加载 */
+        /* 重置与核心样式 - 极速渲染 */
         * {
             margin: 0;
             padding: 0;
@@ -20,597 +14,609 @@
         }
 
         body {
-            background: #0a0718; /* 纯色背景替代复杂粒子，大幅提升性能 */
-            font-family: 'Exo 2', system-ui, -apple-system, sans-serif;
+            background: #08051a; /* 纯色背景，无任何开销 */
+            font-family: system-ui, -apple-system, 'Exo 2', 'Segoe UI', Roboto, sans-serif;
             color: #f0eaff;
             overflow-x: hidden;
             line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* 简化背景 - 使用纯色+简单渐变，移除复杂动画和粒子 */
-        .bg-simple {
+        /* 极简背景层 - 无动画无粒子 */
+        .bg-static {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(ellipse at 30% 40%, #2a1a3a 0%, #0a0518 100%);
-            z-index: -1;
+            background: radial-gradient(ellipse at 30% 40%, #2a1a42 0%, #070318 100%);
+            z-index: -2;
         }
         
-        /* 只保留一个非常简单的静态纹理，无动画 */
-        .bg-simple::after {
+        /* 单层静态纹理 - 无动画 */
+        .bg-static::after {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" opacity="0.05"><path d="M100 40 L160 100 L100 160 L40 100 Z" fill="none" stroke="%23aa88ff" stroke-width="2"/></svg>');
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgdmlld0JveD0iMCAwIDgwIDgwIiBvcGFjaXR5PSIwLjA0Ij48cGF0aCBkPSJNNDAgMTUgTDY1IDQwIEw0MCA2NSBMMTUgNDAgWiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYWE4OGZmIiBzdHJva2Utd2lkdGg9IjIiLz48L3N2Zz4=');
             background-repeat: repeat;
+            opacity: 0.3;
             pointer-events: none;
         }
 
-        /* 主容器 - 优化边距 */
-        .site-wrapper {
+        /* 主容器 - 优化内边距 */
+        .container {
             max-width: 2000px;
             margin: 0 auto;
-            padding: 0 2rem 3rem;
+            padding: 0 20px 40px;
             position: relative;
         }
 
-        /* 导航 - 简化效果，移除模糊 */
-        .navbar {
+        /* 导航 - 无模糊 */
+        .nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.5rem 0;
-            border-bottom: 2px solid rgba(180, 140, 255, 0.4);
-            margin-bottom: 1.5rem;
+            padding: 16px 0;
+            border-bottom: 2px solid rgba(170, 130, 240, 0.3);
+            margin-bottom: 20px;
             flex-wrap: wrap;
+            gap: 10px;
         }
-        .logo-area {
+        .logo {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 10px;
         }
-        .logo-icon {
-            font-size: 3rem;
-            color: #dbb6ff;
-            filter: drop-shadow(0 0 20px #a07aff);
+        .logo i {
+            font-size: 36px;
+            color: #d0b0ff;
+            filter: drop-shadow(0 0 15px #9f7aff);
         }
-        .logo-text {
-            font-size: 2.5rem;
+        .logo span {
+            font-size: 28px;
             font-weight: 800;
-            background: linear-gradient(145deg, #ffffff, #d0b0ff);
+            background: linear-gradient(145deg, #fff, #d4b5ff);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
         }
         .nav-links {
             display: flex;
-            gap: 2rem;
-            font-size: 1.2rem;
+            gap: 20px;
+            font-size: 16px;
             font-weight: 600;
             flex-wrap: wrap;
         }
         .nav-links span {
-            color: #d0baff;
+            color: #cbb5ff;
             cursor: default;
         }
-        .badge-light {
-            background: #2a1d48;
-            border-radius: 60px;
-            padding: 0.6rem 2rem;
-            border: 2px solid #b592ff;
-            font-size: 1rem;
+        .nav-badge {
+            background: #251d48;
+            border-radius: 40px;
+            padding: 8px 24px;
+            border: 2px solid #b38eff;
+            font-size: 14px;
+            white-space: nowrap;
         }
 
-        /* 主视觉 - 简化阴影 */
-        .hero-vision {
+        /* 主视觉 - 精简 */
+        .hero {
             text-align: center;
-            margin: 0.5rem 0 3rem;
+            margin: 10px 0 40px;
         }
-        .hero-title {
-            font-size: 6rem;
+        .hero h1 {
+            font-size: clamp(3rem, 10vw, 7rem);
             font-weight: 900;
-            letter-spacing: 8px;
-            background: linear-gradient(145deg, #ffffff, #e4ccff, #c6a2ff);
+            letter-spacing: 4px;
+            background: linear-gradient(145deg, #fff, #e8d0ff, #caaaff);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            text-shadow: 0 0 60px #b185ff;
+            text-shadow: 0 0 40px #b792ff;
             line-height: 1.1;
         }
-        .hero-sub {
-            font-size: 2rem;
-            background: rgba(20, 10, 40, 0.7);
-            padding: 0.8rem 4rem;
-            border-radius: 80px;
-            border: 2px solid #dbbaff;
+        .hero p {
+            font-size: clamp(1.2rem, 4vw, 2.2rem);
+            background: rgba(20, 10, 40, 0.6);
+            padding: 10px 40px;
+            border-radius: 60px;
+            border: 2px solid #d0b0ff;
             display: inline-block;
-            backdrop-filter: none; /* 移除模糊提高性能 */
+            margin-top: 10px;
         }
 
-        /* 四大本源 - 简化边框阴影 */
-        .source-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-            margin: 2rem 0 4rem;
-        }
-        .source-item {
-            background: rgba(15, 8, 30, 0.9);
-            border-radius: 120px 120px 50px 50px;
-            border: 3px solid;
-            padding: 2rem 1rem 1.8rem;
-            text-align: center;
-        }
-        .source-item:nth-child(1) { border-color: #ff8a5c; }
-        .source-item:nth-child(2) { border-color: #7ac2ff; }
-        .source-item:nth-child(3) { border-color: #ffe97a; }
-        .source-item:nth-child(4) { border-color: #8cf5a0; }
-        .source-icon { font-size: 4rem; }
-        .source-name { font-size: 2.5rem; font-weight: 800; }
-
-        /* 统一卡片样式 - 无模糊，轻阴影 */
-        .card {
-            background: rgba(18, 10, 35, 0.9);
-            border-radius: 50px;
-            padding: 1.5rem;
-            border: 2px solid #b792ff;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-        }
-        .card-title {
-            font-size: 1.8rem;
-            font-weight: 700;
-            border-left: 12px solid #cfb0ff;
-            padding-left: 1.2rem;
-            margin-bottom: 1.2rem;
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-        }
-
-        /* 三列主网格 */
-        .master-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            margin: 1.5rem 0;
-        }
-
-        /* 内部小网格 */
+        /* 四大本源网格 */
         .grid-4 {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 0.6rem;
+            gap: 20px;
+            margin: 30px 0 50px;
         }
-        .grid-3 {
+        .source-card {
+            background: #120b28;
+            border-radius: 100px 100px 40px 40px;
+            border: 3px solid;
+            padding: 30px 10px 20px;
+            text-align: center;
+        }
+        .source-card:nth-child(1) { border-color: #ff8a5c; }
+        .source-card:nth-child(2) { border-color: #7ac2ff; }
+        .source-card:nth-child(3) { border-color: #ffe97a; }
+        .source-card:nth-child(4) { border-color: #8cf5a0; }
+        .source-icon { font-size: 48px; }
+        .source-name { font-size: 28px; font-weight: 800; }
+
+        /* 统一卡片 - 极轻量 */
+        .card {
+            background: #120d28;
+            border-radius: 40px;
+            padding: 18px;
+            border: 2px solid #b38eff;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        }
+        .card-title {
+            font-size: 20px;
+            font-weight: 700;
+            border-left: 10px solid #c6a6ff;
+            padding-left: 14px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* 三列主网格 */
+        .main-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 0.6rem;
+            gap: 18px;
+            margin: 20px 0;
         }
-        .grid-2 {
+
+        /* 内部小网格 */
+        .inner-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 6px;
+        }
+        .inner-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 6px;
+        }
+        .inner-2 {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 0.6rem;
+            gap: 6px;
         }
 
-        /* 迷你卡片 - 无复杂效果 */
-        .mini-card {
-            background: #251d42;
-            border-radius: 30px;
-            padding: 1rem 0.2rem;
+        /* 迷你卡片 - 极轻 */
+        .mini {
+            background: #231d40;
+            border-radius: 24px;
+            padding: 10px 2px;
             text-align: center;
-            border: 1px solid #9f83dd;
-            font-size: 0.9rem;
+            border: 1px solid #9b80d0;
+            font-size: 13px;
         }
-        .mini-card i { font-size: 2rem; }
-        .mini-card span { display: block; margin-top: 0.2rem; }
+        .mini i { font-size: 22px; display: block; margin-bottom: 4px; }
 
-        /* 抽奖区 - 简化 */
-        .gacha-light {
-            background: linear-gradient(145deg, #352b5a, #181138);
-            border-radius: 120px;
-            padding: 2.5rem 3rem;
-            margin: 3rem 0;
-            border: 4px solid #e2c9ff;
+        /* 抽奖区 */
+        .gacha {
+            background: #2a2355;
+            border-radius: 80px;
+            padding: 30px 40px;
+            margin: 30px 0;
+            border: 4px solid #dbbaff;
         }
-        .gacha-light-grid {
+        .gacha-inner {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 1.5rem;
+            gap: 30px;
+            margin-top: 20px;
         }
-        .gacha-light-item {
-            background: #2a2250;
-            border-radius: 60px;
-            padding: 1.8rem;
-            border: 3px solid #dbbaff;
+        .gacha-item {
+            background: #1f1948;
+            border-radius: 50px;
+            padding: 20px;
+            border: 3px solid #c6a6ff;
             text-align: center;
         }
 
-        /* 预约区 - 简化 */
-        .preorder-light {
-            background: linear-gradient(145deg, #3a2d6a, #19123b);
-            border-radius: 150px;
-            padding: 3rem 4rem;
-            margin: 3rem 0;
-            border: 4px solid #e6ceff;
+        /* 预约区 */
+        .preorder {
+            background: #31296a;
+            border-radius: 100px;
+            padding: 40px 50px;
+            margin: 30px 0;
+            border: 4px solid #e4caff;
             text-align: center;
         }
-        .platform-light {
+        .platforms {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 1.5rem;
-            margin: 2rem 0;
+            gap: 20px;
+            margin: 25px 0;
         }
-        .platform-light-item {
-            background: #2e255a;
-            border-radius: 60px;
-            padding: 1.2rem 2.5rem;
-            border: 3px solid #dbbaff;
-            font-size: 2.5rem;
+        .platform-item {
+            background: #231d58;
+            border-radius: 50px;
+            padding: 12px 30px;
+            border: 3px solid #caacff;
+            font-size: 28px;
         }
 
-        /* 底部 - 简化 */
-        .footer-light {
+        /* 底部 */
+        .footer {
             display: grid;
             grid-template-columns: repeat(6, 1fr);
-            gap: 1rem;
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 3px solid #9b80d0;
-            font-size: 0.9rem;
+            gap: 12px;
+            margin-top: 40px;
+            padding-top: 25px;
+            border-top: 3px solid #9a7fd0;
         }
-        .s1-light {
+        .s1 {
             text-align: center;
-            margin: 2rem 0 1rem;
-            font-size: 2rem;
-            background: #251e48;
+            margin: 20px 0 10px;
+            font-size: 24px;
+            background: #1e1740;
             display: inline-block;
-            padding: 0.8rem 4rem;
-            border-radius: 60px;
-            border: 3px solid #ccaeff;
+            padding: 8px 50px;
+            border-radius: 50px;
+            border: 3px solid #bfa2ff;
         }
 
-        /* 响应式 - 优化 */
-        @media (max-width: 1400px) {
-            .master-grid { grid-template-columns: repeat(2, 1fr); }
-            .footer-light { grid-template-columns: repeat(3, 1fr); }
-            .hero-title { font-size: 5rem; }
+        /* 响应式 - 关键断点 */
+        @media (max-width: 1300px) {
+            .main-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer { grid-template-columns: repeat(3, 1fr); }
         }
         @media (max-width: 900px) {
-            .master-grid { grid-template-columns: 1fr; }
-            .source-grid { grid-template-columns: repeat(2, 1fr); }
-            .gacha-light-grid { grid-template-columns: 1fr; }
-            .hero-title { font-size: 4rem; }
+            .grid-4 { grid-template-columns: repeat(2, 1fr); }
+            .main-grid { grid-template-columns: 1fr; }
+            .gacha-inner { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 4rem; }
         }
         @media (max-width: 600px) {
-            .source-grid { grid-template-columns: 1fr; }
-            .site-wrapper { padding: 0 1rem 2rem; }
+            .grid-4 { grid-template-columns: 1fr; }
+            .container { padding: 0 12px 30px; }
         }
+
+        /* 字体加载优化 - 异步 */
+        .fonts-loaded body { font-family: 'Exo 2', system-ui, sans-serif; }
     </style>
+    <!-- 异步加载字体和图标 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- 使用preload关键字体，非阻塞 -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;800&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;800&display=swap"></noscript>
+    
+    <!-- Font Awesome 异步加载 -->
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></noscript>
 </head>
 <body>
-    <div class="bg-simple"></div>
+    <div class="bg-static"></div>
 
-    <div class="site-wrapper">
+    <div class="container">
         <!-- 导航 -->
-        <div class="navbar">
-            <div class="logo-area">
-                <i class="fas fa-feather-alt logo-icon"></i>
-                <span class="logo-text">灵约 · 轻量化</span>
+        <div class="nav">
+            <div class="logo">
+                <i class="fas fa-feather-alt" aria-hidden="true"></i>
+                <span>灵约 · 完全体</span>
             </div>
             <div class="nav-links">
                 <span>英雄</span><span>皮肤</span><span>灵宠</span><span>坐骑</span><span>符文</span><span>铭文</span><span>神器</span>
             </div>
-            <div class="badge-light"><i class="fas fa-bolt"></i> 流畅体验</div>
+            <div class="nav-badge"><i class="fas fa-bolt"></i> 极致流畅</div>
         </div>
 
         <!-- 主视觉 -->
-        <div class="hero-vision">
-            <div class="hero-title">《灵 约 · 全 模 块》</div>
-            <div class="hero-sub"><i class="fas fa-star"></i> 轻量化 · 不卡顿 · 万物归宗 <i class="fas fa-star"></i></div>
+        <div class="hero">
+            <h1>《灵 约 · 终 极》</h1>
+            <p><i class="fas fa-star"></i> 全模块 · 零卡顿 · 万物归宗 <i class="fas fa-star"></i></p>
         </div>
 
         <!-- 四大本源 -->
-        <div class="source-grid">
-            <div class="source-item"><i class="fas fa-fire source-icon"></i><div class="source-name">业火</div><div>真伤·灼烧</div></div>
-            <div class="source-item"><i class="fas fa-snowflake source-icon"></i><div class="source-name">寒霜</div><div>冷却·减速</div></div>
-            <div class="source-item"><i class="fas fa-bolt source-icon"></i><div class="source-name">雷鸣</div><div>攻速·连锁</div></div>
-            <div class="source-item"><i class="fas fa-leaf source-icon"></i><div class="source-name">灵木</div><div>回复·双抗</div></div>
+        <div class="grid-4">
+            <div class="source-card"><i class="fas fa-fire source-icon"></i><div class="source-name">业火</div><div>真伤·灼烧</div></div>
+            <div class="source-card"><i class="fas fa-snowflake source-icon"></i><div class="source-name">寒霜</div><div>冷却·减速</div></div>
+            <div class="source-card"><i class="fas fa-bolt source-icon"></i><div class="source-name">雷鸣</div><div>攻速·连锁</div></div>
+            <div class="source-card"><i class="fas fa-leaf source-icon"></i><div class="source-name">灵木</div><div>回复·双抗</div></div>
         </div>
 
-        <!-- 主网格：三列布局，包含所有模块（轻量化版本，保留全部模块但优化渲染） -->
-        <div class="master-grid">
-            <!-- 1. 英雄 -->
+        <!-- 主网格：三列，包含所有模块 -->
+        <div class="main-grid">
+            <!-- 1. 英雄 81位 -->
             <div class="card">
-                <div class="card-title"><i class="fas fa-dragon"></i> 英雄 · 81位</div>
-                <div class="grid-4">
-                    <div class="mini-card"><i class="fas fa-dragon"></i><span>苍岚</span></div>
-                    <div class="mini-card"><i class="fas fa-crow"></i><span>云梦</span></div>
-                    <div class="mini-card"><i class="fas fa-fox"></i><span>灵漪</span></div>
-                    <div class="mini-card"><i class="fas fa-eagle"></i><span>重明</span></div>
-                    <div class="mini-card"><i class="fas fa-spider"></i><span>幽螭</span></div>
-                    <div class="mini-card"><i class="fas fa-otter"></i><span>玄泽</span></div>
-                    <div class="mini-card"><i class="fas fa-dog"></i><span>祸斗</span></div>
-                    <div class="mini-card"><i class="fas fa-kiwi-bird"></i><span>毕方</span></div>
-                    <div class="mini-card"><i class="fas fa-cat"></i><span>月镰</span></div>
-                    <div class="mini-card"><i class="fas fa-dove"></i><span>白泽</span></div>
-                    <div class="mini-card"><i class="fas fa-fish"></i><span>瑶姬</span></div>
-                    <div class="mini-card"><i class="fas fa-hippo"></i><span>霸下</span></div>
+                <div class="card-title"><i class="fas fa-dragon"></i> 英雄 · 81</div>
+                <div class="inner-4">
+                    <div class="mini"><i class="fas fa-dragon"></i><span>苍岚</span></div>
+                    <div class="mini"><i class="fas fa-crow"></i><span>云梦</span></div>
+                    <div class="mini"><i class="fas fa-fox"></i><span>灵漪</span></div>
+                    <div class="mini"><i class="fas fa-eagle"></i><span>重明</span></div>
+                    <div class="mini"><i class="fas fa-spider"></i><span>幽螭</span></div>
+                    <div class="mini"><i class="fas fa-otter"></i><span>玄泽</span></div>
+                    <div class="mini"><i class="fas fa-dog"></i><span>祸斗</span></div>
+                    <div class="mini"><i class="fas fa-kiwi-bird"></i><span>毕方</span></div>
+                    <div class="mini"><i class="fas fa-cat"></i><span>月镰</span></div>
+                    <div class="mini"><i class="fas fa-dove"></i><span>白泽</span></div>
+                    <div class="mini"><i class="fas fa-fish"></i><span>瑶姬</span></div>
+                    <div class="mini"><i class="fas fa-hippo"></i><span>霸下</span></div>
                 </div>
             </div>
 
             <!-- 2. 皮肤七阶 -->
             <div class="card">
-                <div class="card-title"><i class="fas fa-palette"></i> 皮肤 · 七阶</div>
-                <div style="display: flex; flex-direction: column; gap: 0.8rem;">
-                    <div style="display: flex; justify-content: space-between; background: #2a1f48; border-radius: 40px; padding: 0.8rem 1.5rem;">
-                        <span><i class="fas fa-circle"></i> 初灵</span><span>默认</span>
-                    </div>
-                    <div style="display: flex; justify-content: space-between; background: #2a1f48; border-radius: 40px; padding: 0.8rem 1.5rem;">
-                        <span><i class="fas fa-star"></i> 通灵</span><span>稀有</span>
-                    </div>
-                    <div style="display: flex; justify-content: space-between; background: #2a1f48; border-radius: 40px; padding: 0.8rem 1.5rem;">
-                        <span><i class="fas fa-fire"></i> 业火</span><span>史诗</span>
-                    </div>
-                    <div style="display: flex; justify-content: space-between; background: #2a1f48; border-radius: 40px; padding: 0.8rem 1.5rem;">
-                        <span><i class="fas fa-snowflake"></i> 寒霜</span><span>传说</span>
-                    </div>
-                    <div style="display: flex; justify-content: space-between; background: #2a1f48; border-radius: 40px; padding: 0.8rem 1.5rem;">
-                        <span><i class="fas fa-bolt"></i> 雷鸣</span><span>神话</span>
-                    </div>
-                    <div style="display: flex; justify-content: space-between; background: #2a1f48; border-radius: 40px; padding: 0.8rem 1.5rem;">
-                        <span><i class="fas fa-leaf"></i> 灵木</span><span>至尊</span>
-                    </div>
-                    <div style="display: flex; justify-content: space-between; background: #2a1f48; border-radius: 40px; padding: 0.8rem 1.5rem;">
-                        <span><i class="fas fa-crown"></i> 万灵</span><span>七阶</span>
-                    </div>
+                <div class="card-title"><i class="fas fa-palette"></i> 七阶皮肤</div>
+                <div style="display: flex; flex-direction: column; gap: 8px;">
+                    <div style="display: flex; justify-content: space-between; background: #1e1738; border-radius: 30px; padding: 8px 16px;"><span><i class="fas fa-circle" style="color:#aaa;"></i> 初灵</span><span>默认</span></div>
+                    <div style="display: flex; justify-content: space-between; background: #1e1738; border-radius: 30px; padding: 8px 16px;"><span><i class="fas fa-star" style="color:#ffd966;"></i> 通灵</span><span>稀有</span></div>
+                    <div style="display: flex; justify-content: space-between; background: #1e1738; border-radius: 30px; padding: 8px 16px;"><span><i class="fas fa-fire" style="color:#ff8a5c;"></i> 业火</span><span>史诗</span></div>
+                    <div style="display: flex; justify-content: space-between; background: #1e1738; border-radius: 30px; padding: 8px 16px;"><span><i class="fas fa-snowflake" style="color:#7ac2ff;"></i> 寒霜</span><span>传说</span></div>
+                    <div style="display: flex; justify-content: space-between; background: #1e1738; border-radius: 30px; padding: 8px 16px;"><span><i class="fas fa-bolt" style="color:#ffe97a;"></i> 雷鸣</span><span>神话</span></div>
+                    <div style="display: flex; justify-content: space-between; background: #1e1738; border-radius: 30px; padding: 8px 16px;"><span><i class="fas fa-leaf" style="color:#8cf5a0;"></i> 灵木</span><span>至尊</span></div>
+                    <div style="display: flex; justify-content: space-between; background: #1e1738; border-radius: 30px; padding: 8px 16px;"><span><i class="fas fa-crown" style="color:#f0c45a;"></i> 万灵</span><span>七阶</span></div>
                 </div>
             </div>
 
             <!-- 3. 灵宠 + 坐骑 -->
             <div class="card">
-                <div class="card-title"><i class="fas fa-paw"></i> 灵宠 · 36天罡</div>
-                <div class="grid-2" style="margin-bottom: 1.5rem;">
-                    <div class="mini-card"><i class="fas fa-dragon"></i><span>烛龙</span></div>
-                    <div class="mini-card"><i class="fas fa-fox"></i><span>灵狐</span></div>
-                    <div class="mini-card"><i class="fas fa-otter"></i><span>玄龟</span></div>
-                    <div class="mini-card"><i class="fas fa-crow"></i><span>冥鸦</span></div>
-                    <div class="mini-card"><i class="fas fa-cat"></i><span>月猫</span></div>
-                    <div class="mini-card"><i class="fas fa-dog"></i><span>祸斗</span></div>
+                <div class="card-title"><i class="fas fa-paw"></i> 灵宠 · 36</div>
+                <div class="inner-2" style="margin-bottom: 12px;">
+                    <div class="mini"><i class="fas fa-dragon"></i><span>烛龙</span></div>
+                    <div class="mini"><i class="fas fa-fox"></i><span>灵狐</span></div>
+                    <div class="mini"><i class="fas fa-otter"></i><span>玄龟</span></div>
+                    <div class="mini"><i class="fas fa-crow"></i><span>冥鸦</span></div>
+                    <div class="mini"><i class="fas fa-cat"></i><span>月猫</span></div>
+                    <div class="mini"><i class="fas fa-dog"></i><span>祸斗</span></div>
                 </div>
-                <div class="card-title" style="margin-top: 0.5rem; font-size: 1.5rem;"><i class="fas fa-horse"></i> 坐骑 · 72地煞</div>
-                <div class="grid-2">
-                    <div class="mini-card"><i class="fas fa-dragon"></i><span>应龙</span></div>
-                    <div class="mini-card"><i class="fas fa-horse"></i><span>天马</span></div>
-                    <div class="mini-card"><i class="fas fa-cloud"></i><span>祥云</span></div>
-                    <div class="mini-card"><i class="fas fa-feather"></i><span>青鸾</span></div>
-                    <div class="mini-card"><i class="fas fa-fish"></i><span>鲲鹏</span></div>
-                    <div class="mini-card"><i class="fas fa-tiger"></i><span>穷奇</span></div>
-                </div>
-            </div>
-
-            <!-- 4. 符文 108种 -->
-            <div class="card">
-                <div class="card-title"><i class="fas fa-magic"></i> 符文 · 108种</div>
-                <div class="grid-3">
-                    <div class="mini-card">业火</div><div class="mini-card">寒霜</div><div class="mini-card">雷鸣</div>
-                    <div class="mini-card">灵木</div><div class="mini-card">太阴</div><div class="mini-card">太阳</div>
-                    <div class="mini-card">贪狼</div><div class="mini-card">巨门</div><div class="mini-card">禄存</div>
-                    <div class="mini-card">文曲</div><div class="mini-card">廉贞</div><div class="mini-card">武曲</div>
+                <div class="card-title" style="margin-top: 4px; font-size: 18px;"><i class="fas fa-horse"></i> 坐骑 · 72</div>
+                <div class="inner-2">
+                    <div class="mini"><i class="fas fa-dragon"></i><span>应龙</span></div>
+                    <div class="mini"><i class="fas fa-horse"></i><span>天马</span></div>
+                    <div class="mini"><i class="fas fa-cloud"></i><span>祥云</span></div>
+                    <div class="mini"><i class="fas fa-feather"></i><span>青鸾</span></div>
+                    <div class="mini"><i class="fas fa-fish"></i><span>鲲鹏</span></div>
+                    <div class="mini"><i class="fas fa-tiger"></i><span>穷奇</span></div>
                 </div>
             </div>
 
-            <!-- 5. 铭文 72种 -->
+            <!-- 4. 符文 108 -->
             <div class="card">
-                <div class="card-title"><i class="fas fa-scroll"></i> 铭文 · 72种</div>
-                <div class="grid-2">
-                    <div class="mini-card">破军</div><div class="mini-card">不动</div>
-                    <div class="mini-card">通灵</div><div class="mini-card">长生</div>
-                    <div class="mini-card">迅雷</div><div class="mini-card">踏云</div>
-                    <div class="mini-card">破甲</div><div class="mini-card">不屈</div>
-                    <div class="mini-card">龙威</div><div class="mini-card">羽化</div>
+                <div class="card-title"><i class="fas fa-magic"></i> 符文 · 108</div>
+                <div class="inner-3">
+                    <div class="mini">业火</div><div class="mini">寒霜</div><div class="mini">雷鸣</div>
+                    <div class="mini">灵木</div><div class="mini">太阴</div><div class="mini">太阳</div>
+                    <div class="mini">贪狼</div><div class="mini">巨门</div><div class="mini">禄存</div>
+                    <div class="mini">文曲</div><div class="mini">廉贞</div><div class="mini">武曲</div>
                 </div>
-                <p style="margin-top: 0.8rem; color: #b69eff;">五色铭文 · 自由搭配</p>
+            </div>
+
+            <!-- 5. 铭文 72 -->
+            <div class="card">
+                <div class="card-title"><i class="fas fa-scroll"></i> 铭文 · 72</div>
+                <div class="inner-2">
+                    <div class="mini">破军</div><div class="mini">不动</div>
+                    <div class="mini">通灵</div><div class="mini">长生</div>
+                    <div class="mini">迅雷</div><div class="mini">踏云</div>
+                    <div class="mini">破甲</div><div class="mini">不屈</div>
+                    <div class="mini">龙威</div><div class="mini">羽化</div>
+                </div>
+                <p style="margin-top: 8px; color: #b69eff; font-size: 13px;">五色 · 自由搭配</p>
             </div>
 
             <!-- 6. 神器 + 转职 -->
             <div class="card">
                 <div class="card-title"><i class="fas fa-crown"></i> 十大神器</div>
-                <div class="grid-2" style="margin-bottom: 1rem;">
-                    <div class="mini-card">轩辕剑</div><div class="mini-card">盘古斧</div>
-                    <div class="mini-card">炼妖壶</div><div class="mini-card">东皇钟</div>
-                    <div class="mini-card">昆仑镜</div><div class="mini-card">昊天塔</div>
+                <div class="inner-2" style="margin-bottom: 8px;">
+                    <div class="mini">轩辕剑</div><div class="mini">盘古斧</div>
+                    <div class="mini">炼妖壶</div><div class="mini">东皇钟</div>
+                    <div class="mini">昆仑镜</div><div class="mini">昊天塔</div>
                 </div>
-                <div class="card-title" style="margin-top: 0.5rem; font-size: 1.5rem;"><i class="fas fa-sync-alt"></i> 转职 · 九系</div>
-                <div class="grid-3">
-                    <div class="mini-card">剑仙</div><div class="mini-card">法尊</div><div class="mini-card">战圣</div>
-                    <div class="mini-card">灵师</div><div class="mini-card">影刺</div><div class="mini-card">御者</div>
+                <div class="card-title" style="margin-top: 4px; font-size: 18px;"><i class="fas fa-sync-alt"></i> 转职 · 9</div>
+                <div class="inner-3">
+                    <div class="mini">剑仙</div><div class="mini">法尊</div><div class="mini">战圣</div>
+                    <div class="mini">灵师</div><div class="mini">影刺</div><div class="mini">御者</div>
                 </div>
             </div>
 
             <!-- 7. 结婚 + 师徒 -->
             <div class="card">
                 <div class="card-title"><i class="fas fa-heart"></i> 结婚·情缘</div>
-                <div class="grid-2" style="margin-bottom: 1rem;">
-                    <div class="mini-card">道侣</div><div class="mini-card">双修</div>
-                    <div class="mini-card">情缘技</div><div class="mini-card">夫妻副本</div>
+                <div class="inner-2" style="margin-bottom: 8px;">
+                    <div class="mini">道侣</div><div class="mini">双修</div>
+                    <div class="mini">情缘技</div><div class="mini">夫妻副本</div>
                 </div>
-                <div class="card-title" style="margin-top: 0.5rem; font-size: 1.5rem;"><i class="fas fa-chalkboard-teacher"></i> 师徒</div>
-                <div class="grid-2">
-                    <div class="mini-card">拜师</div><div class="mini-card">收徒</div>
-                    <div class="mini-card">师徒技</div><div class="mini-card">出师</div>
+                <div class="card-title" style="margin-top: 4px; font-size: 18px;"><i class="fas fa-chalkboard-teacher"></i> 师徒</div>
+                <div class="inner-2">
+                    <div class="mini">拜师</div><div class="mini">收徒</div>
+                    <div class="mini">师徒技</div><div class="mini">出师</div>
                 </div>
             </div>
 
             <!-- 8. 宗门 + 家园 -->
             <div class="card">
                 <div class="card-title"><i class="fas fa-building"></i> 宗门战</div>
-                <div class="grid-2" style="margin-bottom: 1rem;">
-                    <div class="mini-card">百宗大战</div><div class="mini-card">灵脉争夺</div>
-                    <div class="mini-card">宗门商店</div><div class="mini-card">宗门技能</div>
+                <div class="inner-2" style="margin-bottom: 8px;">
+                    <div class="mini">百宗大战</div><div class="mini">灵脉争夺</div>
+                    <div class="mini">宗门商店</div><div class="mini">宗门技能</div>
                 </div>
-                <div class="card-title" style="margin-top: 0.5rem; font-size: 1.5rem;"><i class="fas fa-home"></i> 家园·洞府</div>
-                <div class="grid-2">
-                    <div class="mini-card">灵田</div><div class="mini-card">丹房</div>
-                    <div class="mini-card">器室</div><div class="mini-card">闭关</div>
+                <div class="card-title" style="margin-top: 4px; font-size: 18px;"><i class="fas fa-home"></i> 家园·洞府</div>
+                <div class="inner-2">
+                    <div class="mini">灵田</div><div class="mini">丹房</div>
+                    <div class="mini">器室</div><div class="mini">闭关</div>
                 </div>
             </div>
 
             <!-- 9. 成就 + 排行榜 -->
             <div class="card">
                 <div class="card-title"><i class="fas fa-trophy"></i> 成就系统</div>
-                <div class="grid-2" style="margin-bottom: 1rem;">
-                    <div class="mini-card">战斗</div><div class="mini-card">收集</div>
-                    <div class="mini-card">社交</div><div class="mini-card">隐藏</div>
+                <div class="inner-2" style="margin-bottom: 8px;">
+                    <div class="mini">战斗</div><div class="mini">收集</div>
+                    <div class="mini">社交</div><div class="mini">隐藏</div>
                 </div>
-                <div class="card-title" style="margin-top: 0.5rem; font-size: 1.5rem;"><i class="fas fa-list"></i> 排行榜</div>
-                <div class="grid-2">
-                    <div class="mini-card">巅峰</div><div class="mini-card">英雄</div>
-                    <div class="mini-card">宗门</div><div class="mini-card">财富</div>
+                <div class="card-title" style="margin-top: 4px; font-size: 18px;"><i class="fas fa-list"></i> 排行榜</div>
+                <div class="inner-2">
+                    <div class="mini">巅峰</div><div class="mini">英雄</div>
+                    <div class="mini">宗门</div><div class="mini">财富</div>
                 </div>
             </div>
 
             <!-- 10. 录像 + 直播 -->
             <div class="card">
                 <div class="card-title"><i class="fas fa-video"></i> 录像系统</div>
-                <div class="grid-2" style="margin-bottom: 1rem;">
-                    <div class="mini-card">回放</div><div class="mini-card">精彩时刻</div>
-                    <div class="mini-card">大神观战</div><div class="mini-card">战术分析</div>
+                <div class="inner-2" style="margin-bottom: 8px;">
+                    <div class="mini">回放</div><div class="mini">精彩时刻</div>
+                    <div class="mini">大神观战</div><div class="mini">战术分析</div>
                 </div>
-                <div class="card-title" style="margin-top: 0.5rem; font-size: 1.5rem;"><i class="fas fa-broadcast-tower"></i> 直播</div>
-                <div class="grid-2">
-                    <div class="mini-card">官方</div><div class="mini-card">大神</div>
-                    <div class="mini-card">赛事</div><div class="mini-card">教学</div>
+                <div class="card-title" style="margin-top: 4px; font-size: 18px;"><i class="fas fa-broadcast-tower"></i> 直播</div>
+                <div class="inner-2">
+                    <div class="mini">官方</div><div class="mini">大神</div>
+                    <div class="mini">赛事</div><div class="mini">教学</div>
                 </div>
             </div>
 
             <!-- 11. 段位 + 战令 -->
             <div class="card">
                 <div class="card-title"><i class="fas fa-trophy"></i> 灵魂十段</div>
-                <div class="grid-2" style="margin-bottom: 1rem;">
-                    <div class="mini-card">淬灵</div><div class="mini-card">锻魂</div>
-                    <div class="mini-card">通幽</div><div class="mini-card">羽化</div>
-                    <div class="mini-card">登神</div><div class="mini-card">万灵</div>
+                <div class="inner-2" style="margin-bottom: 8px;">
+                    <div class="mini">淬灵</div><div class="mini">锻魂</div>
+                    <div class="mini">通幽</div><div class="mini">羽化</div>
+                    <div class="mini">登神</div><div class="mini">万灵</div>
                 </div>
-                <div class="card-title" style="margin-top: 0.5rem; font-size: 1.5rem;"><i class="fas fa-scroll"></i> 战令</div>
-                <div class="grid-2">
-                    <div class="mini-card">初灵战令</div><div class="mini-card">觉醒战令</div>
+                <div class="card-title" style="margin-top: 4px; font-size: 18px;"><i class="fas fa-scroll"></i> 战令</div>
+                <div class="inner-2">
+                    <div class="mini">初灵战令</div><div class="mini">觉醒战令</div>
                 </div>
             </div>
 
             <!-- 12. 渡劫 + 飞升 -->
             <div class="card">
                 <div class="card-title"><i class="fas fa-cloud-sun"></i> 渡劫六境</div>
-                <div class="grid-2" style="margin-bottom: 1rem;">
-                    <div class="mini-card">金丹</div><div class="mini-card">元婴</div>
-                    <div class="mini-card">化神</div><div class="mini-card">渡劫</div>
-                    <div class="mini-card">大乘</div><div class="mini-card">飞升</div>
+                <div class="inner-2" style="margin-bottom: 8px;">
+                    <div class="mini">金丹</div><div class="mini">元婴</div>
+                    <div class="mini">化神</div><div class="mini">渡劫</div>
+                    <div class="mini">大乘</div><div class="mini">飞升</div>
                 </div>
-                <div class="card-title" style="margin-top: 0.5rem; font-size: 1.5rem;"><i class="fas fa-feather-alt"></i> 飞升奖励</div>
-                <div class="grid-2">
-                    <div class="mini-card">仙器</div><div class="mini-card">仙宠</div>
-                    <div class="mini-card">仙羽</div><div class="mini-card">仙号</div>
+                <div class="card-title" style="margin-top: 4px; font-size: 18px;"><i class="fas fa-feather-alt"></i> 飞升奖励</div>
+                <div class="inner-2">
+                    <div class="mini">仙器</div><div class="mini">仙宠</div>
+                    <div class="mini">仙羽</div><div class="mini">仙号</div>
                 </div>
             </div>
         </div>
 
         <!-- 抽奖系统 -->
-        <div class="gacha-light">
-            <div style="font-size: 3.5rem; font-weight: 900; text-align: center;">🎰 无量灵签 🎰</div>
-            <div class="gacha-light-grid">
-                <div class="gacha-light-item"><h3>天命池</h3>七阶皮肤2% · 70抽保底</div>
-                <div class="gacha-light-item"><h3>觉醒池</h3>神器3% · 50抽保底</div>
-                <div class="gacha-light-item"><h3>无量池</h3>万灵皮肤1.5% · 90抽保底</div>
+        <div class="gacha">
+            <div style="font-size: 36px; font-weight: 900; text-align: center;">🎰 无量灵签 · 召魂 🎰</div>
+            <div class="gacha-inner">
+                <div class="gacha-item"><h3>天命池</h3>七阶皮肤2% · 70抽保底</div>
+                <div class="gacha-item"><h3>觉醒池</h3>神器3% · 50抽保底</div>
+                <div class="gacha-item"><h3>无量池</h3>万灵皮肤1.5% · 90抽保底</div>
             </div>
         </div>
 
         <!-- 玩法大全 -->
-        <div class="master-grid" style="margin-top: 0;">
+        <div class="main-grid" style="margin-top: 0;">
             <div class="card">
                 <div class="card-title"><i class="fas fa-gamepad"></i> 核心玩法</div>
-                <div class="grid-2">
-                    <div class="mini-card">5V5</div><div class="mini-card">排位</div>
-                    <div class="mini-card">觉醒</div><div class="mini-card">灵宠</div>
-                    <div class="mini-card">坐骑</div><div class="mini-card">神器</div>
+                <div class="inner-2">
+                    <div class="mini">5V5</div><div class="mini">排位</div>
+                    <div class="mini">觉醒</div><div class="mini">灵宠</div>
+                    <div class="mini">坐骑</div><div class="mini">神器</div>
                 </div>
             </div>
             <div class="card">
                 <div class="card-title"><i class="fas fa-dice-d20"></i> 进阶玩法</div>
-                <div class="grid-2">
-                    <div class="mini-card">符文</div><div class="mini-card">铭文</div>
-                    <div class="mini-card">转职</div><div class="mini-card">结婚</div>
-                    <div class="mini-card">师徒</div><div class="mini-card">家园</div>
+                <div class="inner-2">
+                    <div class="mini">符文</div><div class="mini">铭文</div>
+                    <div class="mini">转职</div><div class="mini">结婚</div>
+                    <div class="mini">师徒</div><div class="mini">家园</div>
                 </div>
             </div>
             <div class="card">
                 <div class="card-title"><i class="fas fa-tv"></i> 社交·赛事</div>
-                <div class="grid-2">
-                    <div class="mini-card">宗门</div><div class="mini-card">成就</div>
-                    <div class="mini-card">排行榜</div><div class="mini-card">录像</div>
-                    <div class="mini-card">直播</div><div class="mini-card">赛事</div>
+                <div class="inner-2">
+                    <div class="mini">宗门</div><div class="mini">成就</div>
+                    <div class="mini">排行榜</div><div class="mini">录像</div>
+                    <div class="mini">直播</div><div class="mini">赛事</div>
                 </div>
             </div>
         </div>
 
         <!-- 周边商城 -->
-        <div class="master-grid" style="margin-top: 0;">
+        <div class="main-grid" style="margin-top: 0;">
             <div class="card">
                 <div class="card-title"><i class="fas fa-shopping-cart"></i> 周边商城</div>
-                <div class="grid-2">
-                    <div class="mini-card">手办</div><div class="mini-card">服装</div>
-                    <div class="mini-card">设定集</div><div class="mini-card">灵宠公仔</div>
-                    <div class="mini-card">宗门令</div><div class="mini-card">仙器模型</div>
+                <div class="inner-2">
+                    <div class="mini">手办</div><div class="mini">服装</div>
+                    <div class="mini">设定集</div><div class="mini">灵宠公仔</div>
+                    <div class="mini">宗门令</div><div class="mini">仙器模型</div>
                 </div>
             </div>
             <div class="card">
                 <div class="card-title"><i class="fas fa-gift"></i> 预约奖励</div>
-                <div style="padding: 0.8rem;">
-                    「轻量化」头像框<br>七阶皮肤体验卡<br>神兽坐骑蛋
+                <div style="padding: 10px;">
+                    「终极完全体」头像框<br>七阶皮肤体验卡<br>神兽坐骑蛋
                 </div>
             </div>
             <div class="card">
                 <div class="card-title"><i class="fas fa-clock"></i> 即将开启</div>
-                <div style="padding: 0.8rem;">
-                    S1 · 初灵启源<br>全平台互通<br>预约突破百万
+                <div style="padding: 10px;">
+                    S1 · 初灵启源<br>全平台互通<br>预约突破两百万
                 </div>
             </div>
         </div>
 
         <!-- 预约区 -->
-        <div class="preorder-light">
-            <h2 style="font-size: 4rem;">✧ 无量契约 · 预约 ✧</h2>
-            <div class="platform-light">
-                <span class="platform-light-item"><i class="fab fa-android"></i></span>
-                <span class="platform-light-item"><i class="fab fa-apple"></i></span>
-                <span class="platform-light-item"><i class="fab fa-windows"></i></span>
-                <span class="platform-light-item"><i class="fab fa-apple"></i> macOS</span>
-                <span class="platform-light-item"><i class="fas fa-terminal"></i></span>
-                <span class="platform-light-item"><i class="fab fa-steam"></i></span>
+        <div class="preorder">
+            <h2 style="font-size: clamp(2.5rem, 6vw, 5rem);">✧ 无量契约 · 预约 ✧</h2>
+            <div class="platforms">
+                <span class="platform-item"><i class="fab fa-android"></i></span>
+                <span class="platform-item"><i class="fab fa-apple"></i></span>
+                <span class="platform-item"><i class="fab fa-windows"></i></span>
+                <span class="platform-item"><i class="fab fa-apple"></i> macOS</span>
+                <span class="platform-item"><i class="fas fa-terminal"></i></span>
+                <span class="platform-item"><i class="fab fa-steam"></i></span>
             </div>
         </div>
 
         <!-- 底部 -->
-        <div class="footer-light">
+        <div class="footer">
             <div>英雄81</div><div>七阶皮肤</div><div>灵宠36</div><div>坐骑72</div>
             <div>神器10</div><div>符文108</div><div>铭文72</div><div>转职9</div>
             <div>结婚</div><div>师徒</div><div>宗门</div><div>家园</div>
         </div>
         <div style="text-align: center;">
-            <span class="s1-light">S1 · 轻量化完全体 · 流畅预约</span>
+            <span class="s1">S1 · 终极完全体 · 流畅预约</span>
         </div>
-        <div style="text-align: center; color: #a088d0; margin-top: 1.5rem;">
-            © 灵约 · 动漫修仙5V5 · 全模块 · 轻量流畅
+        <div style="text-align: center; color: #a088d0; margin-top: 20px; font-size: 14px;">
+            © 灵约 · 动漫修仙5V5 · 全模块 · 极致性能优化
         </div>
     </div>
+
+    <!-- 极简JavaScript：仅用于标记字体加载完成（可选，不影响渲染） -->
+    <script>
+        // 字体加载检测（非必需，用于统计）
+        if ('fonts' in document) {
+            document.fonts.load('1em "Exo 2"').then(() => {
+                document.body.classList.add('fonts-loaded');
+            });
+        }
+    </script>
 </body>
 </html>
