@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>灵约 · 终极完全体 | 动漫修仙MOBA 全模块·极致流畅</title>
-    <!-- 关键CSS内联，移除阻塞 -->
+    <title>灵约 · 无量终极 | 动漫修仙MOBA 全模块·极致流畅·万物归宗</title>
+    <!-- 关键CSS内联 - 极速渲染 -->
     <style>
-        /* 重置与核心样式 - 极速渲染 */
+        /* === 重置与核心样式 - 无任何动画开销 === */
         * {
             margin: 0;
             padding: 0;
@@ -14,22 +14,22 @@
         }
 
         body {
-            background: #08051a; /* 纯色背景，无任何开销 */
-            font-family: system-ui, -apple-system, 'Exo 2', 'Segoe UI', Roboto, sans-serif;
+            background: #07041a; /* 纯色背景，零开销 */
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Exo 2', sans-serif;
             color: #f0eaff;
             overflow-x: hidden;
             line-height: 1.5;
             -webkit-font-smoothing: antialiased;
         }
 
-        /* 极简背景层 - 无动画无粒子 */
+        /* 静态背景层 - 无动画无粒子 */
         .bg-static {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(ellipse at 30% 40%, #2a1a42 0%, #070318 100%);
+            background: radial-gradient(ellipse at 30% 40%, #2a1a48 0%, #050218 100%);
             z-index: -2;
         }
         
@@ -47,7 +47,7 @@
             pointer-events: none;
         }
 
-        /* 主容器 - 优化内边距 */
+        /* 主容器 */
         .container {
             max-width: 2000px;
             margin: 0 auto;
@@ -55,7 +55,7 @@
             position: relative;
         }
 
-        /* 导航 - 无模糊 */
+        /* === 导航 - 无模糊效果 === */
         .nav {
             display: flex;
             justify-content: space-between;
@@ -95,6 +95,7 @@
         .nav-links span {
             color: #cbb5ff;
             cursor: default;
+            white-space: nowrap;
         }
         .nav-badge {
             background: #251d48;
@@ -105,7 +106,7 @@
             white-space: nowrap;
         }
 
-        /* 主视觉 - 精简 */
+        /* === 主视觉 - 精简 === */
         .hero {
             text-align: center;
             margin: 10px 0 40px;
@@ -131,7 +132,7 @@
             margin-top: 10px;
         }
 
-        /* 四大本源网格 */
+        /* === 四大本源 - 网格 === */
         .grid-4 {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -152,7 +153,7 @@
         .source-icon { font-size: 48px; }
         .source-name { font-size: 28px; font-weight: 800; }
 
-        /* 统一卡片 - 极轻量 */
+        /* === 统一卡片 - 极轻量 === */
         .card {
             background: #120d28;
             border-radius: 40px;
@@ -174,7 +175,7 @@
             gap: 8px;
         }
 
-        /* 三列主网格 */
+        /* === 三列主网格 === */
         .main-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -182,24 +183,12 @@
             margin: 20px 0;
         }
 
-        /* 内部小网格 */
-        .inner-4 {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 6px;
-        }
-        .inner-3 {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 6px;
-        }
-        .inner-2 {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 6px;
-        }
+        /* === 内部小网格 - 整齐划一 === */
+        .inner-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+        .inner-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+        .inner-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; }
 
-        /* 迷你卡片 - 极轻 */
+        /* === 迷你卡片 - 极轻 === */
         .mini {
             background: #231d40;
             border-radius: 24px;
@@ -210,7 +199,7 @@
         }
         .mini i { font-size: 22px; display: block; margin-bottom: 4px; }
 
-        /* 抽奖区 */
+        /* === 抽奖区 === */
         .gacha {
             background: #2a2355;
             border-radius: 80px;
@@ -232,7 +221,7 @@
             text-align: center;
         }
 
-        /* 预约区 */
+        /* === 预约区 === */
         .preorder {
             background: #31296a;
             border-radius: 100px;
@@ -256,7 +245,7 @@
             font-size: 28px;
         }
 
-        /* 底部 */
+        /* === 底部 === */
         .footer {
             display: grid;
             grid-template-columns: repeat(6, 1fr);
@@ -276,7 +265,7 @@
             border: 3px solid #bfa2ff;
         }
 
-        /* 响应式 - 关键断点 */
+        /* === 响应式 - 关键断点 === */
         @media (max-width: 1300px) {
             .main-grid { grid-template-columns: repeat(2, 1fr); }
             .footer { grid-template-columns: repeat(3, 1fr); }
@@ -290,20 +279,20 @@
         @media (max-width: 600px) {
             .grid-4 { grid-template-columns: 1fr; }
             .container { padding: 0 12px 30px; }
+            .nav-links { gap: 10px; }
         }
 
-        /* 字体加载优化 - 异步 */
+        /* 字体加载优化 */
         .fonts-loaded body { font-family: 'Exo 2', system-ui, sans-serif; }
     </style>
-    <!-- 异步加载字体和图标 -->
+    
+    <!-- 异步加载字体和图标 - 非阻塞 -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- 使用preload关键字体，非阻塞 -->
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;800&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;800&display=swap" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;800&display=swap"></noscript>
     
-    <!-- Font Awesome 异步加载 -->
     <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></noscript>
@@ -316,29 +305,29 @@
         <div class="nav">
             <div class="logo">
                 <i class="fas fa-feather-alt" aria-hidden="true"></i>
-                <span>灵约 · 完全体</span>
+                <span>灵约 · 无量终极</span>
             </div>
             <div class="nav-links">
-                <span>英雄</span><span>皮肤</span><span>灵宠</span><span>坐骑</span><span>符文</span><span>铭文</span><span>神器</span>
+                <span>英雄</span><span>皮肤</span><span>灵宠</span><span>坐骑</span><span>符文</span><span>铭文</span><span>神器</span><span>转职</span><span>宗门</span>
             </div>
-            <div class="nav-badge"><i class="fas fa-bolt"></i> 极致流畅</div>
+            <div class="nav-badge"><i class="fas fa-bolt"></i> 全模块·流畅</div>
         </div>
 
         <!-- 主视觉 -->
         <div class="hero">
-            <h1>《灵 约 · 终 极》</h1>
-            <p><i class="fas fa-star"></i> 全模块 · 零卡顿 · 万物归宗 <i class="fas fa-star"></i></p>
+            <h1>《灵 约 · 无 量》</h1>
+            <p><i class="fas fa-star"></i> 二百四十八模块 · 万物归宗 · 零卡顿 <i class="fas fa-star"></i></p>
         </div>
 
         <!-- 四大本源 -->
         <div class="grid-4">
-            <div class="source-card"><i class="fas fa-fire source-icon"></i><div class="source-name">业火</div><div>真伤·灼烧</div></div>
-            <div class="source-card"><i class="fas fa-snowflake source-icon"></i><div class="source-name">寒霜</div><div>冷却·减速</div></div>
-            <div class="source-card"><i class="fas fa-bolt source-icon"></i><div class="source-name">雷鸣</div><div>攻速·连锁</div></div>
-            <div class="source-card"><i class="fas fa-leaf source-icon"></i><div class="source-name">灵木</div><div>回复·双抗</div></div>
+            <div class="source-card"><i class="fas fa-fire source-icon"></i><div class="source-name">业火</div><div>真伤·灼烧·业力</div></div>
+            <div class="source-card"><i class="fas fa-snowflake source-icon"></i><div class="source-name">寒霜</div><div>冷却·减速·凝滞</div></div>
+            <div class="source-card"><i class="fas fa-bolt source-icon"></i><div class="source-name">雷鸣</div><div>攻速·连锁·雷劫</div></div>
+            <div class="source-card"><i class="fas fa-leaf source-icon"></i><div class="source-name">灵木</div><div>回复·双抗·生机</div></div>
         </div>
 
-        <!-- 主网格：三列，包含所有模块 -->
+        <!-- 主网格：三列，包含所有模块（英雄/皮肤/灵宠/坐骑/符文/铭文/神器/转职/结婚/师徒/宗门/家园/成就/排行榜/录像/直播/段位/战令/渡劫/飞升/灵诀/法宝/阵法/炼丹/炼器/采集/钓鱼/烹饪/琴棋书画/奇遇/秘境/深渊/轮回/转世/因果/功德/业力/道心/心境/悟道/等等） -->
         <div class="main-grid">
             <!-- 1. 英雄 81位 -->
             <div class="card">
@@ -403,6 +392,7 @@
                     <div class="mini">灵木</div><div class="mini">太阴</div><div class="mini">太阳</div>
                     <div class="mini">贪狼</div><div class="mini">巨门</div><div class="mini">禄存</div>
                     <div class="mini">文曲</div><div class="mini">廉贞</div><div class="mini">武曲</div>
+                    <div class="mini">破军</div><div class="mini">七杀</div><div class="mini">天机</div>
                 </div>
             </div>
 
@@ -415,31 +405,49 @@
                     <div class="mini">迅雷</div><div class="mini">踏云</div>
                     <div class="mini">破甲</div><div class="mini">不屈</div>
                     <div class="mini">龙威</div><div class="mini">羽化</div>
+                    <div class="mini">沧海</div><div class="mini">不动明王</div>
                 </div>
-                <p style="margin-top: 8px; color: #b69eff; font-size: 13px;">五色 · 自由搭配</p>
+                <p style="margin-top: 8px; color: #b69eff; font-size: 13px;">红·蓝·绿·紫·金·橙 · 六色铭文</p>
             </div>
 
-            <!-- 6. 神器 + 转职 -->
+            <!-- 6. 神器 + 法宝 -->
             <div class="card">
-                <div class="card-title"><i class="fas fa-crown"></i> 十大神器</div>
+                <div class="card-title"><i class="fas fa-crown"></i> 神器 · 12</div>
                 <div class="inner-2" style="margin-bottom: 8px;">
                     <div class="mini">轩辕剑</div><div class="mini">盘古斧</div>
                     <div class="mini">炼妖壶</div><div class="mini">东皇钟</div>
                     <div class="mini">昆仑镜</div><div class="mini">昊天塔</div>
+                    <div class="mini">伏羲琴</div><div class="mini">神农鼎</div>
                 </div>
-                <div class="card-title" style="margin-top: 4px; font-size: 18px;"><i class="fas fa-sync-alt"></i> 转职 · 9</div>
+                <div class="card-title" style="margin-top: 4px; font-size: 18px;"><i class="fas fa-hat-wizard"></i> 法宝 · 36</div>
                 <div class="inner-3">
-                    <div class="mini">剑仙</div><div class="mini">法尊</div><div class="mini">战圣</div>
-                    <div class="mini">灵师</div><div class="mini">影刺</div><div class="mini">御者</div>
+                    <div class="mini">混元伞</div><div class="mini">打神鞭</div><div class="mini">捆仙绳</div>
+                    <div class="mini">翻天印</div><div class="mini">落宝金钱</div><div class="mini">五色石</div>
                 </div>
             </div>
 
-            <!-- 7. 结婚 + 师徒 -->
+            <!-- 7. 转职 + 灵根 -->
+            <div class="card">
+                <div class="card-title"><i class="fas fa-sync-alt"></i> 转职 · 9</div>
+                <div class="inner-3" style="margin-bottom: 8px;">
+                    <div class="mini">剑仙</div><div class="mini">法尊</div><div class="mini">战圣</div>
+                    <div class="mini">灵师</div><div class="mini">影刺</div><div class="mini">御者</div>
+                    <div class="mini">巫祝</div><div class="mini">丹师</div><div class="mini">器宗</div>
+                </div>
+                <div class="card-title" style="margin-top: 4px; font-size: 18px;"><i class="fas fa-tree"></i> 灵根 · 5</div>
+                <div class="inner-3">
+                    <div class="mini">金</div><div class="mini">木</div><div class="mini">水</div>
+                    <div class="mini">火</div><div class="mini">土</div><div class="mini">变异</div>
+                </div>
+            </div>
+
+            <!-- 8. 结婚 + 情缘 + 师徒 -->
             <div class="card">
                 <div class="card-title"><i class="fas fa-heart"></i> 结婚·情缘</div>
                 <div class="inner-2" style="margin-bottom: 8px;">
                     <div class="mini">道侣</div><div class="mini">双修</div>
                     <div class="mini">情缘技</div><div class="mini">夫妻副本</div>
+                    <div class="mini">婚礼</div><div class="mini">离婚</div>
                 </div>
                 <div class="card-title" style="margin-top: 4px; font-size: 18px;"><i class="fas fa-chalkboard-teacher"></i> 师徒</div>
                 <div class="inner-2">
@@ -448,63 +456,70 @@
                 </div>
             </div>
 
-            <!-- 8. 宗门 + 家园 -->
+            <!-- 9. 宗门 + 家园 -->
             <div class="card">
                 <div class="card-title"><i class="fas fa-building"></i> 宗门战</div>
                 <div class="inner-2" style="margin-bottom: 8px;">
                     <div class="mini">百宗大战</div><div class="mini">灵脉争夺</div>
                     <div class="mini">宗门商店</div><div class="mini">宗门技能</div>
+                    <div class="mini">宗门秘境</div><div class="mini">宗门神兽</div>
                 </div>
                 <div class="card-title" style="margin-top: 4px; font-size: 18px;"><i class="fas fa-home"></i> 家园·洞府</div>
                 <div class="inner-2">
                     <div class="mini">灵田</div><div class="mini">丹房</div>
                     <div class="mini">器室</div><div class="mini">闭关</div>
+                    <div class="mini">悟道崖</div><div class="mini">灵泉</div>
                 </div>
             </div>
 
-            <!-- 9. 成就 + 排行榜 -->
+            <!-- 10. 成就 + 排行榜 -->
             <div class="card">
                 <div class="card-title"><i class="fas fa-trophy"></i> 成就系统</div>
                 <div class="inner-2" style="margin-bottom: 8px;">
                     <div class="mini">战斗</div><div class="mini">收集</div>
                     <div class="mini">社交</div><div class="mini">隐藏</div>
+                    <div class="mini">成长</div><div class="mini">传奇</div>
                 </div>
                 <div class="card-title" style="margin-top: 4px; font-size: 18px;"><i class="fas fa-list"></i> 排行榜</div>
                 <div class="inner-2">
                     <div class="mini">巅峰</div><div class="mini">英雄</div>
                     <div class="mini">宗门</div><div class="mini">财富</div>
+                    <div class="mini">魅力</div><div class="mini">成就</div>
                 </div>
             </div>
 
-            <!-- 10. 录像 + 直播 -->
+            <!-- 11. 录像 + 直播 + 社区 -->
             <div class="card">
                 <div class="card-title"><i class="fas fa-video"></i> 录像系统</div>
                 <div class="inner-2" style="margin-bottom: 8px;">
                     <div class="mini">回放</div><div class="mini">精彩时刻</div>
                     <div class="mini">大神观战</div><div class="mini">战术分析</div>
                 </div>
-                <div class="card-title" style="margin-top: 4px; font-size: 18px;"><i class="fas fa-broadcast-tower"></i> 直播</div>
+                <div class="card-title" style="margin-top: 4px; font-size: 18px;"><i class="fas fa-broadcast-tower"></i> 直播·社区</div>
                 <div class="inner-2">
                     <div class="mini">官方</div><div class="mini">大神</div>
                     <div class="mini">赛事</div><div class="mini">教学</div>
+                    <div class="mini">论坛</div><div class="mini">同人</div>
                 </div>
             </div>
 
-            <!-- 11. 段位 + 战令 -->
+            <!-- 12. 段位 + 战令 + 赛事 -->
             <div class="card">
                 <div class="card-title"><i class="fas fa-trophy"></i> 灵魂十段</div>
                 <div class="inner-2" style="margin-bottom: 8px;">
                     <div class="mini">淬灵</div><div class="mini">锻魂</div>
                     <div class="mini">通幽</div><div class="mini">羽化</div>
                     <div class="mini">登神</div><div class="mini">万灵</div>
+                    <div class="mini">无量</div><div class="mini">混沌</div>
                 </div>
-                <div class="card-title" style="margin-top: 4px; font-size: 18px;"><i class="fas fa-scroll"></i> 战令</div>
+                <div class="card-title" style="margin-top: 4px; font-size: 18px;"><i class="fas fa-scroll"></i> 战令·赛事</div>
                 <div class="inner-2">
                     <div class="mini">初灵战令</div><div class="mini">觉醒战令</div>
+                    <div class="mini">巅峰赛</div><div class="mini">全球总决赛</div>
                 </div>
             </div>
 
-            <!-- 12. 渡劫 + 飞升 -->
+            <!-- 13. 渡劫 + 飞升 + 轮回 -->
             <div class="card">
                 <div class="card-title"><i class="fas fa-cloud-sun"></i> 渡劫六境</div>
                 <div class="inner-2" style="margin-bottom: 8px;">
@@ -512,25 +527,96 @@
                     <div class="mini">化神</div><div class="mini">渡劫</div>
                     <div class="mini">大乘</div><div class="mini">飞升</div>
                 </div>
-                <div class="card-title" style="margin-top: 4px; font-size: 18px;"><i class="fas fa-feather-alt"></i> 飞升奖励</div>
+                <div class="card-title" style="margin-top: 4px; font-size: 18px;"><i class="fas fa-circle-notch"></i> 轮回·转世</div>
                 <div class="inner-2">
-                    <div class="mini">仙器</div><div class="mini">仙宠</div>
-                    <div class="mini">仙羽</div><div class="mini">仙号</div>
+                    <div class="mini">轮回</div><div class="mini">转世</div>
+                    <div class="mini">因果</div><div class="mini">业力</div>
+                    <div class="mini">功德</div><div class="mini">道心</div>
+                </div>
+            </div>
+
+            <!-- 14. 灵诀 + 功法 + 神通 -->
+            <div class="card">
+                <div class="card-title"><i class="fas fa-hand-sparkles"></i> 灵诀·16</div>
+                <div class="inner-2" style="margin-bottom: 8px;">
+                    <div class="mini">闪现</div><div class="mini">斩灵</div>
+                    <div class="mini">净化</div><div class="mini">引雷</div>
+                    <div class="mini">护盾</div><div class="mini">传送</div>
+                    <div class="mini">狂暴</div><div class="mini">幽步</div>
+                </div>
+                <div class="card-title" style="margin-top: 4px; font-size: 18px;"><i class="fas fa-book"></i> 功法·神通</div>
+                <div class="inner-2">
+                    <div class="mini">功法108</div><div class="mini">神通36</div>
+                    <div class="mini">秘术18</div><div class="mini">禁术9</div>
+                </div>
+            </div>
+
+            <!-- 15. 阵法 + 炼丹 + 炼器 + 采集 -->
+            <div class="card">
+                <div class="card-title"><i class="fas fa-dharmachakra"></i> 阵法·72</div>
+                <div class="inner-3" style="margin-bottom: 8px;">
+                    <div class="mini">两仪</div><div class="mini">三才</div><div class="mini">四象</div>
+                    <div class="mini">五行</div><div class="mini">六合</div><div class="mini">七星</div>
+                </div>
+                <div class="card-title" style="margin-top: 4px; font-size: 18px;"><i class="fas fa-flask"></i> 炼丹·炼器</div>
+                <div class="inner-2">
+                    <div class="mini">炼丹36</div><div class="mini">炼器36</div>
+                    <div class="mini">采集18</div><div class="mini">钓鱼9</div>
+                </div>
+            </div>
+
+            <!-- 16. 生活技能 + 休闲玩法 -->
+            <div class="card">
+                <div class="card-title"><i class="fas fa-utensils"></i> 生活·休闲</div>
+                <div class="inner-2">
+                    <div class="mini">烹饪</div><div class="mini">垂钓</div>
+                    <div class="mini">采药</div><div class="mini">挖矿</div>
+                    <div class="mini">伐木</div><div class="mini">狩猎</div>
+                    <div class="mini">琴棋</div><div class="mini">书画</div>
+                </div>
+            </div>
+
+            <!-- 17. 奇遇 + 秘境 + 深渊 -->
+            <div class="card">
+                <div class="card-title"><i class="fas fa-compass"></i> 奇遇·秘境</div>
+                <div class="inner-2" style="margin-bottom: 8px;">
+                    <div class="mini">奇遇108</div><div class="mini">秘境36</div>
+                    <div class="mini">深渊18</div><div class="mini">天劫9</div>
+                </div>
+                <div class="card-title" style="margin-top: 4px; font-size: 18px;"><i class="fas fa-skull"></i> 轮回·因果</div>
+                <div class="inner-2">
+                    <div class="mini">业力</div><div class="mini">因果</div>
+                    <div class="mini">功德</div><div class="mini">道心</div>
+                </div>
+            </div>
+
+            <!-- 18. 心境 + 悟道 + 道心 -->
+            <div class="card">
+                <div class="card-title"><i class="fas fa-brain"></i> 心境·悟道</div>
+                <div class="inner-2">
+                    <div class="mini">心境9重</div><div class="mini">悟道12境</div>
+                    <div class="mini">道心</div><div class="mini">剑心</div>
+                    <div class="mini">禅心</div><div class="mini">魔心</div>
                 </div>
             </div>
         </div>
 
-        <!-- 抽奖系统 -->
+        <!-- 抽奖系统 - 三池 -->
         <div class="gacha">
-            <div style="font-size: 36px; font-weight: 900; text-align: center;">🎰 无量灵签 · 召魂 🎰</div>
+            <div style="font-size: 36px; font-weight: 900; text-align: center;">🎰 无量灵签 · 十八池 🎰</div>
             <div class="gacha-inner">
-                <div class="gacha-item"><h3>天命池</h3>七阶皮肤2% · 70抽保底</div>
-                <div class="gacha-item"><h3>觉醒池</h3>神器3% · 50抽保底</div>
-                <div class="gacha-item"><h3>无量池</h3>万灵皮肤1.5% · 90抽保底</div>
+                <div class="gacha-item"><h3>天命池</h3>七阶皮肤2% · 灵宠6% · 70保底</div>
+                <div class="gacha-item"><h3>觉醒池</h3>神器3% · 符文15% · 50保底</div>
+                <div class="gacha-item"><h3>无量池</h3>万灵皮肤1.5% · 神兽坐骑2% · 90保底</div>
+            </div>
+            <div class="gacha-inner" style="margin-top: 20px;">
+                <div class="gacha-item"><h3>法宝池</h3>法宝4% · 灵诀8% · 40保底</div>
+                <div class="gacha-item"><h3>功法池</h3>功法6% · 神通3% · 60保底</div>
+                <div class="gacha-item"><h3>轮回池</h3>轮回道具 · 因果材料 · 30保底</div>
             </div>
         </div>
 
-        <!-- 玩法大全 -->
+        <!-- 玩法大全 - 核心/进阶/社交/生活/休闲/战斗/收集/成就 -->
         <div class="main-grid" style="margin-top: 0;">
             <div class="card">
                 <div class="card-title"><i class="fas fa-gamepad"></i> 核心玩法</div>
@@ -556,9 +642,33 @@
                     <div class="mini">直播</div><div class="mini">赛事</div>
                 </div>
             </div>
+            <div class="card">
+                <div class="card-title"><i class="fas fa-heart"></i> 生活休闲</div>
+                <div class="inner-2">
+                    <div class="mini">烹饪</div><div class="mini">钓鱼</div>
+                    <div class="mini">采药</div><div class="mini">挖矿</div>
+                    <div class="mini">琴棋</div><div class="mini">书画</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-title"><i class="fas fa-skull"></i> 挑战玩法</div>
+                <div class="inner-2">
+                    <div class="mini">秘境</div><div class="mini">深渊</div>
+                    <div class="mini">天劫</div><div class="mini">轮回</div>
+                    <div class="mini">业力</div><div class="mini">因果</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-title"><i class="fas fa-brain"></i> 修行玩法</div>
+                <div class="inner-2">
+                    <div class="mini">渡劫</div><div class="mini">飞升</div>
+                    <div class="mini">悟道</div><div class="mini">心境</div>
+                    <div class="mini">道心</div><div class="mini">功德</div>
+                </div>
+            </div>
         </div>
 
-        <!-- 周边商城 -->
+        <!-- 周边商城 + 预约奖励 + 即将开启 -->
         <div class="main-grid" style="margin-top: 0;">
             <div class="card">
                 <div class="card-title"><i class="fas fa-shopping-cart"></i> 周边商城</div>
@@ -566,52 +676,60 @@
                     <div class="mini">手办</div><div class="mini">服装</div>
                     <div class="mini">设定集</div><div class="mini">灵宠公仔</div>
                     <div class="mini">宗门令</div><div class="mini">仙器模型</div>
+                    <div class="mini">功法卷轴</div><div class="mini">渡劫令牌</div>
                 </div>
             </div>
             <div class="card">
                 <div class="card-title"><i class="fas fa-gift"></i> 预约奖励</div>
                 <div style="padding: 10px;">
-                    「终极完全体」头像框<br>七阶皮肤体验卡<br>神兽坐骑蛋
+                    「无量终极」限定头像框<br>七阶皮肤自选箱<br>神兽坐骑蛋·混沌<br>灵宠·烛龙幼崽<br>功德×10000 · 因果×5000
                 </div>
             </div>
             <div class="card">
                 <div class="card-title"><i class="fas fa-clock"></i> 即将开启</div>
                 <div style="padding: 10px;">
-                    S1 · 初灵启源<br>全平台互通<br>预约突破两百万
+                    S1 · 初灵启源 · 8月8日<br>全平台 · 数据互通<br>预约突破五百萬<br>公测送飞升礼包
                 </div>
             </div>
         </div>
 
-        <!-- 预约区 -->
+        <!-- 预约区 - 全平台 -->
         <div class="preorder">
-            <h2 style="font-size: clamp(2.5rem, 6vw, 5rem);">✧ 无量契约 · 预约 ✧</h2>
+            <h2 style="font-size: clamp(2.5rem, 6vw, 5rem);">✧ 无量契约 · 终级预约 ✧</h2>
             <div class="platforms">
                 <span class="platform-item"><i class="fab fa-android"></i></span>
                 <span class="platform-item"><i class="fab fa-apple"></i></span>
                 <span class="platform-item"><i class="fab fa-windows"></i></span>
                 <span class="platform-item"><i class="fab fa-apple"></i> macOS</span>
-                <span class="platform-item"><i class="fas fa-terminal"></i></span>
+                <span class="platform-item"><i class="fas fa-terminal"></i> Linux</span>
                 <span class="platform-item"><i class="fab fa-steam"></i></span>
+                <span class="platform-item"><i class="fas fa-gamepad"></i> PS5</span>
+                <span class="platform-item"><i class="fas fa-globe"></i> Web</span>
             </div>
+            <p style="font-size: 18px; margin-top: 20px;">已有 5,238,419 位道友缔结契约</p>
         </div>
 
-        <!-- 底部 -->
+        <!-- 底部 - 全模块索引 -->
         <div class="footer">
             <div>英雄81</div><div>七阶皮肤</div><div>灵宠36</div><div>坐骑72</div>
-            <div>神器10</div><div>符文108</div><div>铭文72</div><div>转职9</div>
-            <div>结婚</div><div>师徒</div><div>宗门</div><div>家园</div>
+            <div>神器12</div><div>法宝36</div><div>符文108</div><div>铭文72</div>
+            <div>转职9</div><div>灵根5</div><div>结婚</div><div>师徒</div>
+            <div>宗门</div><div>家园</div><div>成就</div><div>排行榜</div>
+            <div>录像</div><div>直播</div><div>段位10</div><div>战令</div>
+            <div>渡劫6</div><div>飞升</div><div>轮回</div><div>功法108</div>
+            <div>神通36</div><div>阵法72</div><div>炼丹36</div><div>炼器36</div>
+            <div>烹饪</div><div>钓鱼</div><div>奇遇108</div><div>秘境36</div>
         </div>
         <div style="text-align: center;">
-            <span class="s1">S1 · 终极完全体 · 流畅预约</span>
+            <span class="s1">S1 · 无量终极 · 二百四十八模块 · 流畅预约</span>
         </div>
         <div style="text-align: center; color: #a088d0; margin-top: 20px; font-size: 14px;">
-            © 灵约 · 动漫修仙5V5 · 全模块 · 极致性能优化
+            © 灵约 · 动漫修仙5V5 · 全模块完全体 · 极致性能优化 · 万物归宗
         </div>
     </div>
 
-    <!-- 极简JavaScript：仅用于标记字体加载完成（可选，不影响渲染） -->
+    <!-- 极简JavaScript：字体加载检测（可选） -->
     <script>
-        // 字体加载检测（非必需，用于统计）
         if ('fonts' in document) {
             document.fonts.load('1em "Exo 2"').then(() => {
                 document.body.classList.add('fonts-loaded');
