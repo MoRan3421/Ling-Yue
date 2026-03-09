@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>灵约 · 无量终极 | 动漫修仙MOBA 全模块·极致流畅·万物归宗</title>
+    <title>灵约 · 无量终极 | 动漫修仙MOBA 全模块·巅峰赛·贵族·七阶皮肤</title>
     <!-- 关键CSS内联 - 极速渲染 -->
     <style>
         /* === 重置与核心样式 - 无任何动画开销 === */
@@ -199,6 +199,22 @@
         }
         .mini i { font-size: 22px; display: block; margin-bottom: 4px; }
 
+        /* === 等级卡片 - 用于七阶皮肤和VIP === */
+        .level-row {
+            display: flex;
+            justify-content: space-between;
+            background: #1e1738;
+            border-radius: 30px;
+            padding: 8px 16px;
+            margin-bottom: 6px;
+        }
+        .level-tag {
+            background: #4a2f8a;
+            border-radius: 40px;
+            padding: 2px 12px;
+            font-size: 12px;
+        }
+
         /* === 抽奖区 === */
         .gacha {
             background: #2a2355;
@@ -308,7 +324,7 @@
                 <span>灵约 · 无量终极</span>
             </div>
             <div class="nav-links">
-                <span>英雄</span><span>皮肤</span><span>灵宠</span><span>坐骑</span><span>符文</span><span>铭文</span><span>神器</span><span>转职</span><span>宗门</span>
+                <span>英雄</span><span>皮肤</span><span>灵宠</span><span>坐骑</span><span>符文</span><span>铭文</span><span>神器</span><span>巅峰</span><span>贵族</span>
             </div>
             <div class="nav-badge"><i class="fas fa-bolt"></i> 全模块·流畅</div>
         </div>
@@ -316,7 +332,7 @@
         <!-- 主视觉 -->
         <div class="hero">
             <h1>《灵 约 · 无 量》</h1>
-            <p><i class="fas fa-star"></i> 二百四十八模块 · 万物归宗 · 零卡顿 <i class="fas fa-star"></i></p>
+            <p><i class="fas fa-star"></i> 巅峰赛·贵族系统·七阶皮肤·万物归宗 <i class="fas fa-star"></i></p>
         </div>
 
         <!-- 四大本源 -->
@@ -327,7 +343,7 @@
             <div class="source-card"><i class="fas fa-leaf source-icon"></i><div class="source-name">灵木</div><div>回复·双抗·生机</div></div>
         </div>
 
-        <!-- 主网格：三列，包含所有模块（英雄/皮肤/灵宠/坐骑/符文/铭文/神器/转职/结婚/师徒/宗门/家园/成就/排行榜/录像/直播/段位/战令/渡劫/飞升/灵诀/法宝/阵法/炼丹/炼器/采集/钓鱼/烹饪/琴棋书画/奇遇/秘境/深渊/轮回/转世/因果/功德/业力/道心/心境/悟道/等等） -->
+        <!-- 主网格：三列，包含所有模块 -->
         <div class="main-grid">
             <!-- 1. 英雄 81位 -->
             <div class="card">
@@ -348,18 +364,16 @@
                 </div>
             </div>
 
-            <!-- 2. 皮肤七阶 -->
+            <!-- 2. 皮肤七阶 - 分7等 -->
             <div class="card">
-                <div class="card-title"><i class="fas fa-palette"></i> 七阶皮肤</div>
-                <div style="display: flex; flex-direction: column; gap: 8px;">
-                    <div style="display: flex; justify-content: space-between; background: #1e1738; border-radius: 30px; padding: 8px 16px;"><span><i class="fas fa-circle" style="color:#aaa;"></i> 初灵</span><span>默认</span></div>
-                    <div style="display: flex; justify-content: space-between; background: #1e1738; border-radius: 30px; padding: 8px 16px;"><span><i class="fas fa-star" style="color:#ffd966;"></i> 通灵</span><span>稀有</span></div>
-                    <div style="display: flex; justify-content: space-between; background: #1e1738; border-radius: 30px; padding: 8px 16px;"><span><i class="fas fa-fire" style="color:#ff8a5c;"></i> 业火</span><span>史诗</span></div>
-                    <div style="display: flex; justify-content: space-between; background: #1e1738; border-radius: 30px; padding: 8px 16px;"><span><i class="fas fa-snowflake" style="color:#7ac2ff;"></i> 寒霜</span><span>传说</span></div>
-                    <div style="display: flex; justify-content: space-between; background: #1e1738; border-radius: 30px; padding: 8px 16px;"><span><i class="fas fa-bolt" style="color:#ffe97a;"></i> 雷鸣</span><span>神话</span></div>
-                    <div style="display: flex; justify-content: space-between; background: #1e1738; border-radius: 30px; padding: 8px 16px;"><span><i class="fas fa-leaf" style="color:#8cf5a0;"></i> 灵木</span><span>至尊</span></div>
-                    <div style="display: flex; justify-content: space-between; background: #1e1738; border-radius: 30px; padding: 8px 16px;"><span><i class="fas fa-crown" style="color:#f0c45a;"></i> 万灵</span><span>七阶</span></div>
-                </div>
+                <div class="card-title"><i class="fas fa-palette"></i> 七阶皮肤 · 7等</div>
+                <div class="level-row"><span><i class="fas fa-circle" style="color:#aaa;"></i> 一阶·初灵</span><span class="level-tag">默认</span></div>
+                <div class="level-row"><span><i class="fas fa-star" style="color:#ffd966;"></i> 二阶·通灵</span><span class="level-tag">稀有</span></div>
+                <div class="level-row"><span><i class="fas fa-fire" style="color:#ff8a5c;"></i> 三阶·业火</span><span class="level-tag">史诗</span></div>
+                <div class="level-row"><span><i class="fas fa-snowflake" style="color:#7ac2ff;"></i> 四阶·寒霜</span><span class="level-tag">传说</span></div>
+                <div class="level-row"><span><i class="fas fa-bolt" style="color:#ffe97a;"></i> 五阶·雷鸣</span><span class="level-tag">神话</span></div>
+                <div class="level-row"><span><i class="fas fa-leaf" style="color:#8cf5a0;"></i> 六阶·灵木</span><span class="level-tag">至尊</span></div>
+                <div class="level-row"><span><i class="fas fa-crown" style="color:#f0c45a;"></i> 七阶·万灵</span><span class="level-tag">七阶</span></div>
             </div>
 
             <!-- 3. 灵宠 + 坐骑 -->
@@ -503,7 +517,7 @@
                 </div>
             </div>
 
-            <!-- 12. 段位 + 战令 + 赛事 -->
+            <!-- 12. 段位 + 巅峰赛 + 战令 + 赛事 -->
             <div class="card">
                 <div class="card-title"><i class="fas fa-trophy"></i> 灵魂十段</div>
                 <div class="inner-2" style="margin-bottom: 8px;">
@@ -512,14 +526,32 @@
                     <div class="mini">登神</div><div class="mini">万灵</div>
                     <div class="mini">无量</div><div class="mini">混沌</div>
                 </div>
-                <div class="card-title" style="margin-top: 4px; font-size: 18px;"><i class="fas fa-scroll"></i> 战令·赛事</div>
+                <div class="card-title" style="margin-top: 4px; font-size: 18px;"><i class="fas fa-crown"></i> 巅峰赛·战令</div>
                 <div class="inner-2">
+                    <div class="mini">巅峰赛</div><div class="mini">巅峰段位</div>
                     <div class="mini">初灵战令</div><div class="mini">觉醒战令</div>
-                    <div class="mini">巅峰赛</div><div class="mini">全球总决赛</div>
+                    <div class="mini">全球赛</div><div class="mini">冠军皮肤</div>
                 </div>
             </div>
 
-            <!-- 13. 渡劫 + 飞升 + 轮回 -->
+            <!-- 13. VIP·贵族系统 12等 -->
+            <div class="card">
+                <div class="card-title"><i class="fas fa-gem"></i> 贵族·VIP 12等</div>
+                <div class="level-row"><span>V1 散修</span><span class="level-tag">10灵约</span></div>
+                <div class="level-row"><span>V2 练气</span><span class="level-tag">50灵约</span></div>
+                <div class="level-row"><span>V3 筑基</span><span class="level-tag">200灵约</span></div>
+                <div class="level-row"><span>V4 金丹</span><span class="level-tag">500灵约</span></div>
+                <div class="level-row"><span>V5 元婴</span><span class="level-tag">1000灵约</span></div>
+                <div class="level-row"><span>V6 化神</span><span class="level-tag">2000灵约</span></div>
+                <div class="level-row"><span>V7 炼虚</span><span class="level-tag">5000灵约</span></div>
+                <div class="level-row"><span>V8 合体</span><span class="level-tag">10000灵约</span></div>
+                <div class="level-row"><span>V9 大乘</span><span class="level-tag">20000灵约</span></div>
+                <div class="level-row"><span>V10 渡劫</span><span class="level-tag">50000灵约</span></div>
+                <div class="level-row"><span>V11 真仙</span><span class="level-tag">100000灵约</span></div>
+                <div class="level-row"><span>V12 金仙</span><span class="level-tag">200000灵约</span></div>
+            </div>
+
+            <!-- 14. 渡劫 + 飞升 + 轮回 -->
             <div class="card">
                 <div class="card-title"><i class="fas fa-cloud-sun"></i> 渡劫六境</div>
                 <div class="inner-2" style="margin-bottom: 8px;">
@@ -535,7 +567,7 @@
                 </div>
             </div>
 
-            <!-- 14. 灵诀 + 功法 + 神通 -->
+            <!-- 15. 灵诀 + 功法 + 神通 -->
             <div class="card">
                 <div class="card-title"><i class="fas fa-hand-sparkles"></i> 灵诀·16</div>
                 <div class="inner-2" style="margin-bottom: 8px;">
@@ -551,7 +583,7 @@
                 </div>
             </div>
 
-            <!-- 15. 阵法 + 炼丹 + 炼器 + 采集 -->
+            <!-- 16. 阵法 + 炼丹 + 炼器 + 采集 -->
             <div class="card">
                 <div class="card-title"><i class="fas fa-dharmachakra"></i> 阵法·72</div>
                 <div class="inner-3" style="margin-bottom: 8px;">
@@ -565,7 +597,7 @@
                 </div>
             </div>
 
-            <!-- 16. 生活技能 + 休闲玩法 -->
+            <!-- 17. 生活技能 + 休闲玩法 -->
             <div class="card">
                 <div class="card-title"><i class="fas fa-utensils"></i> 生活·休闲</div>
                 <div class="inner-2">
@@ -576,7 +608,7 @@
                 </div>
             </div>
 
-            <!-- 17. 奇遇 + 秘境 + 深渊 -->
+            <!-- 18. 奇遇 + 秘境 + 深渊 -->
             <div class="card">
                 <div class="card-title"><i class="fas fa-compass"></i> 奇遇·秘境</div>
                 <div class="inner-2" style="margin-bottom: 8px;">
@@ -589,19 +621,9 @@
                     <div class="mini">功德</div><div class="mini">道心</div>
                 </div>
             </div>
-
-            <!-- 18. 心境 + 悟道 + 道心 -->
-            <div class="card">
-                <div class="card-title"><i class="fas fa-brain"></i> 心境·悟道</div>
-                <div class="inner-2">
-                    <div class="mini">心境9重</div><div class="mini">悟道12境</div>
-                    <div class="mini">道心</div><div class="mini">剑心</div>
-                    <div class="mini">禅心</div><div class="mini">魔心</div>
-                </div>
-            </div>
         </div>
 
-        <!-- 抽奖系统 - 三池 -->
+        <!-- 抽奖系统 - 六池 -->
         <div class="gacha">
             <div style="font-size: 36px; font-weight: 900; text-align: center;">🎰 无量灵签 · 十八池 🎰</div>
             <div class="gacha-inner">
@@ -612,7 +634,7 @@
             <div class="gacha-inner" style="margin-top: 20px;">
                 <div class="gacha-item"><h3>法宝池</h3>法宝4% · 灵诀8% · 40保底</div>
                 <div class="gacha-item"><h3>功法池</h3>功法6% · 神通3% · 60保底</div>
-                <div class="gacha-item"><h3>轮回池</h3>轮回道具 · 因果材料 · 30保底</div>
+                <div class="gacha-item"><h3>贵族池</h3>贵族经验 · VIP限定 · 30保底</div>
             </div>
         </div>
 
@@ -622,8 +644,8 @@
                 <div class="card-title"><i class="fas fa-gamepad"></i> 核心玩法</div>
                 <div class="inner-2">
                     <div class="mini">5V5</div><div class="mini">排位</div>
-                    <div class="mini">觉醒</div><div class="mini">灵宠</div>
-                    <div class="mini">坐骑</div><div class="mini">神器</div>
+                    <div class="mini">巅峰赛</div><div class="mini">觉醒</div>
+                    <div class="mini">灵宠</div><div class="mini">坐骑</div>
                 </div>
             </div>
             <div class="card">
@@ -682,20 +704,20 @@
             <div class="card">
                 <div class="card-title"><i class="fas fa-gift"></i> 预约奖励</div>
                 <div style="padding: 10px;">
-                    「无量终极」限定头像框<br>七阶皮肤自选箱<br>神兽坐骑蛋·混沌<br>灵宠·烛龙幼崽<br>功德×10000 · 因果×5000
+                    「无量终极」限定头像框<br>七阶皮肤自选箱<br>神兽坐骑蛋·混沌<br>灵宠·烛龙幼崽<br>VIP经验×10000 · 巅峰赛门票×10
                 </div>
             </div>
             <div class="card">
                 <div class="card-title"><i class="fas fa-clock"></i> 即将开启</div>
                 <div style="padding: 10px;">
-                    S1 · 初灵启源 · 8月8日<br>全平台 · 数据互通<br>预约突破五百萬<br>公测送飞升礼包
+                    S1 · 初灵启源 · 8月8日<br>全平台 · 数据互通<br>预约突破六百萬<br>公测送贵族V3大礼包
                 </div>
             </div>
         </div>
 
         <!-- 预约区 - 全平台 -->
         <div class="preorder">
-            <h2 style="font-size: clamp(2.5rem, 6vw, 5rem);">✧ 无量契约 · 终级预约 ✧</h2>
+            <h2 style="font-size: clamp(2.5rem, 6vw, 5rem);">✧ 无量契约 · 终极预约 ✧</h2>
             <div class="platforms">
                 <span class="platform-item"><i class="fab fa-android"></i></span>
                 <span class="platform-item"><i class="fab fa-apple"></i></span>
@@ -706,7 +728,7 @@
                 <span class="platform-item"><i class="fas fa-gamepad"></i> PS5</span>
                 <span class="platform-item"><i class="fas fa-globe"></i> Web</span>
             </div>
-            <p style="font-size: 18px; margin-top: 20px;">已有 5,238,419 位道友缔结契约</p>
+            <p style="font-size: 18px; margin-top: 20px;">已有 6,438,527 位道友缔结契约</p>
         </div>
 
         <!-- 底部 - 全模块索引 -->
@@ -715,16 +737,17 @@
             <div>神器12</div><div>法宝36</div><div>符文108</div><div>铭文72</div>
             <div>转职9</div><div>灵根5</div><div>结婚</div><div>师徒</div>
             <div>宗门</div><div>家园</div><div>成就</div><div>排行榜</div>
-            <div>录像</div><div>直播</div><div>段位10</div><div>战令</div>
-            <div>渡劫6</div><div>飞升</div><div>轮回</div><div>功法108</div>
-            <div>神通36</div><div>阵法72</div><div>炼丹36</div><div>炼器36</div>
-            <div>烹饪</div><div>钓鱼</div><div>奇遇108</div><div>秘境36</div>
+            <div>录像</div><div>直播</div><div>段位10</div><div>巅峰赛</div>
+            <div>VIP12</div><div>战令</div><div>渡劫6</div><div>飞升</div>
+            <div>轮回</div><div>功法108</div><div>神通36</div><div>阵法72</div>
+            <div>炼丹36</div><div>炼器36</div><div>烹饪</div><div>钓鱼</div>
+            <div>奇遇108</div><div>秘境36</div><div>深渊18</div><div>天劫9</div>
         </div>
         <div style="text-align: center;">
-            <span class="s1">S1 · 无量终极 · 二百四十八模块 · 流畅预约</span>
+            <span class="s1">S1 · 无量终极 · 全模块 · 流畅预约</span>
         </div>
         <div style="text-align: center; color: #a088d0; margin-top: 20px; font-size: 14px;">
-            © 灵约 · 动漫修仙5V5 · 全模块完全体 · 极致性能优化 · 万物归宗
+            © 灵约 · 动漫修仙5V5 · 巅峰赛·贵族·七阶皮肤 · 全模块完全体 · 极致性能优化
         </div>
     </div>
 
