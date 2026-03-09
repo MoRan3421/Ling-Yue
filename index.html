@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>灵约 · 终章秩序 | 动漫修仙MOBA 全模块·完全体·预约</title>
+    <title>灵约 · 无量终章 | 动漫修仙MOBA 符文铭文·全模块·完全体</title>
     <!-- 字体与图标库 终极版 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,45 +24,45 @@
             line-height: 1.5;
         }
 
-        /* 秩序混沌背景 */
-        .order-void {
+        /* 无量混沌背景 */
+        .boundless-void {
             position: fixed;
             width: 100%; height: 100%;
             background: radial-gradient(ellipse at 30% 40%, #2f1b4a 0%, #000000 100%);
             z-index: -10;
         }
         
-        .order-void::before {
+        .boundless-void::before {
             content: '';
             position: absolute;
             width: 300%; height: 300%;
             top: -100%; left: -100%;
             background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" opacity="0.15"><path d="M500 200 L800 500 L500 800 L200 500 Z" fill="none" stroke="%23aa88ff" stroke-width="4"/><circle cx="500" cy="500" r="200" fill="%23332288" opacity="0.15"/><path d="M300 350 Q500 150, 700 350" stroke="%23cc99ff" stroke-width="5" fill="none"/><path d="M300 650 Q500 850, 700 650" stroke="%23ddbbff" stroke-width="5" fill="none"/></svg>') repeat;
-            animation: orderSpin 800s linear infinite;
+            animation: boundlessSpin 800s linear infinite;
         }
-        @keyframes orderSpin { 0% { transform: rotate(0deg) scale(1); } 100% { transform: rotate(120deg) scale(2.5); } }
+        @keyframes boundlessSpin { 0% { transform: rotate(0deg) scale(1); } 100% { transform: rotate(120deg) scale(2.5); } }
 
         /* 粒子层 */
-        .order-particles {
+        .boundless-particles {
             position: fixed;
             width: 100%; height: 100%;
             pointer-events: none;
             z-index: -9;
         }
-        .order-particle {
+        .boundless-particle {
             position: absolute;
             background: radial-gradient(circle, rgba(200, 150, 255, 0.25), transparent 90%);
             border-radius: 50%;
             filter: blur(80px);
             width: 900px; height: 900px;
-            animation: orderFlow 60s infinite alternate;
+            animation: boundlessFlow 60s infinite alternate;
         }
-        @keyframes orderFlow {
+        @keyframes boundlessFlow {
             0% { transform: translate(0, 0) scale(1); opacity: 0.1; }
             100% { transform: translate(400px, -300px) scale(2); opacity: 0.3; }
         }
 
-        /* 主容器 - 秩序网格 */
+        /* 主容器 */
         .site-wrapper {
             max-width: 2000px;
             margin: 0 auto;
@@ -71,7 +71,7 @@
             backdrop-filter: blur(1px);
         }
 
-        /* 导航 - 秩序 */
+        /* 导航 */
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -113,7 +113,7 @@
             cursor: default;
             padding: 0.3rem 0;
         }
-        .order-badge {
+        .boundless-badge {
             background: #2e1d55;
             border-radius: 80px;
             padding: 0.8rem 2.5rem;
@@ -148,7 +148,7 @@
             display: inline-block;
         }
 
-        /* 四大BUFF - 等宽秩序 */
+        /* 四大BUFF */
         .relic-buffs {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -172,7 +172,7 @@
         .relic-name { font-size: 3rem; font-weight: 900; }
         .relic-desc { font-size: 1.3rem; }
 
-        /* 英雄+皮肤+灵宠+坐骑 四列等宽 */
+        /* 英雄 + 皮肤 + 灵宠 + 坐骑 */
         .quadrant-section {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -244,14 +244,14 @@
         .pet-card i, .mount-card i { font-size: 3rem; }
         .pet-card span, .mount-card span { font-size: 1.2rem; display: block; }
 
-        /* 符文+神器+转职+结婚 四列 */
-        .heaven-section {
+        /* 符文 + 铭文 + 神器 + 转职 + 结婚 五列（符文铭文分开） */
+        .rune-inscription-section {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: 1.2fr 1.2fr 0.9fr 0.9fr 0.8fr;
             gap: 1.8rem;
             margin: 4rem 0;
         }
-        .heaven-panel {
+        .rune-panel {
             background: rgba(24, 13, 48, 0.8);
             backdrop-filter: blur(20px);
             border-radius: 70px;
@@ -263,7 +263,24 @@
             grid-template-columns: repeat(3, 1fr);
             gap: 0.8rem;
         }
-        .rune-item { background: #332657; border-radius: 40px; padding: 0.8rem; text-align: center; }
+        .rune-item {
+            background: #332657;
+            border-radius: 40px;
+            padding: 0.8rem;
+            text-align: center;
+            font-size: 1rem;
+        }
+        .inscription-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.8rem;
+        }
+        .inscription-item {
+            background: #332657;
+            border-radius: 40px;
+            padding: 0.8rem;
+            text-align: center;
+        }
 
         /* 宗门+成就+排行榜+录像 四列 */
         .war-section {
@@ -274,7 +291,7 @@
         }
 
         /* 抽奖系统 */
-        .gacha-order {
+        .gacha-boundless {
             background: linear-gradient(145deg, #3d2d6a, #120b30);
             border-radius: 150px;
             padding: 3rem 4rem;
@@ -296,8 +313,8 @@
             text-align: center;
         }
 
-        /* 玩法介绍 - 8列等宽 */
-        .gameplay-order {
+        /* 玩法介绍 - 8列 */
+        .gameplay-boundless {
             display: grid;
             grid-template-columns: repeat(8, 1fr);
             gap: 1rem;
@@ -313,7 +330,7 @@
             font-size: 1rem;
         }
 
-        /* 直播+商城 二列 */
+        /* 直播+商城 */
         .media-section {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -329,7 +346,7 @@
         }
 
         /* 预约区 */
-        .preorder-order {
+        .preorder-boundless {
             background: linear-gradient(145deg, #44339b, #150e33);
             border-radius: 200px;
             padding: 4rem 5rem;
@@ -337,7 +354,7 @@
             border: 5px solid #f5e2ff;
             text-align: center;
         }
-        .platform-order {
+        .platform-boundless {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
@@ -345,10 +362,10 @@
             font-size: 3rem;
             margin: 3rem 0;
         }
-        .platform-order span { background: #31286a; border-radius: 80px; padding: 1.5rem 3rem; border: 4px solid #f0dcff; }
+        .platform-boundless span { background: #31286a; border-radius: 80px; padding: 1.5rem 3rem; border: 4px solid #f0dcff; }
 
-        /* 底部 - 8列等宽 */
-        .footer-order {
+        /* 底部 - 8列 */
+        .footer-boundless {
             margin-top: 6rem;
             border-top: 4px solid #b694ff;
             padding-top: 3rem;
@@ -356,7 +373,7 @@
             grid-template-columns: repeat(8, 1fr);
             gap: 1.5rem;
         }
-        .s1-order {
+        .s1-boundless {
             text-align: center;
             margin: 3rem 0 1rem;
             font-size: 2.5rem;
@@ -370,37 +387,37 @@
 
         /* 响应式 */
         @media (max-width: 1600px) {
-            .quadrant-section, .heaven-section, .war-section { grid-template-columns: repeat(2, 1fr); }
-            .gameplay-order { grid-template-columns: repeat(4, 1fr); }
-            .footer-order { grid-template-columns: repeat(4, 1fr); }
+            .quadrant-section, .rune-inscription-section, .war-section { grid-template-columns: repeat(2, 1fr); }
+            .gameplay-boundless { grid-template-columns: repeat(4, 1fr); }
+            .footer-boundless { grid-template-columns: repeat(4, 1fr); }
         }
         @media (max-width: 1000px) {
-            .relic-buffs, .quadrant-section, .heaven-section, .war-section, .media-section { grid-template-columns: 1fr; }
-            .gameplay-order { grid-template-columns: repeat(2, 1fr); }
+            .relic-buffs, .quadrant-section, .rune-inscription-section, .war-section, .media-section { grid-template-columns: 1fr; }
+            .gameplay-boundless { grid-template-columns: repeat(2, 1fr); }
         }
     </style>
 </head>
 <body>
-    <div class="order-void"></div>
-    <div class="order-particles" id="orderParticles"></div>
+    <div class="boundless-void"></div>
+    <div class="boundless-particles" id="boundlessParticles"></div>
 
     <div class="site-wrapper">
         <!-- 导航栏 -->
         <div class="navbar">
             <div class="logo-area">
                 <i class="fas fa-feather-alt logo-icon"></i>
-                <span class="logo-text">灵约 · 终章</span>
+                <span class="logo-text">灵约 · 无量终章</span>
             </div>
             <div class="nav-links">
-                <span>起源</span><span>英雄</span><span>皮肤</span><span>灵宠</span><span>坐骑</span><span>神器</span><span>符文</span><span>宗门</span><span>直播</span><span>商城</span>
+                <span>起源</span><span>英雄</span><span>皮肤</span><span>灵宠</span><span>坐骑</span><span>符文</span><span>铭文</span><span>神器</span><span>宗门</span><span>直播</span>
             </div>
-            <div class="order-badge"><i class="fas fa-infinity"></i> 无量预约</div>
+            <div class="boundless-badge"><i class="fas fa-infinity"></i> 无量预约</div>
         </div>
 
         <!-- 主视觉 -->
         <div class="hero-vision">
-            <div class="hero-title">《灵 约 · 终 章》</div>
-            <div class="hero-sub"><i class="fas fa-star"></i> 全模块·秩序完全体·预约无量 <i class="fas fa-star"></i></div>
+            <div class="hero-title">《灵 约 · 无 量》</div>
+            <div class="hero-sub"><i class="fas fa-star"></i> 符文铭文·全模块·完全体 <i class="fas fa-star"></i></div>
         </div>
 
         <!-- 四大BUFF -->
@@ -411,7 +428,7 @@
             <div class="relic"><i class="fas fa-leaf relic-icon"></i><div class="relic-name">灵木</div><div class="relic-desc">回复·双抗</div></div>
         </div>
 
-        <!-- 英雄 + 皮肤 + 灵宠 + 坐骑 四列等宽 -->
+        <!-- 英雄 + 皮肤 + 灵宠 + 坐骑 -->
         <div class="quadrant-section">
             <!-- 英雄 -->
             <div class="quadrant-panel">
@@ -466,98 +483,131 @@
             </div>
         </div>
 
-        <!-- 符文+神器+转职+结婚 四列 -->
-        <div class="heaven-section">
-            <div class="heaven-panel">
-                <div class="panel-title">🔮 符文系统</div>
+        <!-- 符文 + 铭文 + 神器 + 转职 + 结婚 五列（符文铭文分开） -->
+        <div class="rune-inscription-section">
+            <!-- 符文系统 详细 -->
+            <div class="rune-panel">
+                <div class="panel-title">🔮 符文系统 · 108种</div>
                 <div class="rune-grid">
-                    <div class="rune-item">业火</div><div class="rune-item">寒霜</div><div class="rune-item">雷鸣</div>
-                    <div class="rune-item">灵木</div><div class="rune-item">太阴</div><div class="rune-item">太阳</div>
+                    <div class="rune-item"><i class="fas fa-fire"></i> 业火</div>
+                    <div class="rune-item"><i class="fas fa-snowflake"></i> 寒霜</div>
+                    <div class="rune-item"><i class="fas fa-bolt"></i> 雷鸣</div>
+                    <div class="rune-item"><i class="fas fa-leaf"></i> 灵木</div>
+                    <div class="rune-item"><i class="fas fa-moon"></i> 太阴</div>
+                    <div class="rune-item"><i class="fas fa-sun"></i> 太阳</div>
+                    <div class="rune-item"><i class="fas fa-star"></i> 贪狼</div>
+                    <div class="rune-item"><i class="fas fa-star"></i> 巨门</div>
+                    <div class="rune-item"><i class="fas fa-star"></i> 禄存</div>
                 </div>
+                <p style="margin-top:1rem;">9大系 · 每系12种 · 自由搭配</p>
             </div>
-            <div class="heaven-panel">
-                <div class="panel-title">⚔️ 神器</div>
+            <!-- 铭文系统 新增 -->
+            <div class="rune-panel">
+                <div class="panel-title">📜 铭文系统 · 72种</div>
+                <div class="inscription-grid">
+                    <div class="inscription-item"><i class="fas fa-sword"></i> 攻击·破军</div>
+                    <div class="inscription-item"><i class="fas fa-shield"></i> 防御·不动</div>
+                    <div class="inscription-item"><i class="fas fa-magic"></i> 法术·通灵</div>
+                    <div class="inscription-item"><i class="fas fa-heart"></i> 生命·长生</div>
+                    <div class="inscription-item"><i class="fas fa-bolt"></i> 攻速·迅雷</div>
+                    <div class="inscription-item"><i class="fas fa-running"></i> 移速·踏云</div>
+                    <div class="inscription-item"><i class="fas fa-skull"></i> 穿透·破甲</div>
+                    <div class="inscription-item"><i class="fas fa-shield-alt"></i> 韧性·不屈</div>
+                </div>
+                <p>红·蓝·绿 · 3色铭文页 · 升级强化</p>
+            </div>
+            <!-- 神器 -->
+            <div class="rune-panel">
+                <div class="panel-title">⚔️ 十大神器</div>
                 <div>轩辕剑 · 盘古斧 · 炼妖壶</div>
                 <div>东皇钟 · 昆仑镜 · 昊天塔</div>
+                <div>伏羲琴 · 神农鼎 · 崆峒印</div>
+                <div>女娲石 · 九黎壶 · 轩辕剑</div>
             </div>
-            <div class="heaven-panel">
-                <div class="panel-title">🔄 转职</div>
+            <!-- 转职 -->
+            <div class="rune-panel">
+                <div class="panel-title">🔄 转职系统 · 6系</div>
                 <div>剑仙 · 法尊 · 战圣</div>
                 <div>灵师 · 影刺 · 御者</div>
+                <div>二次飞升 · 三次觉醒</div>
             </div>
-            <div class="heaven-panel">
-                <div class="panel-title">💑 结婚</div>
+            <!-- 结婚 -->
+            <div class="rune-panel">
+                <div class="panel-title">💑 结婚系统</div>
                 <div>道侣 · 双修 · 情缘技能</div>
-                <div>婚礼 · 夫妻副本</div>
+                <div>婚礼殿堂 · 夫妻副本</div>
+                <div>离婚系统 · 再续前缘</div>
             </div>
         </div>
 
         <!-- 宗门+成就+排行榜+录像 -->
         <div class="war-section">
-            <div class="heaven-panel"><div class="panel-title">🏯 宗门战</div>百宗大战 · 灵脉争夺</div>
-            <div class="heaven-panel"><div class="panel-title">🏆 成就</div>战斗 · 收集 · 社交 · 隐藏</div>
-            <div class="heaven-panel"><div class="panel-title">📊 排行榜</div>巅峰 · 英雄 · 宗门 · 财富</div>
-            <div class="heaven-panel"><div class="panel-title">🎥 录像</div>回放 · 精彩时刻 · 大神观战</div>
+            <div class="rune-panel"><div class="panel-title">🏯 宗门战</div>百宗大战 · 灵脉争夺 · 宗门商店</div>
+            <div class="rune-panel"><div class="panel-title">🏆 成就系统</div>战斗 · 收集 · 社交 · 隐藏 · 成就点数</div>
+            <div class="rune-panel"><div class="panel-title">📊 排行榜</div>巅峰 · 英雄 · 宗门 · 财富 · 魅力 · 成就</div>
+            <div class="rune-panel"><div class="panel-title">🎥 录像系统</div>回放 · 精彩时刻 · 大神观战 · 战术分析</div>
         </div>
 
         <!-- 抽奖系统 -->
-        <div class="gacha-order">
+        <div class="gacha-boundless">
             <div style="font-size:4rem; font-weight:900; text-align:center;">🎰 无量灵签 · 召魂 🎰</div>
             <div class="gacha-pools">
-                <div class="gacha-pool"><div style="font-size:2.5rem;">天命池</div>七阶皮肤2% · 70抽保底</div>
-                <div class="gacha-pool"><div style="font-size:2.5rem;">觉醒池</div>神器3% · 50抽保底</div>
-                <div class="gacha-pool"><div style="font-size:2.5rem;">无量池</div>万灵皮肤1.5% · 90抽保底</div>
+                <div class="gacha-pool"><div style="font-size:2.5rem;">天命池</div>七阶皮肤2% · 灵宠6% · 70抽保底</div>
+                <div class="gacha-pool"><div style="font-size:2.5rem;">觉醒池</div>神器3% · 符文15% · 50抽保底</div>
+                <div class="gacha-pool"><div style="font-size:2.5rem;">无量池</div>万灵皮肤1.5% · 神兽坐骑2% · 90抽保底</div>
             </div>
+            <p style="font-size:1.8rem; text-align:center; margin-top:2rem;">保底继承 · 无量灵魄兑换 · 全限定</p>
         </div>
 
-        <!-- 玩法介绍 8列 -->
-        <div class="gameplay-order">
+        <!-- 玩法介绍 16种玩法 -->
+        <div class="gameplay-boundless">
             <div class="gameplay-tile">5V5</div><div class="gameplay-tile">排位</div><div class="gameplay-tile">觉醒</div>
             <div class="gameplay-tile">灵宠</div><div class="gameplay-tile">坐骑</div><div class="gameplay-tile">神器</div>
-            <div class="gameplay-tile">符文</div><div class="gameplay-tile">转职</div><div class="gameplay-tile">结婚</div>
-            <div class="gameplay-tile">宗门</div><div class="gameplay-tile">成就</div><div class="gameplay-tile">排行榜</div>
-            <div class="gameplay-tile">录像</div><div class="gameplay-tile">抽签</div><div class="gameplay-tile">战令</div>
-            <div class="gameplay-tile">赛事</div>
+            <div class="gameplay-tile">符文</div><div class="gameplay-tile">铭文</div><div class="gameplay-tile">转职</div>
+            <div class="gameplay-tile">结婚</div><div class="gameplay-tile">宗门</div><div class="gameplay-tile">成就</div>
+            <div class="gameplay-tile">排行榜</div><div class="gameplay-tile">录像</div><div class="gameplay-tile">抽签</div>
+            <div class="gameplay-tile">战令</div><div class="gameplay-tile">赛事</div><div class="gameplay-tile">直播</div>
         </div>
 
         <!-- 直播 + 商城 -->
         <div class="media-section">
-            <div class="media-panel"><div class="panel-title"><i class="fas fa-video"></i> 灵约直播</div>官方直播 · 大神直播 · 赛事直播</div>
-            <div class="media-panel"><div class="panel-title"><i class="fas fa-shopping-cart"></i> 周边商城</div>手办 · 服装 · 设定集 · 灵宠公仔</div>
+            <div class="media-panel"><div class="panel-title"><i class="fas fa-video"></i> 灵约直播</div>官方直播 · 大神直播 · 赛事直播 · 弹幕互动</div>
+            <div class="media-panel"><div class="panel-title"><i class="fas fa-shopping-cart"></i> 周边商城</div>手办 · 服装 · 设定集 · 灵宠公仔 · 宗门令</div>
         </div>
 
         <!-- 预约区 -->
-        <div class="preorder-order">
+        <div class="preorder-boundless">
             <h2 style="font-size:5rem;">✧ 无量契约 · 预约 ✧</h2>
-            <div class="platform-order">
+            <div class="platform-boundless">
                 <span><i class="fab fa-android"></i></span>
                 <span><i class="fab fa-apple"></i></span>
                 <span><i class="fab fa-windows"></i></span>
                 <span><i class="fab fa-apple"></i> macOS</span>
                 <span><i class="fas fa-terminal"></i></span>
                 <span><i class="fab fa-steam"></i></span>
+                <span><i class="fas fa-gamepad"></i> PS5</span>
             </div>
-            <div style="font-size:2rem;">🎁 预约得「终章」头像框 · 七阶皮肤 · 神兽蛋 🎁</div>
+            <div style="font-size:2rem;">🎁 预约得「无量终章」头像框 · 七阶皮肤 · 神兽蛋 🎁</div>
         </div>
 
         <!-- 底部 全模块索引 -->
-        <div class="footer-order">
+        <div class="footer-boundless">
             <div>英雄81</div><div>七阶皮肤</div><div>灵宠36</div><div>坐骑72</div>
-            <div>神器10</div><div>符文108</div><div>转职6</div><div>结婚</div>
+            <div>神器12</div><div>符文108</div><div>铭文72</div><div>转职6</div>
         </div>
         <div style="text-align:center; margin:2rem 0;">
-            <span class="s1-order">S1 · 终章秩序 · 全模块预约</span>
+            <span class="s1-boundless">S1 · 无量终章 · 全模块预约</span>
         </div>
-        <div style="text-align:center; color:#b89ef0;">© 灵约 · 动漫修仙5V5 · 无量完全体 · 一切以正式发布为准</div>
+        <div style="text-align:center; color:#b89ef0;">© 灵约 · 动漫修仙5V5 · 符文铭文完全体 · 一切以正式发布为准</div>
     </div>
 
     <!-- 粒子生成 -->
     <script>
         (function() {
-            const container = document.getElementById('orderParticles');
+            const container = document.getElementById('boundlessParticles');
             for (let i = 0; i < 30; i++) {
                 const p = document.createElement('div');
-                p.className = 'order-particle';
+                p.className = 'boundless-particle';
                 p.style.width = (Math.random()*800+500)+'px';
                 p.style.height = p.style.width;
                 p.style.top = Math.random()*100 + '%';
