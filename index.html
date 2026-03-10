@@ -3,64 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>灵约 · 终章·大马荣耀·无量无尽 | 动漫修仙MOBA 全模块终极介绍</title>
-    <!-- 极速渲染 · 特效拉满 · 全息粒子背景 -->
+    <title>灵约 · 终章·大马荣耀·无量无尽 | 全模块·全符文效果·实时预约</title>
+    <!-- 极致特效 · 粒子背景 + 发光元素 + 动态计数器 -->
     <style>
-        *{margin:0;padding:0;box-sizing:border-box;}
-        body{background:#01000c;font-family:'Exo 2',system-ui,sans-serif;color:#edeaff;overflow-x:hidden;line-height:1.5;}
-        /* 动态粒子背景 (纯css特效) */
-        .bg-cosmic{position:fixed;inset:0;z-index:-3;background:radial-gradient(ellipse at 40% 50%,#0d072e 0%,#010005 100%);}
-        .bg-cosmic::before{content:'';position:absolute;width:100%;height:100%;background-image:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiB2aWV3Qm94PSIwIDAgMTIwIDEyMCIgb3BhY2l0eT0iMC4yIj48cGF0aCBkPSJNNTAgMTAgTDEwMCA0MCBMODAgOTAgTDIwIDkwIEwwIDQwIFoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzdhNjBmZiIgc3Ryb2tlLXdpZHRoPSIxLjUiLz48Y2lyY2xlIGN4PSI2MCIgY3k9IjYwIiByPSI4IiBmaWxsPSIjYWE4OGZmIi8+PC9zdmc+');background-repeat:repeat;opacity:0.4;animation:drift 220s linear infinite;}
-        .bg-cosmic::after{content:'';position:absolute;width:100%;height:100%;background:radial-gradient(circle at 20% 30%, #66b0ff08 0%, transparent 30%);}
-        @keyframes drift{0%{background-position:0 0;}100%{background-position:200% 200%;}}
-        
-        .container{max-width:2000px;margin:0 auto;padding:0 20px 40px;position:relative;backdrop-filter:blur(2px);}
-        /* 霓虹导航 */
-        .nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-bottom:2px solid #ac8eff80;margin-bottom:20px;flex-wrap:wrap;gap:12px;backdrop-filter:blur(8px);background:#030014b0;border-radius:60px;padding:16px 30px;box-shadow:0 0 40px #6030ff40;}
-        .logo i{font-size:40px;color:#ffd966;text-shadow:0 0 30px #f0f,0 0 60px #b180ff;}
-        .logo span{font-size:30px;font-weight:800;background:linear-gradient(145deg,#fff7e6,#eabfff,#c88aff);-webkit-background-clip:text;background-clip:text;color:transparent;}
-        .nav-links{display:flex;gap:18px;font-size:15px;font-weight:600;flex-wrap:wrap;color:#dbc7ff;}
-        .nav-badge{background:#2f2360;border-radius:40px;padding:10px 28px;border:2px solid #daaaff;box-shadow:0 0 30px #bc8eff;}
-        .hero{text-align:center;margin:40px 0 50px;}
-        .hero h1{font-size:clamp(3.2rem,12vw,7.5rem);font-weight:900;background:linear-gradient(145deg,#ffffff,#dab5ff,#b889ff);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 0 60px #ffa0ff,0 0 120px #ad6eff;line-height:1;}
-        .hero p{font-size:clamp(1.2rem,4vw,2.2rem);background:rgba(14,0,40,0.8);padding:15px 50px;border-radius:100px;border:2px solid #f2daff;box-shadow:0 0 60px #7f4aff;display:inline-block;}
-        /* 四本源卡 特效拉满 */
-        .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:25px;margin:30px 0 50px;}
-        .source-card{background:#0e072caa;border-radius:100px 100px 40px 40px;border:4px solid;padding:35px 10px 20px;text-align:center;backdrop-filter:blur(16px);box-shadow:0 0 70px currentColor;transition:0.2s;}
-        .source-card:nth-child(1){border-color:#ff5e5e;color:#ffbaba;text-shadow:0 0 20px red;}
-        .source-card:nth-child(2){border-color:#5ec2ff;color:#c2e2ff;text-shadow:0 0 20px cyan;}
-        .source-card:nth-child(3){border-color:#ffea7a;color:#fff0b5;text-shadow:0 0 20px gold;}
-        .source-card:nth-child(4){border-color:#7eff9a;color:#cdffd6;text-shadow:0 0 20px lightgreen;}
-        .source-icon{font-size:58px;}
-        .source-name{font-size:32px;font-weight:800;}
-        .card{background:#09021fdd;border-radius:40px;padding:18px;border:3px solid #b185ff;height:100%;backdrop-filter:blur(18px);box-shadow:0 8px 32px #00000080,0 0 30px #a26eff40;}
-        .card-title{font-size:22px;font-weight:700;border-left:12px solid #dbb6ff;padding-left:18px;margin-bottom:16px;display:flex;align-items:center;gap:10px;}
-        .main-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:20px 0;}
-        .inner-4{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;}
-        .inner-3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
-        .inner-2{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;}
-        .mini{background:#2e1f5e;border-radius:24px;padding:10px 2px;text-align:center;border:2px solid #b593ff;font-size:13px;box-shadow:0 0 20px #aaa0ff;transition:0.1s;}
-        .level-row{display:flex;justify-content:space-between;background:#1e133f;border-radius:30px;padding:8px 18px;margin-bottom:6px;font-size:13px;border:1px solid #ae8eff;}
-        .level-tag{background:#452c92;border-radius:40px;padding:2px 14px;font-size:11px;font-weight:800;}
-        .event-item{background:#1f124a;border-radius:30px;padding:12px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;border:2px solid #bf9aff;}
-        .event-tag.malaysia{background:#bf1e2e;color:white;}
-        .event-tag.china{background:#e4393c;}
-        .event-tag{background:#6d3f9e;border-radius:30px;padding:4px 15px;font-weight:600;}
-        .gacha{background:#0a032ad4;border-radius:80px;padding:30px 40px;margin:30px 0;border:4px solid #f0ccff;backdrop-filter:blur(20px);}
-        .gacha-inner{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:20px;}
-        .gacha-item{background:#1e1150dd;border-radius:50px;padding:20px;border:4px solid #dbb5ff;text-align:center;}
-        .preorder{background:#190e45;border-radius:100px;padding:50px;margin:30px 0;border:5px solid #ffe6aa;background:radial-gradient(circle at 30% 30%, #5a32b0, #0b002b);box-shadow:0 0 120px #b359ff;}
-        .platforms{display:flex;flex-wrap:wrap;justify-content:center;gap:20px;margin:25px 0;}
-        .platform-item{background:#302281;border-radius:50px;padding:12px 30px;border:3px solid #ffd966;font-size:28px;box-shadow:0 0 50px gold;}
-        .footer{display:grid;grid-template-columns:repeat(8,1fr);gap:10px;margin-top:40px;padding-top:25px;border-top:4px solid #bb9bff;font-size:12px;}
-        .s1{text-align:center;margin:20px 0;font-size:28px;background:#251b4b;display:inline-block;padding:12px 70px;border-radius:80px;border:4px solid #ffccff;}
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #030014;
+            font-family: 'Exo 2', system-ui, sans-serif;
+            color: #f0e9ff;
+            overflow-x: hidden;
+            line-height: 1.5;
+        }
+        /* 深空粒子背景 (css动效) */
+        .bg-universe {
+            position: fixed;
+            inset: 0;
+            z-index: -5;
+            background: radial-gradient(ellipse at 30% 40%, #150c2e 0%, #010004 100%);
+        }
+        .bg-universe::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background-image: 
+                radial-gradient(2px 2px at 10% 10%, #fff 1px, transparent 1px),
+                radial-gradient(3px 3px at 20% 30%, #b180ff 1px, transparent 1px),
+                radial-gradient(2px 2px at 40% 70%, #7ad0ff 1px, transparent 1px),
+                radial-gradient(4px 4px at 80% 90%, #ffb86b 1px, transparent 1px);
+            background-repeat: repeat;
+            background-size: 200px 200px;
+            opacity: 0.5;
+            animation: starDrift 240s linear infinite;
+        }
+        @keyframes starDrift {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-20%, -20%); }
+        }
 
-        /* 预约按钮有效区域 */
-        .btn-reserve{background:linear-gradient(145deg,#f90,#ffcc66);border:none;border-radius:80px;padding:20px 70px;font-size:40px;font-weight:900;color:#090018;cursor:pointer;box-shadow:0 0 70px #ffb347;transition:0.1s;border:4px solid white;}
-        .btn-reserve:hover{background:#ffaa33;box-shadow:0 0 140px #ffaa33;}
-        .btn-reserve:active{transform:scale(0.95);}
-        @media (max-width:1300px){.main-grid{grid-template-columns:repeat(2,1fr);}.footer{grid-template-columns:repeat(4,1fr);}}
-        @media (max-width:900px){.grid-4{grid-template-columns:repeat(2,1fr);}.main-grid{grid-template-columns:1fr;}.gacha-inner{grid-template-columns:1fr;}}
+        .container {
+            max-width: 2000px;
+            margin: 0 auto;
+            padding: 0 20px 40px;
+            position: relative;
+            backdrop-filter: blur(2px);
+        }
+
+        /* 霓虹导航 + 预约计数器 */
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 30px;
+            background: rgba(5, 0, 30, 0.7);
+            backdrop-filter: blur(18px);
+            border-radius: 100px;
+            border: 2px solid #aa88ff;
+            box-shadow: 0 0 60px #6d3ae0;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+        .logo i { font-size: 44px; color: #ffd966; text-shadow: 0 0 40px gold, 0 0 80px violet; }
+        .logo span { font-size: 30px; font-weight: 800; background: linear-gradient(145deg, #fff, #e3c4ff); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .reserve-counter {
+            background: #271c55;
+            border-radius: 60px;
+            padding: 10px 35px;
+            border: 3px solid #ffcc66;
+            font-size: 28px;
+            font-weight: 800;
+            box-shadow: 0 0 60px #f90;
+            white-space: nowrap;
+        }
+        .counter-number {
+            color: #fff3b8;
+            text-shadow: 0 0 30px orange;
+        }
+
+        /* 四大本源 更华丽 */
+        .grid-4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; margin: 40px 0; }
+        .source-card {
+            background: #0f072fd4;
+            border-radius: 100px 100px 40px 40px;
+            border: 4px solid;
+            padding: 30px 10px 20px;
+            text-align: center;
+            backdrop-filter: blur(16px);
+            box-shadow: 0 0 100px currentColor;
+            transition: 0.2s;
+        }
+        .source-card:nth-child(1) { border-color: #ff5e5e; color: #ffbaba; text-shadow: 0 0 30px red; }
+        .source-card:nth-child(2) { border-color: #5ec2ff; color: #c2e2ff; text-shadow: 0 0 30px cyan; }
+        .source-card:nth-child(3) { border-color: #ffea7a; color: #fff0b5; text-shadow: 0 0 30px gold; }
+        .source-card:nth-child(4) { border-color: #7eff9a; color: #cdffd6; text-shadow: 0 0 30px lightgreen; }
+        .source-icon { font-size: 64px; }
+
+        /* 卡片通用 */
+        .card {
+            background: #0d052fd4;
+            border-radius: 40px;
+            padding: 18px;
+            border: 3px solid #b185ff;
+            backdrop-filter: blur(16px);
+            box-shadow: 0 8px 32px #000, 0 0 30px #9f7aff;
+        }
+        .card-title { font-size: 22px; font-weight: 700; border-left: 12px solid #dbb6ff; padding-left: 18px; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+        .main-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin: 20px 0; }
+        .inner-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+        .inner-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+        .mini {
+            background: #2b1c5e;
+            border-radius: 24px;
+            padding: 12px 4px;
+            text-align: center;
+            border: 2px solid #c6a6ff;
+            box-shadow: 0 0 25px #b180ff;
+            cursor: pointer;
+            transition: 0.1s;
+            font-size: 14px;
+        }
+        .mini:hover { background: #4b2ea0; transform: scale(1.02); border-color: gold; }
+
+        /* 符文特效展示区 (大/中/小 效果) */
+        .rune-detail-panel {
+            background: #1a1040;
+            border-radius: 40px;
+            padding: 20px;
+            margin-top: 10px;
+            border: 3px solid #f0c4ff;
+        }
+        .rune-category { font-size: 20px; margin-bottom: 10px; border-bottom: 2px solid #c99eff; padding-bottom: 5px; }
+        .rune-item {
+            background: #120934;
+            border-radius: 60px;
+            padding: 10px 20px;
+            margin: 8px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-left: 12px solid #a673ff;
+        }
+        .rune-name { font-weight: 800; width: 140px; }
+        .rune-effect { flex: 1; color: #bfffae; font-size: 14px; }
+        .rune-stat { background: #5936b0; border-radius: 40px; padding: 4px 18px; font-size: 14px; }
+
+        /* 预约大按钮 */
+        .btn-reserve {
+            background: linear-gradient(145deg, #ffaa33, #ffdd77);
+            border: none;
+            border-radius: 120px;
+            padding: 25px 80px;
+            font-size: 48px;
+            font-weight: 900;
+            color: #1a0033;
+            cursor: pointer;
+            box-shadow: 0 0 100px #ffb86b, 0 0 200px #ffd966;
+            border: 5px solid white;
+            margin: 30px 0;
+        }
+        .btn-reserve:hover { background: #ffbb44; box-shadow: 0 0 180px #ffaa33; }
+        .btn-reserve:active { transform: scale(0.96); }
+
+        /* 底部 */
+        .footer { display: grid; grid-template-columns: repeat(8, 1fr); gap: 8px; margin-top: 40px; font-size: 12px; }
+
+        @media (max-width:1300px){ .main-grid{grid-template-columns:repeat(2,1fr);} .footer{grid-template-columns:repeat(4,1fr);} }
+        @media (max-width:900px){ .grid-4{grid-template-columns:repeat(2,1fr);} .main-grid{grid-template-columns:1fr;} }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -68,217 +176,249 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-<div class="bg-cosmic"></div>
+<div class="bg-universe"></div>
 <div class="container">
-    <!-- 导航 完全体 -->
+
+    <!-- 导航 + 实时预约人数 (每秒增加) -->
     <div class="nav">
-        <div class="logo"><i class="fas fa-dragon"></i><span>灵约·大马荣耀·无量无尽</span></div>
-        <div class="nav-links"><span>108英雄</span><span>40赛季</span><span>36阶皮肤</span><span>108灵宠</span><span>108坐骑</span><span>九界</span><span>九货币</span><span>29社交</span><span>EVMGSO</span><span>分服·国旗</span></div>
-        <div class="nav-badge"><i class="fas fa-flag-malaysia"></i> 大马荣耀·究极完全</div>
+        <div class="logo"><i class="fas fa-dragon"></i><span>灵约 · 大马荣耀·无量无尽</span></div>
+        <div class="reserve-counter">
+            <i class="fas fa-user-astronaut"></i> <span class="counter-number" id="reserveCount">10,024,587,392</span> 人已预约
+        </div>
+        <div style="display:flex; gap:15px;"><i class="fas fa-flag-malaysia"></i> 国服·大马荣耀</div>
     </div>
-    <!-- 主视觉 九大货币直接列出 -->
-    <div class="hero"><h1>《灵 约 · 无 量 无 尽》</h1><p><i class="fas fa-coins"></i> 九大货币: 灵约石 · 道缘 · 功德 · 业力 · 因果 · 天命 · 轮回 · 鸿蒙 · 混沌 <i class="fas fa-coins"></i></p></div>
 
-    <!-- 四大本源 特效全满 -->
+    <!-- 主视觉 九大货币 -->
+    <div class="hero" style="text-align:center; margin:30px 0;">
+        <h1 style="font-size:6rem; font-weight:900; background:linear-gradient(145deg,#fff,#f0c4ff,#caaaff); -webkit-background-clip:text; background-clip:text; color:transparent; text-shadow:0 0 70px #cc99ff;">《灵约·无量无尽》</h1>
+        <p style="font-size:2rem; background:#1f124b; display:inline-block; padding:15px 60px; border-radius:100px; border:3px solid gold;">九大货币: 灵约石·道缘·功德·业力·因果·天命·轮回·鸿蒙·混沌</p>
+    </div>
+
+    <!-- 四大本源 -->
     <div class="grid-4">
-        <div class="source-card"><i class="fas fa-fire source-icon"></i><div class="source-name">业火</div>真伤·灼烧·业力货币·持续伤害可叠加50层，满层业火焚身15%真实伤害。</div>
-        <div class="source-card"><i class="fas fa-snowflake source-icon"></i><div class="source-name">寒霜</div>冷却·减速·凝滞控制，5层触发冻结，减少敌方冷却回复。</div>
-        <div class="source-card"><i class="fas fa-bolt source-icon"></i><div class="source-name">雷鸣</div>攻速·连锁·雷劫，每3次攻击触发范围真实伤害，引动天界试炼。</div>
-        <div class="source-card"><i class="fas fa-leaf source-icon"></i><div class="source-name">灵木</div>回复·双抗·生机，低血量护盾+清除负面，每秒生命回复。</div>
+        <div class="source-card"><i class="fas fa-fire source-icon"></i><div class="source-name">业火</div>真伤·灼烧·业力货币，每层+1%灼烧，50层业火焚身15%真伤。</div>
+        <div class="source-card"><i class="fas fa-snowflake source-icon"></i><div class="source-name">寒霜</div>冷却·减速·凝滞，5层触发冻结1秒，减少敌方冷却。</div>
+        <div class="source-card"><i class="fas fa-bolt source-icon"></i><div class="source-name">雷鸣</div>攻速·连锁·雷劫，每3次攻击触发范围真伤，引动雷劫。</div>
+        <div class="source-card"><i class="fas fa-leaf source-icon"></i><div class="source-name">灵木</div>回复·双抗·生机，低血量护盾20%最大生命+清除负面。</div>
     </div>
 
-    <!-- 核心模块 国服大马荣耀 + 九种货币展示 + 商城系统 (超详细) -->
+    <!-- 核心模块: 国服大马 + 九种货币详细 + 商城 -->
     <div class="main-grid">
-        <!-- 国服·大马荣耀 -->
         <div class="card"><div class="card-title"><i class="fas fa-flag-malaysia"></i> 国服·大马荣耀</div>
-            <div class="level-row"><span>吉隆坡仙城</span><span class="level-tag malaysia">双子塔地标</span><span>多元文化主城:马来高脚屋/华人骑楼/印度神庙/卡达山长屋</span></div>
-            <div class="level-row"><span>国服货币</span><span class="level-tag malaysia">灵约石(马币)</span><span>1马币=12灵约石，首充双倍，累计充值送大马富豪称号</span></div>
-            <div class="level-row"><span>国服专属</span><span class="level-tag malaysia">犀鸟·榴莲·马来粽</span><span>犀鸟坐骑·榴莲神器·马来粽法宝，进化9阶得「大马神兽」</span></div>
-            <div class="level-row"><span>独立排名</span><span class="level-tag malaysia">每月联赛</span><span>大马荣耀段位、冠军皮肤、秘境副本「双子塔秘境」「槟城壁画」</span></div>
+            <div class="level-row"><span>吉隆坡仙城</span><span class="level-tag malaysia">双子塔地标</span><span>多元文化主城</span></div>
+            <div class="level-row"><span>国服专属</span><span class="level-tag malaysia">犀鸟·榴莲·马来粽</span><span>坐骑/神器/法宝，进化9阶得大马神兽</span></div>
+            <div class="level-row"><span>独立排名</span><span class="level-tag malaysia">每月联赛</span><span>双子塔秘境·槟城壁画副本</span></div>
         </div>
-        <!-- 九大货币详解 -->
-        <div class="card"><div class="card-title"><i class="fas fa-coins"></i> 九种货币·各司其职</div>
-            <div class="level-row"><span>💰 灵约石</span><span class="level-tag gold">充值</span><span>点券·购买皮肤/英雄/抽奖/转服/改名/小兵皮肤/回城特效</span></div>
-            <div class="level-row"><span>💎 道缘</span><span class="level-tag blue">每日任务</span><span>免费钻石·抽天命池/换碎片/灵宠口粮/表情包</span></div>
-            <div class="level-row"><span>📿 功德</span><span class="level-tag teal">副本宗门</span><span>绑定钻·强化材料/家园装饰/丹药图纸/语音播报材料</span></div>
-            <div class="level-row"><span>⚔️ 业力</span><span class="level-tag red">竞技币</span><span>排位/巅峰获得·兑换竞技皮肤/动态框/竞技专属坐骑</span></div>
-            <div class="level-row"><span>☯️ 因果</span><span class="level-tag purple">荣誉点</span><span>跨服/宗门战·荣誉神器/战区称号/转区卡/荣誉小兵皮肤</span></div>
-            <div class="level-row"><span>🌌 天命</span><span class="level-tag gold">抽奖池</span><span>天命池专属货币·可抽稀有神器/限定皮肤/天命法宝</span></div>
-            <div class="level-row"><span>♻️ 轮回</span><span class="level-tag green">轮回副本</span><span>轮回石·觉醒材料/轮回限定皮肤/轮回灵宠</span></div>
-            <div class="level-row"><span>🌀 鸿蒙</span><span class="level-tag purple">鸿蒙秘境</span><span>鸿蒙碎片·升级鸿蒙神器/鸿蒙称号/鸿蒙坐骑</span></div>
-            <div class="level-row"><span>🌑 混沌</span><span class="level-tag gray">混沌深渊</span><span>混沌币·兑换混沌神器/混沌至宝/混沌小兵皮肤</span></div>
+        <div class="card"><div class="card-title"><i class="fas fa-coins"></i> 九种货币详解</div>
+            <div class="level-row"><span>灵约石</span><span class="level-tag gold">充值</span><span>皮肤/英雄/抽奖/转服</span></div>
+            <div class="level-row"><span>道缘</span><span class="level-tag blue">每日</span><span>抽天命池/碎片/表情包</span></div>
+            <div class="level-row"><span>功德</span><span class="level-tag teal">副本</span><span>强化/家园/语音材料</span></div>
+            <div class="level-row"><span>业力</span><span class="level-tag red">竞技</span><span>竞技皮肤/动态框</span></div>
+            <div class="level-row"><span>因果</span><span class="level-tag purple">荣誉</span><span>荣誉神器/战区称号</span></div>
+            <div class="level-row"><span>天命</span><span class="level-tag gold">抽奖</span><span>天命限定/神器</span></div>
+            <div class="level-row"><span>轮回</span><span class="level-tag green">轮回副本</span><span>轮回石/觉醒</span></div>
+            <div class="level-row"><span>鸿蒙</span><span class="level-tag purple">秘境</span><span>鸿蒙至宝</span></div>
+            <div class="level-row"><span>混沌</span><span class="level-tag gray">深渊</span><span>混沌神器/小兵皮肤</span></div>
         </div>
-        <!-- 商城系统 包含九种货币购买 -->
-        <div class="card"><div class="card-title"><i class="fas fa-store"></i> 商城·九币购物</div>
-            <div class="level-row"><span>灵约石商城</span><span class="level-tag gold">点券直购</span><span>英雄/皮肤/坐骑/灵宠/神器/法宝/小兵皮肤/回城特效</span></div>
-            <div class="level-row"><span>道缘商城</span><span class="level-tag blue">碎片/口粮</span><span>英雄碎片/皮肤碎片/经验丹/表情包碎片/语音碎片</span></div>
-            <div class="level-row"><span>功德商城</span><span class="level-tag teal">强化/家具</span><span>强化石/家园装饰/灵植种子/阵法书/符咒材料</span></div>
-            <div class="level-row"><span>业力商城</span><span class="level-tag red">竞技限定</span><span>竞技皮肤/动态头像框/竞技buff/竞技法宝/竞技小兵</span></div>
-            <div class="level-row"><span>因果商城</span><span class="level-tag purple">荣誉/跨服</span><span>荣誉神器/宗门神兽/战区称号/转区卡/荣誉回城</span></div>
-            <div class="level-row"><span>天命商城</span><span class="level-tag gold">稀有天命</span><span>天命神器/天命灵宠/天命皮肤/天命坐骑/天命法宝</span></div>
-            <div class="level-row"><span>轮回商城</span><span class="level-tag green">轮回觉醒</span><span>轮回石/轮回转职卡/轮回小兵/轮回表情包</span></div>
-            <div class="level-row"><span>鸿蒙商城</span><span class="level-tag purple">鸿蒙至宝</span><span>鸿蒙灵根/鸿蒙法宝/鸿蒙皮肤/鸿蒙回城特效</span></div>
-            <div class="level-row"><span>混沌商城</span><span class="level-tag gray">混沌深渊</span><span>混沌神器/混沌坐骑/混沌称号/混沌语音播报</span></div>
-        </div>
+        <div class="card"><div class="card-title"><i class="fas fa-store"></i> 商城·九币购买</div>灵约石商城/道缘商城/功德商城/业力商城/因果商城/天命商城/轮回商城/鸿蒙商城/混沌商城，各自售卖限定道具。</div>
     </div>
 
-    <!-- 等级/段位/熟练度 核心成长 -->
+    <!-- 等级·段位·熟练度 -->
     <div class="main-grid">
-        <div class="card"><div class="card-title"><i class="fas fa-level-up-alt"></i> 等级100·满级神话</div>1-10级新手→91-100神话，每级送灵约石，100级「神话」+10%属性。</div>
-        <div class="card"><div class="card-title"><i class="fas fa-trophy"></i> 段位40·万物归宗</div>淬灵→锻魂→……无量无尽→大马荣耀→寰宇终极→万物归宗(30000分+)全服唯一。</div>
-        <div class="card"><div class="card-title"><i class="fas fa-star"></i> 熟练度10·神话</div>见习→神话，满级解锁专属皮肤/称号/回城特效/语音播报。</div>
+        <div class="card"><div class="card-title"><i class="fas fa-level-up-alt"></i> 等级100·满级神话</div>1-100级，每级送灵约石，100级「神话」+10%属性。</div>
+        <div class="card"><div class="card-title"><i class="fas fa-trophy"></i> 段位40·万物归宗</div>淬灵→锻魂→……无量无尽→大马荣耀→寰宇终极→万物归宗(30000分+)</div>
+        <div class="card"><div class="card-title"><i class="fas fa-star"></i> 熟练度10·神话</div>见习→神话，满级专属皮肤/称号/回城特效/语音播报。</div>
     </div>
 
-    <!-- EVMGSO 匹配/信誉分/结束时长 -->
+    <!-- 匹配/信誉/时长 -->
     <div class="main-grid">
-        <div class="card"><div class="card-title"><i class="fas fa-robot"></i> EVMGSO-AURA</div>ELO+战力+位置+组队+段位+在线+反作弊+信誉+人工复核+保护机制。补位奖励+补位宝箱，信誉7级得「信誉宗师」皮肤「明镜」。</div>
-        <div class="card"><div class="card-title"><i class="fas fa-gavel"></i> 信誉分7级</div>挂机扣10-20，演员扣20-30，脚本永久封禁。每日恢复1分，举报成功恢复2分。等级7奖励勇者积分+20% 称号「信誉宗师」。</div>
-        <div class="card"><div class="card-title"><i class="fas fa-clock"></i> 对局时长</div>5V5 15-25min, 3V3 8-12min, 大乱斗10-15min, 无限火力10-15min, 边境突围20-30min, 排位/巅峰20-30min。</div>
+        <div class="card"><div class="card-title"><i class="fas fa-robot"></i> EVMGSO-AURA</div>ELO+战力+位置+组队+段位+在线+反作弊+信誉+人工复核+保护机制。信誉7级得「信誉宗师」皮肤。</div>
+        <div class="card"><div class="card-title"><i class="fas fa-gavel"></i> 信誉分7级</div>挂机扣10-20，演员扣20-30，每日恢复1分，举报成功恢复2分。</div>
+        <div class="card"><div class="card-title"><i class="fas fa-clock"></i> 对局时长</div>5V5 15-25min, 3V3 8-12min, 大乱斗10-15min, 边境突围20-30min。</div>
     </div>
 
-    <!-- 符文·12大+14中+35小 + 铭文108 展示 -->
-    <div class="main-grid">
-        <div class="card"><div class="card-title"><i class="fas fa-magic"></i> 大符文12种</div>业火/寒霜/雷鸣/灵木/太阴/太阳/贪狼/巨门/禄存/文曲/廉贞/武曲，提供特殊效果+攻击/穿透等。</div>
-        <div class="card"><div class="card-title"><i class="fas fa-scroll"></i> 中符文14种</div>破军/不动/通灵/长生/迅雷/踏云/金刚/修罗/轮回/因果/功德/业力/造化/鸿蒙，中等属性+特殊。</div>
-        <div class="card"><div class="card-title"><i class="fas fa-dharmachakra"></i> 小符文35种</div>攻击·小/防御·小/生命·小/法力·小/攻速·小/移速·小/暴击·小/穿透·小/冷却·小……全能·小。</div>
+    <!-- ========= 符文系统 大·中·小 全部带有效果展示 (超详细) ========= -->
+    <div class="rune-detail-panel">
+        <div class="rune-category"><i class="fas fa-meteor"></i> 大符文 · 12种 · 每个都有独特战斗特效</div>
+        <div class="rune-item"><span class="rune-name">业火符文</span><span class="rune-effect">攻击+15，造成伤害附加灼烧，每秒5点真伤持续3秒</span><span class="rune-stat">可升至10级</span></div>
+        <div class="rune-item"><span class="rune-name">寒霜符文</span><span class="rune-effect">冷却+10%，攻击减速20%移速2秒</span><span class="rune-stat">可升至10级</span></div>
+        <div class="rune-item"><span class="rune-name">雷鸣符文</span><span class="rune-effect">攻速+12%，攻击可连锁周围3个目标造成30%额外伤害</span><span class="rune-stat">可升至10级</span></div>
+        <div class="rune-item"><span class="rune-name">灵木符文</span><span class="rune-effect">生命+150，每秒回复3生命，低血量翻倍</span><span class="rune-stat">可升至10级</span></div>
+        <div class="rune-item"><span class="rune-name">太阴符文</span><span class="rune-effect">法术穿透+8%，命中降低10%魔抗3秒</span><span class="rune-stat">可升至10级</span></div>
+        <div class="rune-item"><span class="rune-name">太阳符文</span><span class="rune-effect">物理穿透+8%，命中降低10%护甲3秒</span><span class="rune-stat">可升至10级</span></div>
+        <div class="rune-item"><span class="rune-name">贪狼符文</span><span class="rune-effect">暴击+5%，暴击时额外造成10%真实伤害</span><span class="rune-stat">可升至10级</span></div>
+        <div class="rune-item"><span class="rune-name">巨门符文</span><span class="rune-effect">生命+200，每5秒回复2%最大生命</span><span class="rune-stat">可升至10级</span></div>
+        <div class="rune-item"><span class="rune-name">禄存符文</span><span class="rune-effect">防御+20，受到攻击反弹10%伤害</span><span class="rune-stat">可升至10级</span></div>
+        <div class="rune-item"><span class="rune-name">文曲符文</span><span class="rune-effect">法术强度+15，技能冷却缩短5%</span><span class="rune-stat">可升至10级</span></div>
+        <div class="rune-item"><span class="rune-name">廉贞符文</span><span class="rune-effect">穿透+10%，无视10%防御</span><span class="rune-stat">可升至10级</span></div>
+        <div class="rune-item"><span class="rune-name">武曲符文</span><span class="rune-effect">攻击+20，击杀增加10%攻击5秒</span><span class="rune-stat">可升至10级</span></div>
     </div>
-    <!-- 铭文108·新手全送 -->
+
+    <div class="rune-detail-panel">
+        <div class="rune-category"><i class="fas fa-scroll"></i> 中符文 · 14种 · 强力特效</div>
+        <div class="rune-item"><span class="rune-name">破军·中</span><span class="rune-effect">攻击+8，对50%以下敌人造成额外5%伤害</span><span class="rune-stat">可升至10级</span></div>
+        <div class="rune-item"><span class="rune-name">不动·中</span><span class="rune-effect">防御+10，受控时间减少10%</span><span class="rune-stat">可升至10级</span></div>
+        <div class="rune-item"><span class="rune-name">通灵·中</span><span class="rune-effect">法术强度+8，技能命中回复5法力</span><span class="rune-stat">可升至10级</span></div>
+        <div class="rune-item"><span class="rune-name">长生·中</span><span class="rune-effect">生命+100，每5秒回复1%最大生命</span><span class="rune-stat">可升至10级</span></div>
+        <div class="rune-item"><span class="rune-name">迅雷·中</span><span class="rune-effect">攻速+6%，攻速超100%时额外5%暴击</span><span class="rune-stat">可升至10级</span></div>
+        <div class="rune-item"><span class="rune-name">踏云·中</span><span class="rune-effect">移速+3%，脱战后+10%移速</span><span class="rune-stat">可升至10级</span></div>
+        <div class="rune-item"><span class="rune-name">金刚·中</span><span class="rune-effect">防御+12，受到暴击减伤10%</span><span class="rune-stat">可升至10级</span></div>
+        <div class="rune-item"><span class="rune-name">修罗·中</span><span class="rune-effect">攻击+10，击杀回复5%生命</span><span class="rune-stat">可升至10级</span></div>
+        <div class="rune-item"><span class="rune-name">轮回·中</span><span class="rune-effect">全能+2%，复活时间减少5%</span><span class="rune-stat">可升至10级</span></div>
+        <div class="rune-item"><span class="rune-name">因果·中</span><span class="rune-effect">每击败一个敌人增加1攻击，最多20层</span><span class="rune-stat">可升至10级</span></div>
+        <div class="rune-item"><span class="rune-name">功德·中</span><span class="rune-effect">每秒回复2生命</span><span class="rune-stat">可升至10级</span></div>
+        <div class="rune-item"><span class="rune-name">业力·中</span><span class="rune-effect">对同一目标连续攻击增伤最多5%</span><span class="rune-stat">可升至10级</span></div>
+        <div class="rune-item"><span class="rune-name">造化·中</span><span class="rune-effect">每级增加1%经验获取</span><span class="rune-stat">可升至10级</span></div>
+        <div class="rune-item"><span class="rune-name">鸿蒙·中</span><span class="rune-effect">随机增益每30秒切换</span><span class="rune-stat">可升至10级</span></div>
+    </div>
+
+    <div class="rune-detail-panel">
+        <div class="rune-category"><i class="fas fa-dharmachakra"></i> 小符文 · 35种 · 基础属性加成 (部分展示，全部有效)</div>
+        <div class="inner-4" style="margin-top:8px;">
+            <div class="mini">攻击·小 +2攻</div><div class="mini">防御·小 +3防</div><div class="mini">生命·小 +20生</div><div class="mini">法力·小 +10法</div>
+            <div class="mini">攻速·小 +1%速</div><div class="mini">移速·小 +1%移</div><div class="mini">暴击·小 +1%暴</div><div class="mini">穿透·小 +1%穿</div>
+            <div class="mini">冷却·小 +1%冷</div><div class="mini">回复·小 +1/5s</div><div class="mini">韧性·小 +1%韧</div><div class="mini">吸血·小 +1%吸</div>
+            <div class="mini">法强·小 +2法强</div><div class="mini">物强·小 +2物强</div><div class="mini">双抗·小 +2双抗</div><div class="mini">法抗·小 +3法抗</div>
+            <div class="mini">物抗·小 +3物抗</div><div class="mini">暴伤·小 +2%暴伤</div><div class="mini">穿透物·小 +1%物穿</div><div class="mini">穿透法·小 +1%法穿</div>
+            <div class="mini">冷却物·小 +1%物冷</div><div class="mini">冷却法·小 +1%法冷</div><div class="mini">回复战·小 +1战斗回复</div><div class="mini">回复脱·小 +2脱战回复</div>
+            <div class="mini">韧性控·小 +1%控韧</div><div class="mini">韧性减·小 +1%减韧</div><div class="mini">吸血物·小 +1%物吸</div><div class="mini">吸血法·小 +1%法吸</div>
+            <div class="mini">法强加·小 +1%法强</div><div class="mini">物强加·小 +1%物强</div><div class="mini">双抗加·小 +1%双抗</div><div class="mini">法抗加·小 +1%法抗</div>
+            <div class="mini">物抗加·小 +1%物抗</div><div class="mini">暴伤加·小 +1%暴伤</div><div class="mini">全能·小 +1全属性</div>
+        </div>
+        <p style="margin-top:10px;">小符文共35种，每个可提供基础属性，每个英雄最多装备8个小符文，可升级至10级。</p>
+    </div>
+
+    <!-- 铭文108 新手全送 -->
     <div class="main-grid">
-        <div class="card"><div class="card-title"><i class="fas fa-gem"></i> 铭文108·一级全送</div>新手注册即送108种一级铭文，可升至10级。包含破军·攻/不动·防/通灵·法/长生·命/迅雷·速……大马·马/寰宇·宇/归宗·宗等108种。</div>
-        <div class="card"><div class="card-title"><i class="fas fa-shield-alt"></i> 小兵皮肤36种</div>初灵/业火/寒霜/雷鸣/灵木/太阴/太阳/贪狼……大马小兵/寰宇小兵，图鉴收集加属性。</div>
+        <div class="card"><div class="card-title"><i class="fas fa-gem"></i> 铭文108·一级全送</div>新手注册送108种一级铭文，可升至10级。包含破军·攻/不动·防/通灵·法/长生·命/迅雷·速……大马·马/寰宇·宇/归宗·宗等108种。</div>
+        <div class="card"><div class="card-title"><i class="fas fa-shield-alt"></i> 小兵皮肤36种</div>初灵/业火/寒霜/雷鸣/灵木……大马小兵/寰宇小兵，图鉴加属性。</div>
         <div class="card"><div class="card-title"><i class="fas fa-home"></i> 回城特效36种</div>初灵回城/业火回城……大马回城/寰宇回城，改变回城动画。</div>
     </div>
+
     <!-- 表情包/语音播报/图鉴 -->
     <div class="main-grid">
-        <div class="card"><div class="card-title"><i class="fas fa-smile"></i> 表情包36种</div>开心/悲伤/愤怒/惊讶/可爱/搞笑/鄙视……大马表情/寰宇表情，对局可用。</div>
+        <div class="card"><div class="card-title"><i class="fas fa-smile"></i> 表情包36种</div>开心/悲伤/愤怒……大马表情/寰宇表情，对局可用。</div>
         <div class="card"><div class="card-title"><i class="fas fa-microphone-alt"></i> 语音播报36种</div>初灵语音……大马语音，击杀/推塔特效语音。</div>
-        <div class="card"><div class="card-title"><i class="fas fa-crown"></i> 特效收集图鉴</div>收集小兵/回城/表情/语音达指定数量，获得称号「小兵大师」「回城大师」等，属性+5%。</div>
+        <div class="card"><div class="card-title"><i class="fas fa-crown"></i> 特效收集图鉴</div>收集小兵/回城/表情/语音达指定数量，获得称号「小兵大师」等，属性+5%。</div>
     </div>
 
-    <!-- 赛季S1-S40 浓缩展示 -->
+    <!-- 赛季S1-S40 浓缩 -->
     <div class="main-grid">
-        <div class="card"><div class="card-title"><i class="fas fa-trophy"></i> S1-S12 初灵时代</div>S1初灵启源…S12无极太极，每赛季皮肤/坐骑/称号/小兵/回城/表情/语音。</div>
-        <div class="card"><div class="card-title"><i class="fas fa-trophy"></i> S13-S24 大马荣耀</div>S13阴阳调和…S24无量无边，融入大马元素：犀鸟/榴莲/风筝/马来貘/峇峇/娘惹等限定。</div>
-        <div class="card"><div class="card-title"><i class="fas fa-trophy"></i> S25-S40 寰宇终极·归宗</div>S25太初有道…S40万物归宗，终章·大马荣耀·无量无尽·归宗者称号。</div>
+        <div class="card"><div class="card-title"><i class="fas fa-trophy"></i> S1-S12 初灵时代</div>S1初灵启源…S12无极太极，每赛季皮肤/坐骑/称号。</div>
+        <div class="card"><div class="card-title"><i class="fas fa-trophy"></i> S13-S24 大马荣耀</div>S13阴阳调和…S24无量无边，融入犀鸟/榴莲/风筝等限定。</div>
+        <div class="card"><div class="card-title"><i class="fas fa-trophy"></i> S25-S40 寰宇终极</div>S25太初有道…S40万物归宗，终章·大马荣耀·归宗者称号。</div>
     </div>
 
-    <!-- 服务器分服 + 国旗系统 大模块 -->
+    <!-- 服务器分服 + 国旗系统 -->
     <div class="main-grid">
-        <div class="card"><div class="card-title"><i class="fas fa-server"></i> 全境服务器·大马优先</div>
-            <div class="level-row"><span>大马荣耀服:吉隆坡/槟城/沙巴/砂拉越/马六甲/柔佛/霹雳/登嘉楼/吉兰丹/彭亨/森美兰/玻璃市</span><span class="level-tag malaysia">12区独立</span></div>
-            <div class="level-row"><span>中国服(盘古/女娲/伏羲等)</span><span class="level-tag china">8区</span></div>
-            <div class="level-row"><span>亚洲服/欧美服/港澳台/大洋洲/非洲/国际服/星际服</span><span class="level-tag purple">全球50+区</span></div>
-            <div class="level-row"><span>转服功能/跨服战场/国战/九界战场</span></div>
-        </div>
-        <div class="card"><div class="card-title"><i class="fas fa-flag"></i> 国旗系统·195国</div>
-            <div class="level-row"><span>马来西亚🇲🇾</span><span class="level-tag malaysia">辉煌条纹</span><span>移速+5%,组队互助,满星得「辉煌条纹」皮肤+10%属性</span></div>
-            <div class="level-row"><span>中国🇨🇳</span><span class="level-tag china">五星红旗</span><span>全属性+2%,团结buff,满星「红旗飘飘」</span></div>
-            <div class="level-row"><span>美国/英国/日本/韩国/法国/德国/意大利/俄罗斯/印度/巴西/南非……全球195国国旗</span><span class="level-tag gold">收集图鉴得「寰宇旗手」称号</span></div>
-        </div>
-        <div class="card"><div class="card-title"><i class="fas fa-map-marked-alt"></i> 跨服战场·国战</div><span>周六国战(服务器为单位) / 跨服竞技场 / 世界BOSS / 九界战场 / 跨服交易行 / 跨服结婚</span></div>
+        <div class="card"><div class="card-title"><i class="fas fa-server"></i> 全境服务器·大马12区</div>吉隆坡/槟城/沙巴/砂拉越/马六甲/柔佛/霹雳/登嘉楼/吉兰丹/彭亨/森美兰/玻璃市 · 中国8区 · 亚洲欧美等全球50+区。</div>
+        <div class="card"><div class="card-title"><i class="fas fa-flag"></i> 国旗系统·195国</div>马来西亚国旗🇲🇾辉煌条纹:移速+5%；中国🇨🇳全属性+2%……收集满图鉴得「寰宇旗手」称号。</div>
+        <div class="card"><div class="card-title"><i class="fas fa-map-marked-alt"></i> 跨服战场·国战</div>周六国战/跨服竞技/世界BOSS/九界战场/跨服结婚/跨服交易行。</div>
     </div>
 
-    <!-- 马来西亚节日36种 + 国际节日36种 超详细 -->
+    <!-- 马来西亚节日36种 + 国际节日36种 简略但全 -->
     <div class="main-grid">
-        <div class="card"><div class="card-title"><i class="fas fa-flag-malaysia"></i> 马来西亚节日36种</div>国庆日/马来西亚日/开斋节/哈芝节/大宝森节/卫塞节/农历新年/屠妖节/圣诞节/达雅节/丰收节/马六甲历史日/槟城世遗日/吉隆坡城市日/柔佛苏丹诞辰/登嘉楼苏丹诞辰/吉兰丹苏丹诞辰/彭亨苏丹诞辰/霹雳苏丹诞辰/雪兰莪苏丹诞辰/森美兰最高统治者诞辰/玻璃市拉惹诞辰/吉打苏丹诞辰/国家元首诞辰/联邦直辖区日/劳动节/青年节/教师节/警察日/武装部队日/国家运动日/环境日/野生动物日/海洋日/榴莲节/热带雨林音乐节。每个节日送限定皮肤/坐骑/神器/小兵皮肤。</div>
-        <div class="card"><div class="card-title"><i class="fas fa-globe"></i> 全球节日36种</div>元旦/情人节/妇女节/愚人节/劳动节/母亲节/父亲节/端午节/儿童节/环境日/友谊日/七夕/中秋节/万圣节/感恩节/圣诞节/复活节/狂欢节/樱花节/啤酒节/亡灵节/光明节/排灯节/宋干节/水灯节/印度共和国日/澳大利亚日/加拿大日/美国独立日/法国国庆/德国统一日/意大利共和国日/西班牙国庆/巴西独立日/南非自由日/埃及国庆日。丰厚奖励。</div>
-        <div class="card"><div class="card-title"><i class="fas fa-calendar-alt"></i> 日常/周常/月常36种</div>每日签到/在线奖励/活跃度宝箱/每日任务/周常/月常/经验副本/金币副本/灵宠副本/坐骑副本/神器副本/法宝副本/符文副本/铭文副本/渡劫副本/轮回副本/业火深渊/寒霜秘境/雷鸣战场/灵木秘境/仙界副本/神界副本/魔界副本/妖界副本/冥界副本/灵界副本/鬼界副本/佛界副本/圣界副本/家园副本/洞府副本/仙府副本/神国副本/秘境副本/深渊副本/天劫副本。</div>
+        <div class="card"><div class="card-title"><i class="fas fa-flag-malaysia"></i> 马来西亚节日36</div>国庆日/开斋节/哈芝节/大宝森节/卫塞节/农历新年/屠妖节/达雅节/丰收节/榴莲节……等36个，每个送限定皮肤/坐骑。</div>
+        <div class="card"><div class="card-title"><i class="fas fa-globe"></i> 全球节日36</div>元旦/情人节/妇女节/劳动节/端午节/中秋节/万圣节/圣诞节/复活节/啤酒节/亡灵节/宋干节……等36个，丰厚奖励。</div>
+        <div class="card"><div class="card-title"><i class="fas fa-calendar-alt"></i> 日常·周常36种</div>每日签到/在线奖励/活跃度宝箱/经验副本/灵宠副本/神器副本/渡劫副本/业火深渊/寒霜秘境……等36种。</div>
     </div>
 
-    <!-- 转职108 / 灵根36 / 渡劫40 / 功法108 等核心成长浓缩 -->
+    <!-- 转职108 / 灵根36 / 渡劫40 / 功法108等 -->
     <div class="main-grid">
-        <div class="card"><div class="card-title"><i class="fas fa-sync-alt"></i> 转职108</div>剑仙/法尊/战圣/灵师/影刺/御者/巫祝/丹师/器宗/阵师/符师/驭兽师/琴师/棋师/书师/画师……共108种转职，觉醒新技能。</div>
+        <div class="card"><div class="card-title"><i class="fas fa-sync-alt"></i> 转职108</div>剑仙/法尊/战圣/灵师/影刺/御者/巫祝/丹师/器宗/阵师/符师/驭兽师/琴师/棋师/书师/画师……觉醒新技能。</div>
         <div class="card"><div class="card-title"><i class="fas fa-tree"></i> 灵根36+道心12</div>金木水火土风雷冰光暗时空混沌鸿蒙永恒因果轮回等36灵根；道心12层每层加全属性。</div>
         <div class="card"><div class="card-title"><i class="fas fa-cloud-sun"></i> 渡劫40境</div>筑基→大乘→渡劫→飞升→真仙→金仙→太乙→大罗→混元→无极→太极→鸿蒙→造化→因果→轮回→生死→阴阳→太初→两仪→三才→四象→五行→六合→七星→八卦→九宫→十方→无量→无尽→大马→寰宇→归宗。</div>
     </div>
-    <!-- 功法神通灵诀/阵法炼丹炼器/奇遇秘境深渊天劫 -->
+
+    <!-- 功法/神通/灵诀/阵法/炼丹/炼器/奇遇等 -->
     <div class="main-grid">
         <div class="card"><div class="card-title"><i class="fas fa-book"></i> 功法108·神通108·灵诀108</div>基础功法、特殊神通、主动灵诀(闪现/斩灵等)，自由搭配。</div>
         <div class="card"><div class="card-title"><i class="fas fa-dharmachakra"></i> 阵法108·炼丹108·炼器108</div>两仪阵/三才阵/四象阵…可炼制丹药、打造装备，提升熟练度。</div>
         <div class="card"><div class="card-title"><i class="fas fa-compass"></i> 奇遇108·秘境36·深渊18·天劫18</div>世界随机奇遇，秘境探索，深渊100层，天劫9重，稀有奖励。</div>
     </div>
 
-    <!-- 家园系统 / 成就排行榜 / 直播社区 / VIP36 -->
+    <!-- 家园/成就/VIP -->
     <div class="main-grid">
-        <div class="card"><div class="card-title"><i class="fas fa-home"></i> 家园·洞府·仙府·神国</div>灵田种植/丹房/器室/闭关/悟道/灵泉/仙兽/神兵，可邀请好友做客。</div>
-        <div class="card"><div class="card-title"><i class="fas fa-trophy"></i> 成就1080项·排行榜·称号·勋章</div>战斗/收集/社交/隐藏成就，巅峰榜/英雄榜/财富榜/魅力榜/信誉榜等。</div>
-        <div class="card"><div class="card-title"><i class="fas fa-gem"></i> VIP36等·贵族特权</div>V1-V36，送皮肤/坐骑/神器/至尊卡/专属客服/线下聚会名额。</div>
+        <div class="card"><div class="card-title"><i class="fas fa-home"></i> 家园·洞府·仙府·神国</div>灵田/丹房/器室/闭关/悟道/灵泉/仙兽/神兵，好友做客。</div>
+        <div class="card"><div class="card-title"><i class="fas fa-trophy"></i> 成就1080项·排行榜·勋章</div>战斗/收集/社交成就，巅峰榜/英雄榜/财富榜/信誉榜等。</div>
+        <div class="card"><div class="card-title"><i class="fas fa-gem"></i> VIP36等·贵族特权</div>V1-V36，送皮肤/坐骑/神器/至尊卡/专属客服/线下聚会。</div>
     </div>
 
     <!-- 月卡/年卡/终身卡/周卡/季卡/半年卡/十年卡/永久卡/至尊卡 9种卡 -->
     <div class="main-grid">
-        <div class="card"><div class="card-title"><i class="fas fa-moon"></i> 月卡 RM30</div>每日300灵约石·皮肤「月华」·经验+10%·7折·月卡副本/称号</div>
-        <div class="card"><div class="card-title"><i class="fas fa-sun"></i> 年卡 RM328</div>每日500灵约石·皮肤「岁星」·经验+20%·6折·生日礼包·年卡坐骑</div>
-        <div class="card"><div class="card-title"><i class="fas fa-infinity"></i> 终身卡 RM998</div>每日1000灵约石·皮肤「永恒」·5折·终身抽奖·终身卡副本·专属称号</div>
-        <div class="card"><div class="card-title"><i class="fas fa-calendar-week"></i> 周卡 RM12</div>每日100灵约石·经验+5%·功德礼包</div>
-        <div class="card"><div class="card-title"><i class="fas fa-calendar-alt"></i> 季卡 RM88</div>每日200灵约石·皮肤「四季」·经验+12%·业力3000</div>
-        <div class="card"><div class="card-title"><i class="fas fa-calendar-check"></i> 半年卡 RM168</div>每日350灵约石·皮肤「半载」·经验+18%·因果2000</div>
-        <div class="card"><div class="card-title"><i class="fas fa-calendar-alt"></i> 十年卡 RM998</div>每日800灵约石·皮肤「十载」·经验+25%·十年庆典抽奖</div>
-        <div class="card"><div class="card-title"><i class="fas fa-infinity"></i> 永久卡 RM1998</div>每日1500灵约石·皮肤「不朽」·经验+40%·3折·不朽者称号</div>
-        <div class="card"><div class="card-title"><i class="fas fa-crown"></i> 至尊卡 RM2998</div>每日3000灵约石·皮肤「大道」·经验+60%·2折·至尊客服/线下聚会/转服特权</div>
+        <div class="card"><div class="card-title"><i class="fas fa-moon"></i> 月卡RM30</div>每日300灵约石·皮肤「月华」·经验+10%·7折</div>
+        <div class="card"><div class="card-title"><i class="fas fa-sun"></i> 年卡RM328</div>每日500灵约石·皮肤「岁星」·经验+20%·6折·生日礼包</div>
+        <div class="card"><div class="card-title"><i class="fas fa-infinity"></i> 终身卡RM998</div>每日1000灵约石·皮肤「永恒」·5折·终身抽奖</div>
+        <div class="card"><div class="card-title"><i class="fas fa-calendar-week"></i> 周卡RM12</div>每日100灵约石·经验+5%·功德礼包</div>
+        <div class="card"><div class="card-title"><i class="fas fa-calendar-alt"></i> 季卡RM88</div>每日200灵约石·皮肤「四季」·经验+12%·业力3000</div>
+        <div class="card"><div class="card-title"><i class="fas fa-calendar-check"></i> 半年卡RM168</div>每日350灵约石·皮肤「半载」·经验+18%·因果2000</div>
+        <div class="card"><div class="card-title"><i class="fas fa-calendar-alt"></i> 十年卡RM998</div>每日800灵约石·皮肤「十载」·经验+25%·十年庆典抽奖</div>
+        <div class="card"><div class="card-title"><i class="fas fa-infinity"></i> 永久卡RM1998</div>每日1500灵约石·皮肤「不朽」·经验+40%·3折·不朽者称号</div>
+        <div class="card"><div class="card-title"><i class="fas fa-crown"></i> 至尊卡RM2998</div>每日3000灵约石·皮肤「大道」·经验+60%·2折·线下聚会</div>
     </div>
 
-    <!-- 抽奖系统一百零八池 特效炸裂 -->
-    <div class="gacha">
-        <h2 style="font-size:40px;text-align:center;">🎰 大道灵签·一百零八池 🎰</h2>
-        <div class="gacha-inner">
-            <div class="gacha-item"><h3>天命池</h3>皮肤2%·70保底·道缘抽·可出英雄/皮肤/节日限定/国旗限定/战区限定/九界限定/小兵皮肤/回城特效/表情包/语音播报</div>
-            <div class="gacha-item"><h3>觉醒池</h3>神器3%·50保底·灵约石·可出神器/觉醒材料/服务器限定/战区限定/国旗限定</div>
-            <div class="gacha-item"><h3>无量池</h3>神兽2%·90保底·业力·稀有坐骑/灵宠/九界限定</div>
+    <!-- 抽奖池 -->
+    <div class="gacha" style="background:#0a032a; border-radius:80px; padding:30px; border:4px solid gold;">
+        <h2 style="font-size:40px; text-align:center;">🎰 一百零八抽奖池 🎰</h2>
+        <div class="gacha-inner" style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px;">
+            <div class="gacha-item">天命池·70保底</div><div class="gacha-item">觉醒池·50保底</div><div class="gacha-item">无量池·90保底</div>
+            <div class="gacha-item">法宝池·40保底</div><div class="gacha-item">功法池·60保底</div><div class="gacha-item">贵族池·30保底</div>
         </div>
-        <div class="gacha-inner">
-            <div class="gacha-item"><h3>法宝池</h3>法宝4%·40保底·功德</div>
-            <div class="gacha-item"><h3>功法池</h3>功法6%·60保底·因果</div>
-            <div class="gacha-item"><h3>贵族池</h3>VIP限定·30保底·灵约石</div>
-        </div>
-        <div class="gacha-inner">
-            <div class="gacha-item"><h3>巅峰池</h3>巅峰积分·50保底</div>
-            <div class="gacha-item"><h3>渡劫池</h3>渡劫材料·40保底</div>
-            <div class="gacha-item"><h3>轮回池</h3>轮回道具·30保底</div>
-        </div>
-        <p style="text-align:center;">保底互通·灵魄兑换任意限定</p>
     </div>
 
-    <!-- 周边商城 + 预约奖励 + 预约按钮有效 -->
+    <!-- 周边商城 + 预约按钮 + 全平台下载 -->
     <div class="main-grid">
-        <div class="card"><div class="card-title"><i class="fas fa-shopping-cart"></i> 周边商城·大马限定</div>英雄手办/犀鸟公仔/双子塔模型/榴莲抱枕/蜡染时装/各国国旗徽章……购买送游戏兑换码。</div>
-        <div class="card"><div class="card-title"><i class="fas fa-gift"></i> 预约奖励·大马荣耀</div>限定头像框+三十六阶皮肤自选箱×36+神兽坐骑蛋×18+灵宠烛龙×18+九种货币各百万+终身卡+至尊卡抽奖+马来西亚国庆限定皮肤「辉煌条纹」+国旗收集册+全英雄体验卡+……</div>
-        <div class="card"><div class="card-title"><i class="fas fa-download"></i> 全平台下载·预约</div>
-            <div class="platforms" style="gap:8px;flex-wrap:wrap;">
-                <span class="platform-item"><i class="fab fa-android"></i> APK</span>
-                <span class="platform-item"><i class="fab fa-apple"></i> iOS</span>
-                <span class="platform-item"><i class="fab fa-windows"></i> exe</span>
-                <span class="platform-item"><i class="fab fa-apple"></i> macOS</span>
-                <span class="platform-item"><i class="fas fa-terminal"></i> Linux</span>
-                <span class="platform-item"><i class="fab fa-steam"></i> Steam</span>
-                <span class="platform-item"><i class="fas fa-gamepad"></i> PS5</span>
-                <span class="platform-item"><i class="fab fa-xbox"></i> Xbox</span>
-                <span class="platform-item"><i class="fab fa-nintendo-switch"></i> Switch</span>
-                <span class="platform-item"><i class="fas fa-globe"></i> Web</span>
-                <span class="platform-item"><i class="fas fa-mobile-alt"></i> HarmonyOS</span>
-                <span class="platform-item"><i class="fas fa-vr-cardboard"></i> VR</span>
-            </div>
-            <!-- 有效预约按钮 -->
-            <div style="text-align:center; margin-top:30px;">
-                <button class="btn-reserve" onclick="alert('预约成功！大马荣耀·无量无尽，公测送VIP30+限定皮肤。感谢道友！')"><i class="fas fa-hand-pointer"></i> 立即预约·缔结灵约 <i class="fas fa-feather-alt"></i></button>
-                <p style="margin-top:15px;">已有 9,999,999,999,999 位道友预约 · 大马荣耀突破10亿</p>
+        <div class="card"><div class="card-title"><i class="fas fa-shopping-cart"></i> 周边商城</div>英雄手办/犀鸟公仔/双子塔模型/榴莲抱枕/蜡染时装/各国国旗徽章……购买送游戏兑换码。</div>
+        <div class="card"><div class="card-title"><i class="fas fa-gift"></i> 预约奖励</div>限定头像框+三十六阶皮肤自选箱×36+神兽坐骑蛋×18+九种货币各百万+终身卡+至尊卡抽奖+马来西亚国庆限定「辉煌条纹」皮肤+国旗收集册……</div>
+        <div class="card"><div class="card-title"><i class="fas fa-download"></i> 全平台下载</div>
+            <div style="display:flex; flex-wrap:wrap; gap:8px;">
+                <span class="platform-item" style="background:#2f1d70;">Android</span>
+                <span class="platform-item">iOS</span>
+                <span class="platform-item">Windows</span>
+                <span class="platform-item">macOS</span>
+                <span class="platform-item">Linux</span>
+                <span class="platform-item">Steam</span>
+                <span class="platform-item">PS5</span>
+                <span class="platform-item">Xbox</span>
+                <span class="platform-item">Switch</span>
+                <span class="platform-item">Web</span>
+                <span class="platform-item">HarmonyOS</span>
+                <span class="platform-item">VR</span>
             </div>
         </div>
     </div>
 
-    <!-- 底部全索引无尽 -->
+    <!-- 巨型预约按钮 -->
+    <div style="text-align:center;">
+        <button class="btn-reserve" onclick="alert('预约成功！您已缔结灵约，公测送VIP30+限定皮肤。感谢道友！')"><i class="fas fa-hand-peace"></i> 立即预约·无量无尽 <i class="fas fa-feather-alt"></i></button>
+    </div>
+
+    <!-- 底部全索引 -->
     <div class="footer">
         <div>英雄108</div><div>皮肤36阶</div><div>灵宠108</div><div>坐骑108</div><div>神器108</div><div>法宝108</div><div>大符文12</div><div>中符文14</div>
         <div>小符文35</div><div>铭文108</div><div>转职108</div><div>灵根36</div><div>108模式</div><div>999+活动</div><div>29社交</div><div>EVMGSO</div>
-        <div>九货币</div><div>段位40</div><div>巅峰赛</div><div>VIP36</div><div>战令</div><div>渡劫40</div><div>轮回</div><div>功法108</div>
-        <div>神通108</div><div>灵诀108</div><div>阵法108</div><div>炼丹108</div><div>炼器108</div><div>奇遇108</div><div>秘境36</div><div>深渊18</div>
-        <div>天劫18</div><div>家园</div><div>洞府</div><div>仙府</div><div>神国</div><div>九界</div><div>月卡</div><div>年卡</div><div>终身卡</div>
-        <div>至尊卡</div><div>大马节日</div><div>全球节日</div><div>吉隆坡服</div><div>槟城服</div><div>沙巴服</div><div>砂拉越服</div><div>马六甲服</div>
+        <div>九货币</div><div>段位40</div><div>巅峰赛</div><div>VIP36</div><div>渡劫40</div><div>功法108</div><div>神通108</div><div>灵诀108</div>
+        <div>阵法108</div><div>炼丹108</div><div>炼器108</div><div>奇遇108</div><div>秘境36</div><div>家园</div><div>九界</div><div>月卡</div>
+        <div>年卡</div><div>终身卡</div><div>至尊卡</div><div>大马节日</div><div>全球节日</div><div>吉隆坡服</div><div>槟城服</div><div>沙巴服</div>
         <div>中国服</div><div>国际服</div><div>星际服</div><div>国旗195</div><div>小兵皮肤</div><div>回城特效</div><div>表情包</div><div>语音播报</div>
     </div>
-    <div class="s1">S1-S40 · 大马荣耀无量无尽 · 万物归宗</div>
-    <div style="text-align:center; color:#9f87e0;">© 灵约·动漫修仙5V5·终章·大马荣耀·无量无尽·究极完全体 · 预约豪礼·公测相见</div>
+    <div class="s1" style="text-align:center; margin:20px 0;">S1-S40 · 大马荣耀无量无尽 · 万物归宗 · 九大货币·全符文效果实装</div>
 </div>
-<!-- 没有任何遗漏，全模块，九货币，预约有效，特效满，代码全部包含 -->
+
+<!-- 实时预约人数递增脚本 -->
+<script>
+    (function() {
+        // 初始预约人数 (以万亿为单位模拟)
+        let base = 10024587392; // 约100亿
+        const counterSpan = document.getElementById('reserveCount');
+        function updateCounter() {
+            base += Math.floor(Math.random() * 30) + 15; // 每秒增加15~45人
+            // 格式化数字加逗号
+            let numStr = base.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            counterSpan.innerText = numStr;
+        }
+        setInterval(updateCounter, 1000);
+    })();
+</script>
 </body>
 </html>
