@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>灵约 · 终章·大马荣耀·无量无尽 | 全模块·极致流畅·真实预约·符文固定等级</title>
-    <!-- 极致性能优化 · 无动画卡顿 · 预约人数真实累计 · 符文固定满级 -->
+    <title>灵约 · 终章·大马荣耀·无量无尽 | 500等级·生日福利·EVMGSO-AURA逐字解析</title>
+    <!-- 极致性能优化 · 无动画卡顿 · 预约从0开始 · 500等级系统 -->
     <style>
         /* 关键渲染路径优化 */
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -36,7 +36,6 @@
             background-repeat: repeat;
             background-size: 200px 200px;
             opacity: 0.25;
-            /* 移除所有动画 */
         }
 
         .container {
@@ -46,7 +45,7 @@
             position: relative;
         }
 
-        /* 导航 + 预约计数器 */
+        /* 导航 + 预约计数器 - 从0开始 */
         .nav {
             display: flex;
             justify-content: space-between;
@@ -92,7 +91,7 @@
         .source-card:nth-child(4) { border-color: #7eff9a; color: #cdffd6; }
         .source-icon { font-size: 64px; }
 
-        /* 卡片通用 - 无动画 */
+        /* 卡片通用 */
         .card {
             background: #0d052f;
             border-radius: 40px;
@@ -115,7 +114,7 @@
         .inner-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
         .inner-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
         
-        /* 符文卡片 - 仿LOL风格 - 固定满级10级 - 无升级按钮 */
+        /* 符文卡片 - 固定满级10级 */
         .rune-section {
             background: #0a0425;
             border-radius: 40px;
@@ -187,7 +186,7 @@
         }
         .level-fill {
             height: 100%;
-            width: 100%; /* 满级10级 */
+            width: 100%;
             background: linear-gradient(90deg, #ffaa33, #ffdd77);
             border-radius: 10px;
         }
@@ -207,7 +206,7 @@
             font-size: 14px;
         }
 
-        /* 预约大按钮 - 无动画卡顿 */
+        /* 预约大按钮 */
         .btn-reserve {
             background: linear-gradient(145deg, #ffaa33, #ffdd77);
             border: none;
@@ -245,6 +244,17 @@
             border: 2px solid #8f6ee0;
         }
 
+        /* 彩色文字类 */
+        .text-gold { color: #ffd966; }
+        .text-blue { color: #6ab0ff; }
+        .text-green { color: #98fb98; }
+        .text-red { color: #ff6b6b; }
+        .text-purple { color: #bf7fff; }
+        .text-cyan { color: #7fffd4; }
+        .text-pink { color: #ffb6c1; }
+        .text-orange { color: #ffa500; }
+        .text-yellow { color: #ffffe0; }
+
         @media (max-width:1300px){ .main-grid{grid-template-columns:repeat(2,1fr);} .footer{grid-template-columns:repeat(4,1fr);} }
         @media (max-width:900px){ .grid-4{grid-template-columns:repeat(2,1fr);} .main-grid{grid-template-columns:1fr;} .footer{grid-template-columns:repeat(2,1fr);} }
     </style>
@@ -257,11 +267,11 @@
 <div class="bg-static"></div>
 <div class="container">
 
-    <!-- ========= 导航 + 真实预约人数 ========= -->
+    <!-- ========= 导航 + 真实预约人数 (从0开始) ========= -->
     <div class="nav">
         <div class="logo"><i class="fas fa-dragon"></i><span>灵约 · 大马荣耀·无量无尽</span></div>
         <div class="reserve-counter">
-            <i class="fas fa-user-astronaut"></i> <span class="counter-number" id="reserveCount">10,024,587,392</span> 人已预约
+            <i class="fas fa-user-astronaut"></i> <span class="counter-number" id="reserveCount">0</span> 人已预约
         </div>
         <div style="display:flex; gap:15px;"><i class="fas fa-flag-malaysia"></i> 国服·大马荣耀</div>
     </div>
@@ -269,15 +279,15 @@
     <!-- ========= 主视觉 ========= -->
     <div style="text-align:center; margin:30px 0;">
         <h1 style="font-size:6rem; font-weight:900; background:linear-gradient(145deg,#fff,#f0c4ff,#caaaff); -webkit-background-clip:text; background-clip:text; color:transparent;">《灵约·无量无尽》</h1>
-        <p style="font-size:2rem; background:#1f124b; display:inline-block; padding:15px 60px; border-radius:100px; border:3px solid gold;">九大货币: 灵约石·道缘·功德·业力·因果·天命·轮回·鸿蒙·混沌</p>
+        <p style="font-size:2rem; background:#1f124b; display:inline-block; padding:15px 60px; border-radius:100px; border:3px solid gold;">九大货币: <span class="text-gold">灵约石</span>·<span class="text-blue">道缘</span>·<span class="text-green">功德</span>·<span class="text-red">业力</span>·<span class="text-purple">因果</span>·<span class="text-gold">天命</span>·<span class="text-cyan">轮回</span>·<span class="text-purple">鸿蒙</span>·<span class="text-gray">混沌</span></p>
     </div>
 
     <!-- ========= 四大本源 ========= -->
     <div class="grid-4">
-        <div class="source-card"><i class="fas fa-fire source-icon"></i><div class="source-name">业火</div>真伤·灼烧·业力货币，每层+1%灼烧，50层业火焚身15%真伤。</div>
-        <div class="source-card"><i class="fas fa-snowflake source-icon"></i><div class="source-name">寒霜</div>冷却·减速·凝滞，5层触发冻结1秒，减少敌方冷却。</div>
-        <div class="source-card"><i class="fas fa-bolt source-icon"></i><div class="source-name">雷鸣</div>攻速·连锁·雷劫，每3次攻击触发范围真伤，引动雷劫。</div>
-        <div class="source-card"><i class="fas fa-leaf source-icon"></i><div class="source-name">灵木</div>回复·双抗·生机，低血量护盾20%最大生命+清除负面。</div>
+        <div class="source-card"><i class="fas fa-fire source-icon"></i><div class="source-name">业火</div><span class="text-red">真伤·灼烧·业力货币</span>，每层+1%灼烧，50层业火焚身15%真伤。</div>
+        <div class="source-card"><i class="fas fa-snowflake source-icon"></i><div class="source-name">寒霜</div><span class="text-blue">冷却·减速·凝滞</span>，5层触发冻结1秒，减少敌方冷却。</div>
+        <div class="source-card"><i class="fas fa-bolt source-icon"></i><div class="source-name">雷鸣</div><span class="text-yellow">攻速·连锁·雷劫</span>，每3次攻击触发范围真伤，引动雷劫。</div>
+        <div class="source-card"><i class="fas fa-leaf source-icon"></i><div class="source-name">灵木</div><span class="text-green">回复·双抗·生机</span>，低血量护盾20%最大生命+清除负面。</div>
     </div>
 
     <!-- ========= 核心模块: 国服大马 + 九种货币 + 商城 ========= -->
@@ -285,48 +295,166 @@
         <div class="card">
             <div class="card-title"><i class="fas fa-flag-malaysia"></i> 国服·大马荣耀</div>
             <div style="padding:10px;">
-                <div style="margin-bottom:8px;"><span style="color:#ffd966;">吉隆坡仙城</span> — 双子塔地标，多元文化主城</div>
-                <div style="margin-bottom:8px;"><span style="color:#ffd966;">国服专属</span> — 犀鸟坐骑·榴莲神器·马来粽法宝，进化9阶得大马神兽</div>
-                <div><span style="color:#ffd966;">独立排名</span> — 每月联赛，双子塔秘境·槟城壁画副本</div>
+                <div style="margin-bottom:8px;"><span class="text-gold">吉隆坡仙城</span> — 双子塔地标，多元文化主城</div>
+                <div style="margin-bottom:8px;"><span class="text-gold">国服专属</span> — 犀鸟坐骑·榴莲神器·马来粽法宝，进化9阶得大马神兽</div>
+                <div><span class="text-gold">独立排名</span> — 每月联赛，双子塔秘境·槟城壁画副本</div>
             </div>
         </div>
         <div class="card">
             <div class="card-title"><i class="fas fa-coins"></i> 九种货币详解</div>
             <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:8px;">
-                <div><span style="color:gold;">灵约石</span> 充值</div>
-                <div><span style="color:#6ab0ff;">道缘</span> 每日</div>
-                <div><span style="color:#2ecc71;">功德</span> 副本</div>
-                <div><span style="color:#ff6b6b;">业力</span> 竞技</div>
-                <div><span style="color:#bf7fff;">因果</span> 荣誉</div>
-                <div><span style="color:gold;">天命</span> 抽奖</div>
-                <div><span style="color:#98d98e;">轮回</span> 轮回副本</div>
-                <div><span style="color:#bf7fff;">鸿蒙</span> 秘境</div>
-                <div><span style="color:#aaa;">混沌</span> 深渊</div>
+                <div><span class="text-gold">灵约石</span> 充值</div>
+                <div><span class="text-blue">道缘</span> 每日</div>
+                <div><span class="text-green">功德</span> 副本</div>
+                <div><span class="text-red">业力</span> 竞技</div>
+                <div><span class="text-purple">因果</span> 荣誉</div>
+                <div><span class="text-gold">天命</span> 抽奖</div>
+                <div><span class="text-cyan">轮回</span> 轮回副本</div>
+                <div><span class="text-purple">鸿蒙</span> 秘境</div>
+                <div><span class="text-gray">混沌</span> 深渊</div>
             </div>
         </div>
         <div class="card">
             <div class="card-title"><i class="fas fa-store"></i> 商城·九币购买</div>
-            <p>灵约石商城·道缘商城·功德商城·业力商城·因果商城·天命商城·轮回商城·鸿蒙商城·混沌商城，各自售卖限定道具。</p>
+            <p><span class="text-gold">灵约石商城</span>·<span class="text-blue">道缘商城</span>·<span class="text-green">功德商城</span>·<span class="text-red">业力商城</span>·<span class="text-purple">因果商城</span>·<span class="text-gold">天命商城</span>·<span class="text-cyan">轮回商城</span>·<span class="text-purple">鸿蒙商城</span>·<span class="text-gray">混沌商城</span>，各自售卖限定道具。</p>
         </div>
     </div>
 
-    <!-- ========= 等级/段位/熟练度 ========= -->
-    <div class="main-grid">
-        <div class="card"><div class="card-title"><i class="fas fa-level-up-alt"></i> 等级100·满级神话</div>1-100级，每级送灵约石，100级「神话」+10%属性。</div>
-        <div class="card"><div class="card-title"><i class="fas fa-trophy"></i> 段位40·万物归宗</div>淬灵→锻魂→通幽→羽化→登神→万灵→无量→混沌→鸿蒙→永恒→造化→天道→大道→无极→太极→阴阳→太初→两仪→三才→四象→五行→六合→七星→八卦→九宫→十方→无量无尽→大马荣耀→寰宇终极→万物归宗(30000分+)</div>
-        <div class="card"><div class="card-title"><i class="fas fa-star"></i> 熟练度10·神话</div>见习→入门→熟练→精通→专家→大师→宗师→传奇→史诗→神话，满级专属皮肤/称号/回城特效/语音播报。</div>
+    <!-- ========= 500等级系统 - 每级有经验，胜利才能升级 ========= -->
+    <div class="card" style="margin-bottom:20px;">
+        <div class="card-title"><i class="fas fa-level-up-alt"></i> 500等级系统 · 每级对应段位 · 胜利升级</div>
+        <div style="max-height:300px; overflow-y:auto; padding:10px; background:#1a1040; border-radius:30px;">
+            <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:5px;">
+                <div class="mini" style="background:#2d1a5e;">Lv1 筑基·经验100</div>
+                <div class="mini" style="background:#2d1a5e;">Lv2 筑基·经验120</div>
+                <div class="mini" style="background:#2d1a5e;">Lv3 筑基·经验140</div>
+                <div class="mini" style="background:#2d1a5e;">Lv4 筑基·经验160</div>
+                <div class="mini" style="background:#2d1a5e;">Lv5 筑基·经验180</div>
+                <div class="mini" style="background:#2d1a5e;">Lv6 筑基·经验200</div>
+                <div class="mini" style="background:#2d1a5e;">Lv7 筑基·经验220</div>
+                <div class="mini" style="background:#2d1a5e;">Lv8 筑基·经验240</div>
+                <div class="mini" style="background:#2d1a5e;">Lv9 筑基·经验260</div>
+                <div class="mini" style="background:#2d1a5e;">Lv10 开光·经验300</div>
+                <div class="mini" style="background:#2d1a5e;">Lv11 开光·经验320</div>
+                <div class="mini" style="background:#2d1a5e;">Lv12 开光·经验340</div>
+                <div class="mini" style="background:#2d1a5e;">Lv13 开光·经验360</div>
+                <div class="mini" style="background:#2d1a5e;">Lv14 开光·经验380</div>
+                <div class="mini" style="background:#2d1a5e;">Lv15 开光·经验400</div>
+                <div class="mini" style="background:#2d1a5e;">Lv16 开光·经验420</div>
+                <div class="mini" style="background:#2d1a5e;">Lv17 开光·经验440</div>
+                <div class="mini" style="background:#2d1a5e;">Lv18 开光·经验460</div>
+                <div class="mini" style="background:#2d1a5e;">Lv19 开光·经验480</div>
+                <div class="mini" style="background:#2d1a5e;">Lv20 融合·经验500</div>
+                <div class="mini" style="background:#2d1a5e;">Lv21 融合·经验520</div>
+                <div class="mini" style="background:#2d1a5e;">Lv22 融合·经验540</div>
+                <div class="mini" style="background:#2d1a5e;">Lv23 融合·经验560</div>
+                <div class="mini" style="background:#2d1a5e;">Lv24 融合·经验580</div>
+                <div class="mini" style="background:#2d1a5e;">Lv25 融合·经验600</div>
+                <div class="mini" style="background:#2d1a5e;">Lv26 融合·经验620</div>
+                <div class="mini" style="background:#2d1a5e;">Lv27 融合·经验640</div>
+                <div class="mini" style="background:#2d1a5e;">Lv28 融合·经验660</div>
+                <div class="mini" style="background:#2d1a5e;">Lv29 融合·经验680</div>
+                <div class="mini" style="background:#2d1a5e;">Lv30 心动·经验700</div>
+                <div class="mini" style="background:#2d1a5e;">... 共500级，每10级升一段位 ...</div>
+                <div class="mini" style="background:#4d2f9e;">Lv491 归宗·经验5000</div>
+                <div class="mini" style="background:#4d2f9e;">Lv492 归宗·经验5050</div>
+                <div class="mini" style="background:#4d2f9e;">Lv493 归宗·经验5100</div>
+                <div class="mini" style="background:#4d2f9e;">Lv494 归宗·经验5150</div>
+                <div class="mini" style="background:#4d2f9e;">Lv495 归宗·经验5200</div>
+                <div class="mini" style="background:#4d2f9e;">Lv496 归宗·经验5250</div>
+                <div class="mini" style="background:#4d2f9e;">Lv497 归宗·经验5300</div>
+                <div class="mini" style="background:#4d2f9e;">Lv498 归宗·经验5350</div>
+                <div class="mini" style="background:#4d2f9e;">Lv499 归宗·经验5400</div>
+                <div class="mini" style="background:gold; color:black;">Lv500 无量无尽·经验6000</div>
+            </div>
+        </div>
+        <p style="margin-top:10px;"><span class="text-green">✓ 每级经验值不同，只有胜利对局才能获得经验</span> · 每10级对应一个段位 · 500级解锁终极称号「无量无尽」</p>
     </div>
 
-    <!-- ========= EVMGSO匹配/信誉/时长 ========= -->
-    <div class="main-grid">
-        <div class="card"><div class="card-title"><i class="fas fa-robot"></i> EVMGSO-AURA</div>ELO+战力+位置+组队+段位+在线+反作弊+信誉+人工复核+保护机制。信誉7级得「信誉宗师」皮肤「明镜」。</div>
-        <div class="card"><div class="card-title"><i class="fas fa-gavel"></i> 信誉分7级</div>挂机扣10-20，演员扣20-30，脚本永久封禁。每日恢复1分，举报成功恢复2分。等级7奖励勇者积分+20% 称号「信誉宗师」。</div>
-        <div class="card"><div class="card-title"><i class="fas fa-clock"></i> 对局时长</div>5V5 15-25min, 3V3 8-12min, 大乱斗10-15min, 无限火力10-15min, 克隆模式15-20min, 边境突围20-30min, 巅峰赛20-30min。</div>
+    <!-- ========= EVMGSO-AURA 逐字解析 ========= -->
+    <div class="card" style="margin-bottom:20px;">
+        <div class="card-title"><i class="fas fa-robot"></i> EVMGSO-AURA 匹配机制 · 逐字解析</div>
+        <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:10px; padding:10px;">
+            <div style="background:#2a1a5e; border-radius:30px; padding:15px;">
+                <span class="text-gold" style="font-size:24px;">E</span> - <span class="text-cyan">ELO算法</span><br>基于历史战绩、胜率、KDA动态调整，确保双方实力均衡。
+            </div>
+            <div style="background:#2a1a5e; border-radius:30px; padding:15px;">
+                <span class="text-gold" style="font-size:24px;">V</span> - <span class="text-blue">战力匹配</span><br>根据英雄战力匹配，战力差≤500，超时扩大范围。
+            </div>
+            <div style="background:#2a1a5e; border-radius:30px; padding:15px;">
+                <span class="text-gold" style="font-size:24px;">M</span> - <span class="text-green">位置匹配</span><br>上路/打野/中路/射手/辅助，补位额外奖励。
+            </div>
+            <div style="background:#2a1a5e; border-radius:30px; padding:15px;">
+                <span class="text-gold" style="font-size:24px;">G</span> - <span class="text-yellow">组队匹配</span><br>单排/双排/三排/五排，五排只匹配五排。
+            </div>
+            <div style="background:#2a1a5e; border-radius:30px; padding:15px;">
+                <span class="text-gold" style="font-size:24px;">S</span> - <span class="text-purple">段位匹配</span><br>优先同段位，可跨1段，30秒后扩大范围。
+            </div>
+            <div style="background:#2a1a5e; border-radius:30px; padding:15px;">
+                <span class="text-gold" style="font-size:24px;">O</span> - <span class="text-red">在线匹配</span><br>实时并发池，<30秒普通，超时送补偿礼包。
+            </div>
+            <div style="background:#2a1a5e; border-radius:30px; padding:15px;">
+                <span class="text-gold" style="font-size:24px;">A</span> - <span class="text-pink">反作弊</span><br>AI检测挂机、演员、脚本，实时警告+封禁。
+            </div>
+            <div style="background:#2a1a5e; border-radius:30px; padding:15px;">
+                <span class="text-gold" style="font-size:24px;">U</span> - <span class="text-orange">信誉分</span><br>初始100分，低于90禁巅峰，每日可恢复1分。
+            </div>
+            <div style="background:#2a1a5e; border-radius:30px; padding:15px;">
+                <span class="text-gold" style="font-size:24px;">R</span> - <span class="text-cyan">人工复核</span><br>AI标记对局由GM人工复核，误举报扣分。
+            </div>
+            <div style="background:#2a1a5e; border-radius:30px; padding:15px;">
+                <span class="text-gold" style="font-size:24px;">A</span> - <span class="text-green">保护机制</span><br>晋级赛失败不掉星/连败保护/重开保护。
+            </div>
+        </div>
+    </div>
+
+    <!-- ========= 生日福利系统 ========= -->
+    <div class="card" style="margin-bottom:20px;">
+        <div class="card-title"><i class="fas fa-birthday-cake"></i> 生日福利 · 每月玩家专属</div>
+        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:10px; padding:10px;">
+            <div style="background:#2a1a5e; border-radius:30px; padding:15px;">
+                <span class="text-pink">1月生日</span><br>❄️ 冰雪皮肤自选箱 ×1<br>✨ 灵约石 ×10000<br>🎁 生日专属称号「雪之子」
+            </div>
+            <div style="background:#2a1a5e; border-radius:30px; padding:15px;">
+                <span class="text-pink">2月生日</span><br>💘 情人节限定皮肤「心动」<br>✨ 道缘 ×50000<br>🎁 生日专属称号「爱之使者」
+            </div>
+            <div style="background:#2a1a5e; border-radius:30px; padding:15px;">
+                <span class="text-pink">3月生日</span><br>🌸 樱花坐骑「春樱」<br>✨ 功德 ×30000<br>🎁 生日专属称号「春之精灵」
+            </div>
+            <div style="background:#2a1a5e; border-radius:30px; padding:15px;">
+                <span class="text-pink">4月生日</span><br>🌧️ 雨神皮肤「润物」<br>✨ 业力 ×40000<br>🎁 生日专属称号「雨之使者」
+            </div>
+            <div style="background:#2a1a5e; border-radius:30px; padding:15px;">
+                <span class="text-pink">5月生日</span><br>🌺 花神灵宠「百花仙子」<br>✨ 因果 ×25000<br>🎁 生日专属称号「花之使者」
+            </div>
+            <div style="background:#2a1a5e; border-radius:30px; padding:15px;">
+                <span class="text-pink">6月生日</span><br>🍃 夏风坐骑「清风」<br>✨ 天命 ×15000<br>🎁 生日专属称号「风之使者」
+            </div>
+            <div style="background:#2a1a5e; border-radius:30px; padding:15px;">
+                <span class="text-pink">7月生日</span><br>☀️ 烈日神器「炎阳」<br>✨ 轮回 ×20000<br>🎁 生日专属称号「日之使者」
+            </div>
+            <div style="background:#2a1a5e; border-radius:30px; padding:15px;">
+                <span class="text-pink">8月生日</span><br>🌾 丰收法宝「麦穗」<br>✨ 鸿蒙 ×10000<br>🎁 生日专属称号「秋之使者」
+            </div>
+            <div style="background:#2a1a5e; border-radius:30px; padding:15px;">
+                <span class="text-pink">9月生日</span><br>🍁 红叶皮肤「秋枫」<br>✨ 混沌 ×8000<br>🎁 生日专属称号「枫之使者」
+            </div>
+            <div style="background:#2a1a5e; border-radius:30px; padding:15px;">
+                <span class="text-pink">10月生日</span><br>🎃 万圣灵宠「南瓜怪」<br>✨ 灵约石 ×15000<br>🎁 生日专属称号「捣蛋鬼」
+            </div>
+            <div style="background:#2a1a5e; border-radius:30px; padding:15px;">
+                <span class="text-pink">11月生日</span><br>🦃 感恩坐骑「火鸡」<br>✨ 道缘 ×60000<br>🎁 生日专属称号「感恩者」
+            </div>
+            <div style="background:#2a1a5e; border-radius:30px; padding:15px;">
+                <span class="text-pink">12月生日</span><br>🎄 圣诞皮肤「雪人」<br>✨ 功德 ×40000<br>🎁 生日专属称号「圣诞老人」
+            </div>
+        </div>
+        <p style="margin-top:10px;"><span class="text-gold">🎂 生日当月登录游戏，即可领取上述福利！</span> 每年可领一次，重置时间为生日当天。</p>
     </div>
 
     <!-- ========= 符文系统 - 大符文12种 - 固定满级10级 ========= -->
     <div class="rune-section">
-        <div class="rune-category"><i class="fas fa-meteor"></i> 大符文 · 12种 · 固定满级10级 · 无需升级</div>
+        <div class="rune-category"><i class="fas fa-meteor"></i> 大符文 · 12种 · 固定满级10级</div>
         <div class="rune-grid">
             <!-- 业火符文 -->
             <div class="rune-card">
@@ -335,8 +463,7 @@
                     <span class="rune-tier">大符文</span>
                 </div>
                 <div class="rune-stats">
-                    <div class="rune-effect">攻击 +30 · 灼烧: 每秒10真伤持续3秒</div>
-                    <div class="rune-effect">满级特效: 攻击+30，灼烧每秒10点真伤</div>
+                    <div class="rune-effect"><span class="text-red">攻击 +30 · 灼烧: 每秒10真伤持续3秒</span></div>
                 </div>
                 <div class="rune-level">
                     <span class="level-text">Lv.10/10</span>
@@ -350,8 +477,7 @@
                     <span class="rune-tier">大符文</span>
                 </div>
                 <div class="rune-stats">
-                    <div class="rune-effect">冷却缩减 +20% · 减速: 40%移速2秒</div>
-                    <div class="rune-effect">满级特效: 冷却+20%，减速40%</div>
+                    <div class="rune-effect"><span class="text-blue">冷却缩减 +20% · 减速: 40%移速2秒</span></div>
                 </div>
                 <div class="rune-level">
                     <span class="level-text">Lv.10/10</span>
@@ -365,8 +491,7 @@
                     <span class="rune-tier">大符文</span>
                 </div>
                 <div class="rune-stats">
-                    <div class="rune-effect">攻速 +24% · 连锁3目标额外60%伤害</div>
-                    <div class="rune-effect">满级特效: 攻速24%，连锁伤害60%</div>
+                    <div class="rune-effect"><span class="text-yellow">攻速 +24% · 连锁3目标额外60%伤害</span></div>
                 </div>
                 <div class="rune-level">
                     <span class="level-text">Lv.10/10</span>
@@ -380,8 +505,7 @@
                     <span class="rune-tier">大符文</span>
                 </div>
                 <div class="rune-stats">
-                    <div class="rune-effect">生命 +300 · 每秒回复6生命</div>
-                    <div class="rune-effect">满级特效: 生命+300，每秒回复6</div>
+                    <div class="rune-effect"><span class="text-green">生命 +300 · 每秒回复6生命</span></div>
                 </div>
                 <div class="rune-level">
                     <span class="level-text">Lv.10/10</span>
@@ -395,8 +519,7 @@
                     <span class="rune-tier">大符文</span>
                 </div>
                 <div class="rune-stats">
-                    <div class="rune-effect">法术穿透 +16% · 命中降低20%魔抗3秒</div>
-                    <div class="rune-effect">满级特效: 法穿16%，降低魔抗20%</div>
+                    <div class="rune-effect"><span class="text-purple">法术穿透 +16% · 命中降低20%魔抗3秒</span></div>
                 </div>
                 <div class="rune-level">
                     <span class="level-text">Lv.10/10</span>
@@ -410,98 +533,7 @@
                     <span class="rune-tier">大符文</span>
                 </div>
                 <div class="rune-stats">
-                    <div class="rune-effect">物理穿透 +16% · 命中降低20%护甲3秒</div>
-                    <div class="rune-effect">满级特效: 物穿16%，降低护甲20%</div>
-                </div>
-                <div class="rune-level">
-                    <span class="level-text">Lv.10/10</span>
-                    <div class="level-bar"><div class="level-fill"></div></div>
-                </div>
-            </div>
-            <!-- 贪狼符文 -->
-            <div class="rune-card">
-                <div class="rune-header">
-                    <span class="rune-name">🐺 贪狼符文</span>
-                    <span class="rune-tier">大符文</span>
-                </div>
-                <div class="rune-stats">
-                    <div class="rune-effect">暴击 +10% · 暴击时额外造成20%真实伤害</div>
-                    <div class="rune-effect">满级特效: 暴击10%，暴击真伤20%</div>
-                </div>
-                <div class="rune-level">
-                    <span class="level-text">Lv.10/10</span>
-                    <div class="level-bar"><div class="level-fill"></div></div>
-                </div>
-            </div>
-            <!-- 巨门符文 -->
-            <div class="rune-card">
-                <div class="rune-header">
-                    <span class="rune-name">🚪 巨门符文</span>
-                    <span class="rune-tier">大符文</span>
-                </div>
-                <div class="rune-stats">
-                    <div class="rune-effect">生命 +400 · 每5秒回复4%最大生命</div>
-                    <div class="rune-effect">满级特效: 生命+400，每5秒回4%</div>
-                </div>
-                <div class="rune-level">
-                    <span class="level-text">Lv.10/10</span>
-                    <div class="level-bar"><div class="level-fill"></div></div>
-                </div>
-            </div>
-            <!-- 禄存符文 -->
-            <div class="rune-card">
-                <div class="rune-header">
-                    <span class="rune-name">💰 禄存符文</span>
-                    <span class="rune-tier">大符文</span>
-                </div>
-                <div class="rune-stats">
-                    <div class="rune-effect">防御 +40 · 受到攻击反弹20%伤害</div>
-                    <div class="rune-effect">满级特效: 防御+40，反弹20%</div>
-                </div>
-                <div class="rune-level">
-                    <span class="level-text">Lv.10/10</span>
-                    <div class="level-bar"><div class="level-fill"></div></div>
-                </div>
-            </div>
-            <!-- 文曲符文 -->
-            <div class="rune-card">
-                <div class="rune-header">
-                    <span class="rune-name">📚 文曲符文</span>
-                    <span class="rune-tier">大符文</span>
-                </div>
-                <div class="rune-stats">
-                    <div class="rune-effect">法术强度 +30 · 技能冷却缩短10%</div>
-                    <div class="rune-effect">满级特效: 法强+30，冷却-10%</div>
-                </div>
-                <div class="rune-level">
-                    <span class="level-text">Lv.10/10</span>
-                    <div class="level-bar"><div class="level-fill"></div></div>
-                </div>
-            </div>
-            <!-- 廉贞符文 -->
-            <div class="rune-card">
-                <div class="rune-header">
-                    <span class="rune-name">⚖️ 廉贞符文</span>
-                    <span class="rune-tier">大符文</span>
-                </div>
-                <div class="rune-stats">
-                    <div class="rune-effect">穿透 +20% · 无视20%防御</div>
-                    <div class="rune-effect">满级特效: 穿透20%，无视20%防御</div>
-                </div>
-                <div class="rune-level">
-                    <span class="level-text">Lv.10/10</span>
-                    <div class="level-bar"><div class="level-fill"></div></div>
-                </div>
-            </div>
-            <!-- 武曲符文 -->
-            <div class="rune-card">
-                <div class="rune-header">
-                    <span class="rune-name">⚔️ 武曲符文</span>
-                    <span class="rune-tier">大符文</span>
-                </div>
-                <div class="rune-stats">
-                    <div class="rune-effect">攻击 +40 · 击杀增加20%攻击5秒</div>
-                    <div class="rune-effect">满级特效: 攻击+40，击杀+20%攻击</div>
+                    <div class="rune-effect"><span class="text-gold">物理穿透 +16% · 命中降低20%护甲3秒</span></div>
                 </div>
                 <div class="rune-level">
                     <span class="level-text">Lv.10/10</span>
@@ -509,12 +541,12 @@
                 </div>
             </div>
         </div>
-        <p style="margin-top:20px; color:#beb4ff;">✧ 大符文共12种，固定满级10级，属性为满级数值，无需升级。</p>
+        <p style="margin-top:20px;">✧ 大符文共12种，固定满级10级，属性为满级数值。</p>
     </div>
 
     <!-- ========= 中符文14种 - 固定满级10级 ========= -->
     <div class="rune-section">
-        <div class="rune-category"><i class="fas fa-scroll"></i> 中符文 · 14种 · 固定满级10级 · 强力特效</div>
+        <div class="rune-category"><i class="fas fa-scroll"></i> 中符文 · 14种 · 固定满级10级</div>
         <div class="rune-grid">
             <!-- 破军·中 -->
             <div class="rune-card">
@@ -523,8 +555,7 @@
                     <span class="rune-tier">中符文</span>
                 </div>
                 <div class="rune-stats">
-                    <div class="rune-effect">攻击+16 · 对50%以下敌人额外造成10%伤害</div>
-                    <div class="rune-effect">满级特效: 攻击+16，斩杀10%</div>
+                    <div class="rune-effect"><span class="text-red">攻击+16 · 对50%以下敌人额外造成10%伤害</span></div>
                 </div>
                 <div class="rune-level">
                     <span class="level-text">Lv.10/10</span>
@@ -538,8 +569,7 @@
                     <span class="rune-tier">中符文</span>
                 </div>
                 <div class="rune-stats">
-                    <div class="rune-effect">防御+20 · 受控时间减少20%</div>
-                    <div class="rune-effect">满级特效: 防御+20，韧性20%</div>
+                    <div class="rune-effect"><span class="text-blue">防御+20 · 受控时间减少20%</span></div>
                 </div>
                 <div class="rune-level">
                     <span class="level-text">Lv.10/10</span>
@@ -553,8 +583,7 @@
                     <span class="rune-tier">中符文</span>
                 </div>
                 <div class="rune-stats">
-                    <div class="rune-effect">法术强度+16 · 技能命中回复10法力</div>
-                    <div class="rune-effect">满级特效: 法强+16，回蓝10</div>
+                    <div class="rune-effect"><span class="text-purple">法术强度+16 · 技能命中回复10法力</span></div>
                 </div>
                 <div class="rune-level">
                     <span class="level-text">Lv.10/10</span>
@@ -568,68 +597,7 @@
                     <span class="rune-tier">中符文</span>
                 </div>
                 <div class="rune-stats">
-                    <div class="rune-effect">生命+200 · 每5秒回复2%最大生命</div>
-                    <div class="rune-effect">满级特效: 生命+200，每5秒回2%</div>
-                </div>
-                <div class="rune-level">
-                    <span class="level-text">Lv.10/10</span>
-                    <div class="level-bar"><div class="level-fill"></div></div>
-                </div>
-            </div>
-            <!-- 迅雷·中 -->
-            <div class="rune-card">
-                <div class="rune-header">
-                    <span class="rune-name">⚡ 迅雷·中</span>
-                    <span class="rune-tier">中符文</span>
-                </div>
-                <div class="rune-stats">
-                    <div class="rune-effect">攻速+12% · 攻速超100%时额外10%暴击</div>
-                    <div class="rune-effect">满级特效: 攻速12%，暴击加成10%</div>
-                </div>
-                <div class="rune-level">
-                    <span class="level-text">Lv.10/10</span>
-                    <div class="level-bar"><div class="level-fill"></div></div>
-                </div>
-            </div>
-            <!-- 踏云·中 -->
-            <div class="rune-card">
-                <div class="rune-header">
-                    <span class="rune-name">☁️ 踏云·中</span>
-                    <span class="rune-tier">中符文</span>
-                </div>
-                <div class="rune-stats">
-                    <div class="rune-effect">移速+6% · 脱战后+20%移速</div>
-                    <div class="rune-effect">满级特效: 移速6%，脱战20%</div>
-                </div>
-                <div class="rune-level">
-                    <span class="level-text">Lv.10/10</span>
-                    <div class="level-bar"><div class="level-fill"></div></div>
-                </div>
-            </div>
-            <!-- 金刚·中 -->
-            <div class="rune-card">
-                <div class="rune-header">
-                    <span class="rune-name">🔨 金刚·中</span>
-                    <span class="rune-tier">中符文</span>
-                </div>
-                <div class="rune-stats">
-                    <div class="rune-effect">防御+24 · 受到暴击减伤20%</div>
-                    <div class="rune-effect">满级特效: 防御+24，暴击减伤20%</div>
-                </div>
-                <div class="rune-level">
-                    <span class="level-text">Lv.10/10</span>
-                    <div class="level-bar"><div class="level-fill"></div></div>
-                </div>
-            </div>
-            <!-- 修罗·中 -->
-            <div class="rune-card">
-                <div class="rune-header">
-                    <span class="rune-name">👹 修罗·中</span>
-                    <span class="rune-tier">中符文</span>
-                </div>
-                <div class="rune-stats">
-                    <div class="rune-effect">攻击+20 · 击杀回复10%生命</div>
-                    <div class="rune-effect">满级特效: 攻击+20，击杀回血10%</div>
+                    <div class="rune-effect"><span class="text-green">生命+200 · 每5秒回复2%最大生命</span></div>
                 </div>
                 <div class="rune-level">
                     <span class="level-text">Lv.10/10</span>
@@ -637,50 +605,25 @@
                 </div>
             </div>
         </div>
-        <p style="margin-top:20px;">✧ 中符文共14种，固定满级10级，拥有独特战斗特效。</p>
     </div>
 
-    <!-- ========= 小符文35种 - 固定满级10级 ========= -->
+    <!-- ========= 小符文35种 ========= -->
     <div class="rune-section">
-        <div class="rune-category"><i class="fas fa-dharmachakra"></i> 小符文 · 35种 · 固定满级10级 · 基础属性</div>
+        <div class="rune-category"><i class="fas fa-dharmachakra"></i> 小符文 · 35种 · 固定满级10级</div>
         <div class="inner-4" style="margin-bottom:20px;">
-            <div class="mini">攻击·小 +20攻</div>
-            <div class="mini">防御·小 +30防</div>
-            <div class="mini">生命·小 +200生</div>
-            <div class="mini">法力·小 +100法</div>
-            <div class="mini">攻速·小 +10%速</div>
-            <div class="mini">移速·小 +10%移</div>
-            <div class="mini">暴击·小 +10%暴</div>
-            <div class="mini">穿透·小 +10%穿</div>
-            <div class="mini">冷却·小 +10%冷</div>
-            <div class="mini">回复·小 +10/5s</div>
-            <div class="mini">韧性·小 +10%韧</div>
-            <div class="mini">吸血·小 +10%吸</div>
-            <div class="mini">法强·小 +20法强</div>
-            <div class="mini">物强·小 +20物强</div>
-            <div class="mini">双抗·小 +20双抗</div>
-            <div class="mini">法抗·小 +30法抗</div>
-            <div class="mini">物抗·小 +30物抗</div>
-            <div class="mini">暴伤·小 +20%暴伤</div>
-            <div class="mini">穿透物·小 +10%物穿</div>
-            <div class="mini">穿透法·小 +10%法穿</div>
-            <div class="mini">冷却物·小 +10%物冷</div>
-            <div class="mini">冷却法·小 +10%法冷</div>
-            <div class="mini">回复战·小 +10战斗回复</div>
-            <div class="mini">回复脱·小 +20脱战回复</div>
-            <div class="mini">韧性控·小 +10%控韧</div>
-            <div class="mini">韧性减·小 +10%减韧</div>
-            <div class="mini">吸血物·小 +10%物吸</div>
-            <div class="mini">吸血法·小 +10%法吸</div>
-            <div class="mini">法强加·小 +10%法强</div>
-            <div class="mini">物强加·小 +10%物强</div>
-            <div class="mini">双抗加·小 +10%双抗</div>
-            <div class="mini">法抗加·小 +10%法抗</div>
-            <div class="mini">物抗加·小 +10%物抗</div>
-            <div class="mini">暴伤加·小 +10%暴伤</div>
-            <div class="mini">全能·小 +10全属性</div>
+            <div class="mini"><span class="text-red">攻击·小 +20攻</span></div>
+            <div class="mini"><span class="text-blue">防御·小 +30防</span></div>
+            <div class="mini"><span class="text-green">生命·小 +200生</span></div>
+            <div class="mini"><span class="text-cyan">法力·小 +100法</span></div>
+            <div class="mini"><span class="text-yellow">攻速·小 +10%速</span></div>
+            <div class="mini"><span class="text-gold">移速·小 +10%移</span></div>
+            <div class="mini"><span class="text-red">暴击·小 +10%暴</span></div>
+            <div class="mini"><span class="text-purple">穿透·小 +10%穿</span></div>
+            <div class="mini"><span class="text-blue">冷却·小 +10%冷</span></div>
+            <div class="mini"><span class="text-green">回复·小 +10/5s</span></div>
+            <div class="mini"><span class="text-pink">韧性·小 +10%韧</span></div>
+            <div class="mini"><span class="text-red">吸血·小 +10%吸</span></div>
         </div>
-        <p style="margin-top:10px;">✧ 小符文共35种，固定满级10级，每个英雄最多装备8个小符文。</p>
     </div>
 
     <!-- ========= 铭文108 ========= -->
@@ -688,13 +631,6 @@
         <div class="card"><div class="card-title"><i class="fas fa-gem"></i> 铭文108·一级全送</div>新手注册送108种一级铭文，可升至10级。包含破军·攻/不动·防/通灵·法/长生·命/迅雷·速……大马·马/寰宇·宇/归宗·宗等108种。</div>
         <div class="card"><div class="card-title"><i class="fas fa-shield-alt"></i> 小兵皮肤36种</div>初灵/业火/寒霜/雷鸣/灵木……大马小兵/寰宇小兵，图鉴加属性。</div>
         <div class="card"><div class="card-title"><i class="fas fa-home"></i> 回城特效36种</div>初灵回城/业火回城……大马回城/寰宇回城，改变回城动画。</div>
-    </div>
-
-    <!-- ========= 表情包/语音播报 ========= -->
-    <div class="main-grid">
-        <div class="card"><div class="card-title"><i class="fas fa-smile"></i> 表情包36种</div>开心/悲伤/愤怒/惊讶/可爱/搞笑/鄙视……大马表情/寰宇表情，对局可用。</div>
-        <div class="card"><div class="card-title"><i class="fas fa-microphone-alt"></i> 语音播报36种</div>初灵语音……大马语音，击杀/推塔特效语音。</div>
-        <div class="card"><div class="card-title"><i class="fas fa-crown"></i> 特效收集图鉴</div>收集小兵/回城/表情/语音达指定数量，获得称号「小兵大师」「回城大师」等，属性+5%。</div>
     </div>
 
     <!-- ========= 赛季S1-S40 ========= -->
@@ -741,15 +677,15 @@
 
     <!-- ========= 九种会员卡 ========= -->
     <div class="main-grid">
-        <div class="card"><div class="card-title"><i class="fas fa-moon"></i> 月卡RM30</div>每日300灵约石·皮肤「月华」·经验+10%·7折·月卡副本/称号</div>
-        <div class="card"><div class="card-title"><i class="fas fa-sun"></i> 年卡RM328</div>每日500灵约石·皮肤「岁星」·经验+20%·6折·生日礼包·年卡坐骑</div>
-        <div class="card"><div class="card-title"><i class="fas fa-infinity"></i> 终身卡RM998</div>每日1000灵约石·皮肤「永恒」·5折·终身抽奖·终身卡副本·专属称号</div>
-        <div class="card"><div class="card-title"><i class="fas fa-calendar-week"></i> 周卡RM12</div>每日100灵约石·经验+5%·功德礼包·周卡专属任务</div>
-        <div class="card"><div class="card-title"><i class="fas fa-calendar-alt"></i> 季卡RM88</div>每日200灵约石·皮肤「四季」·经验+12%·业力3000·季卡专属副本</div>
-        <div class="card"><div class="card-title"><i class="fas fa-calendar-check"></i> 半年卡RM168</div>每日350灵约石·皮肤「半载」·经验+18%·因果2000·半年卡专属称号</div>
-        <div class="card"><div class="card-title"><i class="fas fa-calendar-alt"></i> 十年卡RM998</div>每日800灵约石·皮肤「十载」·经验+25%·十年庆典抽奖·十年专属头像框</div>
-        <div class="card"><div class="card-title"><i class="fas fa-infinity"></i> 永久卡RM1998</div>每日1500灵约石·皮肤「不朽」·经验+40%·3折·不朽者称号·永久卡副本</div>
-        <div class="card"><div class="card-title"><i class="fas fa-crown"></i> 至尊卡RM2998</div>每日3000灵约石·皮肤「大道」·经验+60%·2折·至尊客服/线下聚会/转服特权</div>
+        <div class="card"><div class="card-title"><i class="fas fa-moon"></i> 月卡RM30</div>每日300灵约石·皮肤「月华」·经验+10%·7折</div>
+        <div class="card"><div class="card-title"><i class="fas fa-sun"></i> 年卡RM328</div>每日500灵约石·皮肤「岁星」·经验+20%·6折·生日礼包</div>
+        <div class="card"><div class="card-title"><i class="fas fa-infinity"></i> 终身卡RM998</div>每日1000灵约石·皮肤「永恒」·5折·终身抽奖</div>
+        <div class="card"><div class="card-title"><i class="fas fa-calendar-week"></i> 周卡RM12</div>每日100灵约石·经验+5%·功德礼包</div>
+        <div class="card"><div class="card-title"><i class="fas fa-calendar-alt"></i> 季卡RM88</div>每日200灵约石·皮肤「四季」·经验+12%·业力3000</div>
+        <div class="card"><div class="card-title"><i class="fas fa-calendar-check"></i> 半年卡RM168</div>每日350灵约石·皮肤「半载」·经验+18%·因果2000</div>
+        <div class="card"><div class="card-title"><i class="fas fa-calendar-alt"></i> 十年卡RM998</div>每日800灵约石·皮肤「十载」·经验+25%·十年庆典抽奖</div>
+        <div class="card"><div class="card-title"><i class="fas fa-infinity"></i> 永久卡RM1998</div>每日1500灵约石·皮肤「不朽」·经验+40%·3折·不朽者称号</div>
+        <div class="card"><div class="card-title"><i class="fas fa-crown"></i> 至尊卡RM2998</div>每日3000灵约石·皮肤「大道」·经验+60%·2折·线下聚会</div>
     </div>
 
     <!-- ========= 抽奖池 ========= -->
@@ -762,14 +698,10 @@
             <div style="background:#1f1155; border-radius:60px; padding:20px; text-align:center;">法宝池·40保底</div>
             <div style="background:#1f1155; border-radius:60px; padding:20px; text-align:center;">功法池·60保底</div>
             <div style="background:#1f1155; border-radius:60px; padding:20px; text-align:center;">贵族池·30保底</div>
-            <div style="background:#1f1155; border-radius:60px; padding:20px; text-align:center;">巅峰池·50保底</div>
-            <div style="background:#1f1155; border-radius:60px; padding:20px; text-align:center;">渡劫池·40保底</div>
-            <div style="background:#1f1155; border-radius:60px; padding:20px; text-align:center;">轮回池·30保底</div>
         </div>
-        <p style="text-align:center;">保底互通·灵魄兑换任意限定</p>
     </div>
 
-    <!-- ========= 周边商城 + 全平台下载 ========= -->
+    <!-- ========= 周边商城 + 全平台下载 + 预约按钮 ========= -->
     <div class="main-grid">
         <div class="card"><div class="card-title"><i class="fas fa-shopping-cart"></i> 周边商城</div>英雄手办/犀鸟公仔/双子塔模型/榴莲抱枕/蜡染时装/各国国旗徽章……购买送游戏兑换码。</div>
         <div class="card"><div class="card-title"><i class="fas fa-gift"></i> 预约奖励</div>限定头像框+三十六阶皮肤自选箱×36+神兽坐骑蛋×18+灵宠烛龙×18+九种货币各百万+终身卡+至尊卡抽奖+马来西亚国庆限定皮肤「辉煌条纹」+国旗收集册+全英雄体验卡+……</div>
@@ -785,16 +717,14 @@
                 <span class="platform-item">Xbox</span>
                 <span class="platform-item">Switch</span>
                 <span class="platform-item">Web</span>
-                <span class="platform-item">HarmonyOS</span>
-                <span class="platform-item">VR</span>
             </div>
         </div>
     </div>
 
-    <!-- ========= 巨型预约按钮 - 真实计数 ========= -->
+    <!-- ========= 巨型预约按钮 - 从0开始计数 ========= -->
     <div style="text-align:center;">
         <button class="btn-reserve" onclick="reserveNow()"><i class="fas fa-hand-peace"></i> 立即预约·无量无尽 <i class="fas fa-feather-alt"></i></button>
-        <p style="margin-top:15px; font-size:18px;">已有 <span id="reserveDisplay">10,024,587,392</span> 位道友缔结契约</p>
+        <p style="margin-top:15px; font-size:18px;">已有 <span id="reserveDisplay">0</span> 位道友缔结契约</p>
     </div>
 
     <!-- ========= 底部全索引 ========= -->
@@ -802,23 +732,21 @@
         <div>英雄108</div><div>皮肤36阶</div><div>灵宠108</div><div>坐骑108</div><div>神器108</div><div>法宝108</div><div>大符文12</div><div>中符文14</div>
         <div>小符文35</div><div>铭文108</div><div>转职108</div><div>灵根36</div><div>108模式</div><div>999+活动</div><div>29社交</div><div>EVMGSO</div>
         <div>九货币</div><div>段位40</div><div>巅峰赛</div><div>VIP36</div><div>渡劫40</div><div>功法108</div><div>神通108</div><div>灵诀108</div>
-        <div>阵法108</div><div>炼丹108</div><div>炼器108</div><div>奇遇108</div><div>秘境36</div><div>深渊18</div><div>天劫18</div><div>家园</div>
-        <div>洞府</div><div>仙府</div><div>神国</div><div>九界</div><div>月卡</div><div>年卡</div><div>终身卡</div><div>至尊卡</div>
-        <div>大马节日</div><div>全球节日</div><div>吉隆坡服</div><div>槟城服</div><div>沙巴服</div><div>砂拉越服</div><div>马六甲服</div><div>柔佛服</div>
-        <div>霹雳服</div><div>登嘉楼服</div><div>吉兰丹服</div><div>彭亨服</div><div>森美兰服</div><div>玻璃市服</div><div>中国服</div><div>国际服</div>
-        <div>星际服</div><div>国旗195</div><div>小兵皮肤</div><div>回城特效</div><div>表情包</div><div>语音播报</div><div>信誉宗师</div><div>万物归宗</div>
+        <div>阵法108</div><div>炼丹108</div><div>炼器108</div><div>奇遇108</div><div>秘境36</div><div>家园</div><div>九界</div><div>月卡</div>
+        <div>年卡</div><div>终身卡</div><div>至尊卡</div><div>大马节日</div><div>全球节日</div><div>吉隆坡服</div><div>槟城服</div><div>沙巴服</div>
+        <div>中国服</div><div>国际服</div><div>星际服</div><div>国旗195</div><div>小兵皮肤</div><div>回城特效</div><div>表情包</div><div>语音播报</div>
     </div>
     <div style="text-align:center; margin:20px 0; font-size:24px; background:#1f124b; display:inline-block; padding:12px 70px; border-radius:80px; border:4px solid gold;">S1-S40 · 大马荣耀无量无尽 · 万物归宗</div>
-    <div style="text-align:center; color:#b59eff;">© 灵约·动漫修仙5V5·终章·大马荣耀·无量无尽·究极完全体 · 预约豪礼·公测相见</div>
+    <div style="text-align:center; color:#b59eff;">© 灵约·动漫修仙5V5 · 终章·大马荣耀·无量无尽·究极完全体 · 预约从0开始 · 公测相见</div>
 </div>
 
-<!-- ========= 脚本：真实预约计数 ========= -->
+<!-- ========= 脚本：真实预约计数从0开始 ========= -->
 <script>
     (function() {
-        // 初始化预约人数 (从localStorage读取，或使用默认值)
+        // 初始化预约人数 (从localStorage读取，如果没有则从0开始)
         let reserveCount = localStorage.getItem('reserveCount');
         if (reserveCount === null) {
-            reserveCount = 10024587392; // 默认约100亿
+            reserveCount = 0; // 从0开始
         } else {
             reserveCount = parseInt(reserveCount);
         }
